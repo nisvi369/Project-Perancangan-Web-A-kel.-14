@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Beauty of East Java</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="Ikon.ico">
+</head>
+<body>
+    <nav class="header">
+        <ul>
+            <div class="logo">
+                <img src="Logo.png" alt="home">
+            </div>
+            <div class="bahasa">
+                <li><a href="#">English-UK</a>
+                    <ul>
+                        <li><a href="#">English-US</a></li>
+                        <li><a href="#">Indonesian</a></li>
+                    </ul>
+                </li>
+            </div>
+            <div class="menu">
+                <button type="button" href="WisataD.html"><font face="Freestyle script"; font size="6px">Goes to Wisata</font></button>
+                <button type="button" href="EventD.html"><font face="Freestyle script"; font size="6px">Let's See an Event</font></button>
+            </div>
+                <div class="login">
+                <button type="button" href="LoginD.html"><font face="Calibri"; font size="3px">Login</font></button>
+            </div>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="cari" align="right">
+            <input class="search" type="text" placeholder="Masukkan kata kunci">
+            <button type="button" value="Search">Cari</button>
+        </div>
+        <div class="judul">
+            <font face="Shalinta"; font size=6px; font color="#00FF7F">Welcome to</font><br>
+            <font face="Shalinta"; font size="10px"; font color="#FF8C00">the Beauty of East Java</font><br>
+        </div>
+        <div class="slider">
+            <div class="slide-holder">
+                <div class="slide"><img src="Bromo.jpg" alt=""/></div>
+                <div class="slide"><img src="merah.jpg" alt=""/></div>
+                <div class="slide"><img src="MNP.jpg" alt=""/></div>
+            </div>  
+        </div>
+        <p class="slogan">Refresh your day!</p>
+    </div>
+    <div class="footer">
+        <ul class="footer-menu">
+            <li>
+                <a class="cookie" href="CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
+                <a class="aboutUs" href="AboutUs.html">About us&emsp;&emsp;|</a>
+                <a class="contact" href="ContactUs.html">Contact Us</a>
+                <ul class="sosmed">
+                    <li>
+                        Follow us on :<br>
+                        <a class="instagram" href="instagram.com/BeautyEastJava"><img src="instagram.png" alt=""></a>
+                        <a class="facebook" href="facebook.com/BeautyEastJava"><img src="facebook.png" alt=""></a>
+                        <a class="twitter" href="twitter.com/BeautyEastJava"><img src="twitter.png" alt=""></a>
+                        <a class="youtube" href="youtube.com/BeautyEastJava"><img src="youtube.png" alt=""></a>
+                    </li>
+                </ul>
+            </li>
+        </ul><br>
+        <h5>&copy;Copyright 2019BeautyofEastJava</h5>
+    </div>
+</body>
+</html>
+
+<style>
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/*HEADER*/
+body{
+    background-color: white;
+}
+.logo{
+    float: left;
+    width: 750px;
+}
+.logo img{
+    align:left;
+    height: 90px;
+    width: 170px;
+}
+.header {
+    background:#012F52;
+    width: 100%;
+    height: 90px;
+}
+.header ul { 
+    list-style: none; /*agar tidak ada bullets*/
+}
+.header .menu button{
+    background-color:#2F8758;
+    color: white;
+    padding: 3px 50px 3px 50px;
+    border: none;
+    margin-top: 40px;
+    cursor:pointer;
+}
+.header .menu button:hover{
+    background-color: white;
+    color:#2F8758;
+}
+.header .bahasa{
+    margin-top: 10px;
+    float:right;
+    font-size: 12px;
+    font-family:"Calibri";
+    line-height: 20px; /*ukuran blok*/
+}
+.header ul li a { /*English-UK*/
+    width:100px;
+    display: block;
+    text-align:center;
+    color:white;
+    text-decoration:none; /*biar gak ada garisnya*/
+}
+.header ul li:hover ul { /*muncul pilihan bahasa*/
+    display:block;
+}
+.header ul ul { /*pilihan bahasa*/
+    display:none; /*biar gak kelihatan sebelum di tunjuk*/
+    list-style:none; 
+    position:absolute; 
+    background-color:#B3FF9E;
+    color: black; /*gak berubah*/
+    top:30px;
+}
+.header ul li a:hover { /*hover pilihan bahasa*/
+    background-color:#012F52; 
+    color: white;
+    display:block;
+}
+.header ul ul li a { /*kotak pilihan bahasa*/
+    display:block;
+    padding-left: 10px;
+    text-align:left;
+    width:80px;
+    height:25px;
+}
+.header .login button{
+    background-color: #2F8758;
+    color: white;
+    border: none;
+    margin-top: 5px;
+    padding : 2px 5px 2px 5px
+}
+.header .login button:hover{
+    background-color: white;
+    color:#2F8758;
+}
+/*CONTENT*/
+.slide img{
+    width: 1200px;
+    height: 500px;
+}
+.slider{ /*lebar slide pada halaman*/
+    width: 1200px;
+    height: 500px;
+    overflow: hidden;
+    border: none;
+}
+.slide{
+    width: 1200px;
+    height: 500px;
+    float: left;
+    position: relative;
+}
+.slide-holder{
+    width: 400%;
+    position: relative;
+    left: 0;
+    -webkit-animation: scroller 10s infinite;
+    animation: scroller 20s infinite;
+}
+@-webkit-keyframes scroller{
+    0%{
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    33%{
+        -webkit-transform: translateX(-1200px);
+        transform: translateX(-1200px);
+    }
+    66% {
+        -webkit-transform: translateX(-2400px);
+        transform: translateX(-2400px);
+  }
+}
+.slider {
+  margin: 0 auto;
+}
+.content .cari input{
+    height: 25px;
+    width: 200px;
+}
+.content .cari button{
+    background-color:#2F8758;
+    color: white;
+    padding: 3px 10px 3px 10px;
+    border: none;
+    margin-top: 20px;
+    cursor:pointer;
+}
+.content .cari button:hover{
+    background-color: white;
+    color:#2F8758;
+}
+.slogan{
+    font-family: Segoe script;
+    font-size: 20px;
+    float: right;
+    color: black;
+}
+.judul{
+    margin-top: 30px ;
+    margin-left: 30px;
+    position: absolute;
+    z-index: 1;
+    font-weight: bold;
+}
+/*FOOTER*/
+.footer{
+    position: absolute;
+    margin-bottom: 0px;
+    width: 100%;
+    background-color: #B3FF9E;
+    height: 90px;
+    font-family: Calibri;
+    font-size: 15px;
+}
+.footer .footer-menu{
+    margin-top: 20px; 
+}
+.footer .footer-menu li a{
+    text-decoration: none;
+    margin-left: 30px;
+    color: black;
+}
+.footer .footer-menu li a:hover{
+    color:#012F52;
+}
+.sosmed{
+    text-align: center;
+    list-style: none;
+    float: right;
+    margin-right: 30px;
+    color: black;
+}
+.sosmed img{
+    width: 25px;
+    height: 25px;
+}
+.footer h5{
+    text-align: left;
+    margin-left: 600px;
+    color: black;
+}
+</style>
