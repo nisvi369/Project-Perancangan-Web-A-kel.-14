@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Us</title>
+    <link rel="icon" href="img/Ikon.ico">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        /*HEADER*/
+        .header{
+            background-color: #012F52;
+            height: 90px;
+            width: 100%;
+        }
+        .logo{
+            float: left;
+            width: 170px;
+        }
+        .logo img{
+            align:left;
+            height: 90px;
+            width: 170px;
+        }
+        .menu-utama button{
+            background-color:#2F8758;
+            color: white;
+            float: right;
+            padding: 3px 55px 3px 55px;
+            border: none;
+            margin-top: 40px;
+            margin-right: 5px;
+            cursor:pointer;
+        }
+        .menu-utama a{
+            text-decoration: none;
+        }
+        .menu-utama button:hover{
+            background-color: white;     
+            color:#2F8758;
+        }
+        /*AKUN*/
+        .akun img{
+            height: 40px;
+            width: 40px;
+            float: right;
+            margin-top: 40px;
+            margin-right: 10px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        /*CONTENT*/
+        /*JUDUL*/
+        #judul{
+            margin-top: 20px;
+        }
+        #judul font{
+            background-color: transparent;
+            padding: 7px 60px 7px 60px;
+            text-align: center;
+            font-size: 40px;
+            color: black;
+            font-weight: bold;
+            border-bottom: 5px double mediumturquoise;
+        }
+        /*ISI*/
+        .content{
+            font-family: Calibri;
+            font-size: 18px;
+            text-align:center;
+        }
+        #logo img{
+            margin-top: 20px;
+            width: 250px;
+            height: 150px;
+        }
+        #pemkab img{
+            width: 170px;
+            height: 250px;
+        }
+        /*FOOTER*/
+        .footer{
+            position: absolute;
+            margin-bottom: 0px;
+            width: 100%;
+            background-color: #B3FF9E;
+            height: 90px;
+            font-family: Calibri;
+            font-size: 15px;
+        }
+        .footer .footer-menu{
+            margin-top: 20px; 
+        }
+        .footer .footer-menu li a{
+            text-decoration: none;
+            margin-left: 30px;
+            color: black;
+        }
+        .footer .footer-menu li a:hover{
+            color:#012F52;
+        }
+        .sosmed{
+            text-align: center;
+            list-style: none;
+            float: right;
+            margin-right: 30px;
+            color: black;
+        }
+        .sosmed img{
+            width: 25px;
+            height: 25px;
+        }
+        .footer h5{
+            text-align: left;
+            margin-left: 600px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="img/Logo.png"></a>
+        </div>
+        <div class="akun">
+            <a href="akun.html"><img src="img/user_akun.png" alt="profile"></button></a>
+        </div>
+        <div class="menu-utama">
+            <a href="event.html"><button type="button"><font face="Freestyle script"; font size="6px">Let's See an Event</font></button></a>
+            <a href="wisata.html"><button type="button"><font face="Freestyle script"; font size="6px">Goes to Wisata</font></button></a>
+        </div>
+    </div>
+    <div class="content">
+        <div id="judul"><font face="Freestyle script">the Beauty of East Java</font></div><br>
+        <p>E-Tourism Website to Explore the Beauty of East Java</p>
+        <div id="logo"><img src="img/Logo.png"></div><br><br>
+        <p>Powered by</p><br>
+        <p>East Java Provincial Government</p><br>
+        <div id="pemkab"><img src="img/pemprov.png"></div><br><br>
+        <p>&copy;Copyright 2019 BeautyofEastJava</p>
+    </div>
+    <div class="footer">
+        <ul class="footer-menu">
+            <li>
+                <a class="cookie" href="CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
+                <a class="aboutUs" href="AboutUs.html">About us&emsp;&emsp;|</a>
+                <a class="contact" href="ContactUs.html">Contact Us</a>
+                <ul class="sosmed">
+                    <li>
+                        Follow us on :<br>
+                        <a class="instagram" href="instagram.com/BeautyEastJava"><img src="img/instagram.png" alt=""></a>
+                        <a class="facebook" href="facebook.com/BeautyEastJava"><img src="img/facebook.png" alt=""></a>
+                        <a class="twitter" href="twitter.com/BeautyEastJava"><img src="img/twitter.png" alt=""></a>
+                        <a class="youtube" href="youtube.com/BeautyEastJava"><img src="img/youtube.png" alt=""></a>
+                    </li>
+                </ul>
+            </li>
+        </ul><br>
+        <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
+    </div>
+</body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Goes to Wisata</title>
+    <link rel="icon" href="img/Ikon.ico">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        /*HEADER*/
+        .header{
+            background-color: #012F52;
+            height: 90px;
+            width: 100%;
+        }
+        /*LOGO*/
+        .logo{
+            float: left;
+            width: 170px;
+        }
+        .logo img{
+            align:left;
+            height: 90px;
+            width: 170px;
+        }
+        /*MENU UTAMA*/
+        #open_menu{
+            display: none;
+        }
+        .menu-utama button{
+            background-color:#2F8758;
+            color: white;
+            float: right;
+            padding: 3px 55px 3px 55px;
+            border: none;
+            margin-top: 40px;
+            margin-right: 5px;
+            cursor:pointer;
+        }
+        .menu-utama a{
+            text-decoration: none;
+        }
+        .menu-utama button:hover{
+            background-color: white;     
+            color:#2F8758;
+        }
+        /*AKUN*/
+        .akun img{
+            height: 40px;
+            width: 40px;
+            float: right;
+            margin-top: 40px;
+            margin-right: 10px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        /*CONTENT*/
+        .namaKota{
+            list-style: none;
+        }
+        .a{
+            font-size: 25px;
+            margin-left: 40%;
+            z-index: 1;
+            position: absolute;
+        }
+        .b{
+            background-color: #2F8758;
+            width: 200px;
+            text-align: center;
+            margin-left :45%;
+            margin-top: 20px;
+            position: relative;
+        }
+        .b font{
+            font-size: 40px;
+            color: white;
+        }    
+        /*FILTER*/
+        .filter{
+            list-style: none;
+            margin-left: 85%;
+        }
+        .filter li{
+            width: 50px;
+        }
+        .filter li img{
+            width: 25px;
+            height: 25px;
+            background-color: paleturquoise;
+            padding: 7px;
+        }
+        .filter li a{
+            text-decoration: none; /*biar gak ada garis bawahnya*/
+        }
+        .filter ul {
+            list-style: none;
+        }
+        .filter li a { /*English-UK*/
+            display: block; /*kalo gak ada, jadi ke kanan*/
+        }
+        .filter li:hover ul { /*muncul pilihan bahasa*/
+            display:block;
+        }
+        .filter ul { /*pilihan bahasa*/
+            display:none; /*biar gak kelihatan sebelum di tunjuk*/
+            position:absolute;
+            border : 2px solid paleturquoise;
+        }
+        .filter ul:hover li { /*hover pilihan filter*/
+            border-color: paleturquoise;
+        }
+        .filter ul li a { /*kotak pilihan filter*/
+            display:block;
+            padding-left: 10px;
+            text-align:left;
+            width:150px;
+            height:20px;
+            color: black;
+            font-family: calibri;
+            background-color: white;
+        }
+        .filter ul li a:hover{
+            background-color: paleturquoise;
+        }
+        .cari {
+            background: #B3FF9E;
+            width: 200px;
+            height: 520px;
+            padding-right: 40px;/*search*/
+            position: fixed;
+            z-index: 1;
+            box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.3);
+            left: -200px; /*kedalaman*/
+            transition: 0.3s;
+            color: black;
+        }
+        .cari:hover {
+           transform: translate(150px, 0);
+           animation-timing-function: 1s ease-in; /*awal pelan*/
+       }
+        .cari .title {
+            top: 50%;
+            position: absolute;
+            transform: rotate(270deg);
+            right: 0px;
+            font-weight: 800;
+            font-size: 15px;
+        }
+        .cariKota{
+            position: absolute;
+            top: 15px;
+        }
+        .cariKota input{
+            width: 140px;
+            float: right;
+            margin-right: 40px;
+        }
+        .cariKota button{
+            width: 80px;
+            float: right;
+            margin-top: 5px;
+            margin-left: 27px;
+            margin-right: 70px;
+            background-color: lightseagreen;
+            border: none;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            color: white;
+        }
+        .cari .listKota {
+            position: absolute;
+            top: 15%;
+            left: 60px;
+            font-family: calibri;
+            font-size: 16px;
+            width: 130px;
+            height: 400px;
+            overflow-y: auto;
+        }
+        .cari .listKota li {
+            line-height: 30px;
+            list-style: none;
+        }
+        .cari .listKota li a {
+            text-decoration: none;
+            color: black;
+        }
+        .cari .listKota li a:hover{
+            color: lightseagreen;
+        }
+
+        .gambar{
+            margin-top: 30px;
+            margin-left: 50px;
+        }
+        .gambar img{
+            list-style: none;
+            width: 270px;
+            height: 180px;
+            margin-left: 40px;
+            margin-right: 3px;
+            transition: transform .2s;
+        }
+        .gambar img:hover {
+            transform: scale(1.3);
+        }
+        .gambar table td{
+            font-family: Calibri;
+            font-size: 15px;
+            text-align: center;
+        }
+    
+        /*FOOTER*/
+        .footer{
+            bottom: 0px;
+            width: 100%;
+            background-color: #B3FF9E;
+            height: 90px;
+            font-family: Calibri;
+            font-size: 15px;
+        }
+        .footer-menu{
+            position: absolute;
+            margin-top: 20px;
+            list-style: none;
+        }
+        .footer-menu li a{
+            text-decoration: none;
+            margin-left: 30px;
+            color: black;
+        }
+        .footer-menu li a:hover{
+            color:#012F52;
+        }
+        .sosmed{
+            float: right;
+            margin-right: 30px;
+            margin-top: 20px;
+            text-align: center;
+            list-style: none;
+            float: right;
+            color: black;
+        }
+        .sosmed li a{
+            padding: 10px;
+        }
+        .sosmed img{
+            width: 25px;
+            height: 25px;
+        }
+        .footer h5{
+            text-align: left;
+            margin-left: 45%;
+            margin-top: 50px;
+            color: black;
+        }
+        /* RESPONSIVE */
+        @media screen and (max-width: 765px){
+            .menu-utama, .akun{
+                display: none;
+            }
+            #open_menu{
+                display: block;
+                background-color: transparent;
+                width: 30px;
+                height: 30px;
+                float: right;
+                margin-top: 20px;
+                margin-right: 10px;
+            }
+            #open_menu img{
+                width: 30px;
+                height: 30px;
+            }
+            #open_menu:hover ul{
+                display: block;
+                float: right;
+                top: -5px;
+            }
+            #open_menu ul{
+                display: none;
+                position: relative;
+                z-index: 10;
+                background-color:#B3FF9E;
+                width: 170px;
+            }
+            #open_menu ul a{
+                text-decoration: none;
+                list-style: none;
+            }
+            #open_menu ul a li {
+                padding: 5px 10px 5px 10px;
+                color: black;
+                font-family: calibri;
+                font-size: 18px;
+            }
+            #open_menu ul li:hover{
+                background-color: #2F8758;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="img/Logo.png"></a>
+        </div>
+        <div class="akun">
+            <a href="akun.html"><img src="img/user_akun.png" alt="profile"></button></a>
+        </div>
+        <div class="menu-utama">
+            <a href="event.html"><button type="button"><font face="Freestyle script"; font size="6px">Let's See an Event</font></button></a>
+            <a href="wisata.html"><button type="button"><font face="Freestyle script"; font size="6px">Goes to Wisata</font></button></a>
+        </div>
+        <div id="open_menu"><a href="#"><img src="img/menu.jpg"></a>
+            <ul>
+                <a href="akun.html"><li>Akun</li></a>
+                <a href="wisata.html"><li>Goes to Wisata</li></a>
+                <a href="event.html"><li>Let's See an Event</li></a>    
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="cari">
+            <div class="title">SEARCH</div>
+            <div class="cariKota">
+                <input type="search">
+                <button type="button">Search</button>
+            </div>
+            <ul class="listKota">
+                <li><a href="#">Bangkalan</a></li>
+                <li><a href="#">Banyuwangi</a></li>
+                <li><a href="#">Batu</a></li>
+                <li><a href="#">Blitar</a></li>
+                <li><a href="#">Bojonegoro</a></li>
+                <li><a href="#">Bondowoso</a></li>
+                <li><a href="#">Gresik</a></li>
+                <li><a href="#">Jember</a></li>
+                <li><a href="#">Jombang</a></li>
+                <li><a href="#">Kediri</a></li>
+                <li><a href="#">Lamongan</a></li>
+                <li><a href="#">Lumajang</a></li>
+                <li><a href="#">Madiun</a></li>
+                <li><a href="#">Magetan</a></li>
+                <li><a href="#">Malang</a></li>
+                <li><a href="#">Mojokerto</a></li>
+                <li><a href="#">Nganjuk</a></li>
+                <li><a href="#">Ngawi</a></li>
+                <li><a href="#">Pacitan</a></li>
+                <li><a href="#">Pamekasan</a></li>
+                <li><a href="#">Pasuruan</a></li>
+                <li><a href="#">Ponorogo</a></li>
+                <li><a href="#">Probolinggo</a></li>
+                <li><a href="#">Simpang</a></li>
+                <li><a href="#">Sidoarjo</a></li>
+                <li><a href="#">Situbondo</a></li>
+                <li><a href="#">Sumenep</a></li>
+                <li><a href="#">Surabaya</a></li>
+                <li><a href="#">Trenggalek</a></li>
+                <li><a href="#">Tuban</a></li>
+                <li><a href="#">Tulungagung</a></li>
+            </ul>
+        </div>
+        <div class="namaKota">
+            <li class="a">
+                <font face="Shalinta">Explore</font>
+            </li>
+            <li class="b">
+                <font face="Freestyle script">Malang</font>
+            </li>
+        </div>
+
+        <div class="filter">
+            <li><a href="#"><img src="img/filter.png"></a></button>
+                <ul>
+                    <li><a href="#">Tempat Terdekat</a></li>
+                    <li><a href="#">Rating Tertinggi</a></li>
+                    <li><a href="#">Banyak Dikunjungi</a></li>
+                </ul>
+            </li>
+        </div>
+        <div class="gambar">
+            <table>
+                <tr>
+                    <td><a href="deskripsi.html"><img src="img/MJatimPark3.jpg"></a></td>
+                    <td><a href="KampungTridi.html"><img src="img/MKampungTridi.jpg"></a></td>
+                    <td><a href="Selecta.html"><img src="img/MSelecta.jpg"></a></td>
+                    <td><a href="MuseumA.html"><img src="img/MMuseumAngkut.png"></a></td>
+                </tr>
+                <tr>
+                    <td>Jatim Park 3</td>
+                    <td>Kampung Tridi</td>
+                    <td>Selecta</td>
+                    <td>Museum Angkut</td>
+                </tr>
+                <tr>
+                    <td><a href="MNP.html"><img src="img/MNP.jpg"></td>
+                    <td><a href="ALun2.html"><img src="img/Malun2.jpg"></a></td>
+                    <td><a href="BatuB.html"><img src="img/MPBatuBengkung.jpg"></a></td>
+                    <td><a href="Tiban.html"><img src="img/MMTiban.jpg"></a></td>
+                </tr>
+                <tr>
+                    <td>Malang Night Paradise</td>
+                    <td>Taman ALun-alun Kota Malang</td>
+                    <td>Pantai Batu Bengkung</td>
+                    <td>Masjid Tiban Turen</td>
+                </tr>
+                <tr>
+                    <td><a href="JP1.html"><img src="img/MJatimPark1.jpg"></a></td>
+                    <td><a href="BNS.html"><img src="img/MBNS.jpg"></a></td>
+                    <td><a href="Hawai.html"><img src="img/MHawai.jpg"></a></td>
+                    <td><a href="JP2.html"><img src="img/MJatimPark2.jpg"></a></td>
+                </tr>
+                <tr>
+                    <td>Jatim Park 1</td>
+                    <td>Batu Night Spectacular</td>
+                    <td>Hawai</td>
+                    <td>Jatim Park 2</td>
+                </tr>
+                <tr>
+                    <td><a href="Kalireco.html"><img src="img/MPKalireco.jpg"></a></td>
+                    <td><a href="OmahKayu.html"><img src="img/MOmahKayu.jpg"></a></td>
+                    <td><a href="CandiBatu.html"><img src="img/MCandiBatu.jpg"></a></td>
+                    <td><a href="Paralayang.html"><img src="img/MParalayang.png"></a></td>
+                </tr>
+                <tr>
+                    <td>Pemandian Kalireco</td>
+                    <td>Penginapan Omah Kayu</td>
+                    <td>Candi Batu</td>
+                    <td>Paralayang</td>
+                </tr>
+            </table>
+        </div>
+    </div><br><br><br>
+    <div class="footer">
+        <ul class="footer-menu">
+            <li>
+                <a class="cookie" href="CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
+                <a class="aboutUs" href="AboutUs.html">About us&emsp;&emsp;|</a>
+                <a class="contact" href="ContactUs.html">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="sosmed">
+            <li>
+                Follow us on :<br>
+                <a class="instagram" href="http://www.instagram.com"><img src="img/instagram.png" alt=""></a>
+                <a class="facebook" href="http://www.facebook.com"><img src="img/facebook.png" alt=""></a>
+                <a class="twitter" href="http://www.twitter.com"><img src="img/twitter.png" alt=""></a>
+                <a class="youtube" href="http://www.youtube.com"><img src="img/youtube.png" alt=""></a>
+            </li>
+        </ul><br>
+        <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
+    </div>
+<!-- <script type="text/javascript">
+    function zoomB(x) {
+      x.style.height = "210px";
+      x.style.width = "310px";
+  }
+
+  function zoomN(x) {
+      x.style.height = "180px";
+      x.style.width = "270px";
+  }
+</script> -->
+</body>
+</html>

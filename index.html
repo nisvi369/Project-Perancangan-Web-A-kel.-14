@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Beauty of East Java</title>
+    <link rel="icon" href="img/Ikon.ico">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        /*BAR BAHASA*/
+        .bar{
+            width: 100%;
+            height: 20px;
+            background-color:white;
+        }
+        .bahasa{
+            margin-top: 0px;
+            float:right;
+            font-size: 12px;
+            font-family:"Calibri";
+            line-height: 20px; /*ukuran blok*/
+        }
+        .bahasa li { 
+            list-style: none;
+        }
+        .bahasa li a{
+            text-decoration: none; /*menghilangkan garis bawah krn a href*/
+            width:100px;
+            display: block; /*kalo gak ada, jadi ke kanan*/
+            text-align:center; 
+            color:black;
+        }
+        .bahasa li:hover ul { /*muncul pilihan bahasa*/
+            display:block;
+        }
+        .bahasa ul { /*pilihan bahasa*/
+            display:none; /*biar gak kelihatan sebelum di tunjuk*/
+            list-style:none; 
+            position:absolute; 
+            background-color:#B3FF9E;
+            top:20px;
+        }
+        .bahasa ul li a { /*kotak pilihan bahasa*/
+            display:block;
+            padding-left: 10px;
+            text-align:left;
+            width:80px;
+            height:25px;
+        }
+        .bahasa ul li a:hover { /*hover pilihan bahasa*/
+            background-color:#012F52; 
+            color: white;
+        }
+        /*HEADER*/
+        .header {
+            background:#012F52;
+            width: 100%;
+            height: 90px;
+        }
+        .header ul { 
+            list-style: none;
+        }
+        /*LOGO*/
+        .logo{
+            float: left;
+            width: 170px;
+        }
+        .logo img{
+            align: left;
+            height: 90px;
+            width: 170px;
+        }
+        /*MENU-UTAMA*/
+        #open_menu{
+            display: none;
+        }
+        .menu-utama button{
+            background-color:#2F8758;
+            color: white;
+            float: right;
+            padding: 3px 55px 3px 55px;
+            border: none;
+            margin-top: 40px;
+            margin-right: 5px;
+            cursor:pointer;
+        }
+        .menu-utama a{
+            text-decoration: none;
+        }
+        .menu button:hover{
+            background-color: white;     
+            color:#2F8758;
+        }
+        /*LOGIN*/
+        .login button img{
+            height: 25px;
+            width: 25px;
+        }
+        .login button{
+            float: right;
+            background-color: #2F8758;
+            color: white;
+            border: none;
+            margin-top: 34px;
+            margin-right: 10px;
+            padding : 3px 15px 3px 15px;
+            cursor: pointer;
+        }
+        .login a{
+            text-decoration: none;
+            color: white;
+        }
+        .login button:hover{
+            background-color: white;
+            color:#2F8758;
+        }
+        /*CONTENT*/
+        body{
+            background-color: white;
+            position: relative;
+        }
+        /*SLIDE*/
+        .slide img{
+            width: 1200px;
+            height: 500px;
+        }
+        .slider{ /*lebar slide pada halaman*/
+            width: 1200px;
+            height: 500px;
+            overflow: hidden;
+            border: none;
+        }
+        .slide{
+            width: 1200px;
+            height: 500px;
+            float: left;
+            position: relative;
+        }
+        .slide-holder{
+            width: 400%;
+            position: relative;
+            left: 0;
+            -webkit-animation: scroller 10s infinite;
+            animation: scroller 20s infinite;
+        }
+        @-webkit-keyframes scroller{
+            0%{
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+            33%{
+                -webkit-transform: translateX(-1200px);
+                transform: translateX(-1200px);
+            }
+            66% {
+                -webkit-transform: translateX(-2400px);
+                transform: translateX(-2400px);
+            }
+        }
+        .slider {
+            margin: 0 auto;
+        }
+        /*CARI*/
+        .cari{
+            height: 50px;
+            float: left;
+            margin-left: 25%;
+            margin-top: 20px;
+        }
+        .cari input{
+            height: 25px;
+            width: 250px;
+        }
+        .cari button{
+            position: relative;
+            left: -5px;
+            background-color:#2F8758;
+            color: white;
+            padding: 7px 15px 7px 15px;
+            border: #2F8758;
+            cursor:pointer;
+        }
+        .cari button:hover{
+            background-color: white;
+            color:#2F8758;
+            border: 1px solid #2F8758;
+        }
+        /*JUDUL*/
+        .judul{
+            margin-top: 40px ;
+            margin-left: 30px;
+            position: absolute;
+            z-index: 1;
+            font-weight: bold;
+        }
+        /*REFERENSI*/
+        #ref_judul{
+            margin-top: 50px;
+            text-align: center;
+            color:deepskyblue;
+        }
+        .referensi{
+            margin:3%;
+        }
+        .referensi img{
+            /* margin: 5px 5px 0px 5px; */
+            padding: 5px;
+            width: 23%;
+            height: 200px;
+        }
+        /*FOOTER*/
+        .footer{
+            bottom: 0px;
+            width: 100%;
+            background-color: #B3FF9E;
+            height: 90px;
+            font-family: Calibri;
+            font-size: 15px;
+        }
+        .footer-menu{
+            position: absolute;
+            margin-top: 20px;
+            list-style: none;
+        }
+        .footer-menu li a{
+            text-decoration: none;
+            margin-left: 30px;
+            color: black;
+        }
+        .footer-menu li a:hover{
+            color:#012F52;
+        }
+        .sosmed{
+            float: right;
+            margin-right: 30px;
+            margin-top: 20px;
+            text-align: center;
+            list-style: none;
+            float: right;
+            color: black;
+        }
+        .sosmed li a{
+            padding: 10px;
+        }
+        .sosmed img{
+            width: 25px;
+            height: 25px;
+        }
+        .footer h5{
+            text-align: left;
+            margin-left: 45%;
+            margin-top: 50px;
+            color: black;
+        }
+        /*jendela pop-up login*/
+        #popup, #popup2 {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: rgba(0,0,0,.7);
+            left: 0;
+            top: 0;
+            z-index: 999;
+            visibility: hidden;
+        }
+        /* tampilan pop-up */
+        .window {
+            width: 400px;
+            height: 300px;
+            background: #DCDCDC;;
+            border-radius: 10px;
+            position: relative;
+            padding: 10px;
+            text-align: center;
+            margin: 10% auto;
+
+        }
+        /*tombol tutup*/
+        .close-button, .close-button2 {
+            width: 8%;
+            height: 10%;
+            line-height: 33px;
+            font-size: 20px;
+            font-family: sans-serif;
+            font-weight: bold;
+            background: grey;
+            border-radius: 50%;
+            border : 0px solid #fff;
+            display: block;
+            text-align: center;
+            color: #000;
+            text-decoration: none;
+            position: absolute;
+            top: -10px;
+            right: -15px;
+        }
+        /*memunculkan pop-up*/
+        #popup:target, #popup2:target {
+            visibility: visible;
+        }
+        #popup h2, #popup2 h2 {
+            font-family: sans-serif;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        /*paragraf*/
+        .window p, .window2 p {
+            margin-bottom: 8px;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-size: 13px;
+        }
+        .window input, .window2 input {
+            width: 300px;
+            height: 30px;
+            font-size: 17px;
+            padding-left: 3px;
+        }
+        /*tombol login*/
+        #btn-login, #btn-login2 {
+            color: black;
+            background-color: #00FFFF;
+            padding: 7px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 25px;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 18px;
+            width: 120px;
+        }
+        #btn-login:hover, #btn-login2:hover {
+            background-color: #7FFF00;
+            color: #FFF;
+        }
+        /*login with fb*/
+        .window button, .window2 button { 
+            margin-top: 5px;
+            width: 200px;
+            height: 25px;
+            font-size: 15px;
+        }
+        /*jendela sign in dan tombol close*/
+        .window2  {
+            width: 400px;
+            height: 450px;
+            background: #DCDCDC;;
+            border-radius: 10px;
+            position: relative;
+            padding: 5px;
+            text-align: center;
+            margin: 8% auto;
+        }
+        .close-button2 {
+            width: 8%;
+            height: 7%;
+        }
+        /* RESPONSIVE */
+        @media screen and (max-width: 1200px) {
+            .slide img{
+                width: 750px;
+                height: 300px;
+            }
+            .slider{ /*lebar slide pada halaman*/
+                width: 750px;
+                height: 300px;
+            }
+            .slide{
+                width: 750px;
+                height: 300px;
+            }
+            .slide-holder{
+                -webkit-animation: scroller 20s infinite;
+                animation: scroller 20s infinite;
+            }
+            @-webkit-keyframes scroller{
+                0%{
+                    -webkit-transform: translateX(0);
+                    transform: translateX(0);
+                }
+                33%{
+                    -webkit-transform: translateX(-750px);
+                    transform: translateX(-750px);
+                }
+                66% {
+                    -webkit-transform: translateX(-1500px);
+                    transform: translateX(-1500px);
+                }
+            }
+        }
+        @media screen and (max-width: 765px){
+            .menu-utama, .login{
+                display: none;
+            }
+            #open_menu{
+                display: block;
+                background-color: transparent;
+                width: 30px;
+                height: 30px;
+                float: right;
+                margin-top: 20px;
+                margin-right: 10px;
+            }
+            #open_menu img{
+                width: 30px;
+                height: 30px;
+            }
+            #open_menu:hover ul{
+                display: block;
+                float: right;
+                top: -5px;
+            }
+            #open_menu ul{
+                display: none;
+                position: relative;
+                z-index: 10;
+                background-color:#B3FF9E;
+                width: 170px;
+            }
+            #open_menu ul a{
+                text-decoration: none;
+            }
+            #open_menu ul a li {
+                padding: 5px 10px 5px 10px;
+                color: black;
+                font-family: calibri;
+                font-size: 18px;
+            }
+            #open_menu ul li:hover{
+                background-color: #2F8758;
+                color: white;
+            }
+            .slide img{
+                width: 500px;
+                height: 250px;
+            }
+            .slider{ /*lebar slide pada halaman*/
+                width: 500px;
+                height: 250px;
+            }
+            .slide{
+                width: 500px;
+                height: 250px;
+            }
+            .slide-holder{
+                -webkit-animation: scroller 20s infinite;
+                animation: scroller 20s infinite;
+            }
+            @-webkit-keyframes scroller{
+                0%{
+                    -webkit-transform: translateX(0);
+                    transform: translateX(0);
+                }
+                33%{
+                    -webkit-transform: translateX(-500px);
+                    transform: translateX(-500px);
+                }
+                66% {
+                    -webkit-transform: translateX(-1000px);
+                    transform: translateX(-1000px);
+                }
+            }
+        }
+        /* @media screen and (max-width: 930px){
+            div.menu{
+                display: none;
+            }
+            #open_menu{
+                display: block;
+                float: right;
+            }
+        }
+        @media screen and (max-width: 930px){
+            .menu.responsive{
+                position: relative;
+            }
+            .menu.responsive {
+                display: block;
+            }
+            .menu.responsive div{
+                float: none;
+                width: 100%;
+                display: block;
+                text-align: right;
+            }
+            .menu.responsive div a{
+                float: none;
+                display: block;
+                text-align: right;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <div class="bar">
+        <div class="bahasa">
+            <li><a href="#"></a>English-UK</a>
+                <ul>
+                    <li><a href="#">English-US</a></li>
+                    <li><a href="#">Indonesian</a></li>
+                </ul>
+            </li>
+        </div>
+    </div>
+    <nav class="header">
+        <ul>
+            <div class="logo">
+                <a href="index.html"><img src="img/Logo.png" alt="home"></a>
+            </div>
+            <div class="menu" id="menu_atas">
+                <div class="login">
+                    <a href="#popup"><button type="button"><img src="img/Akun.png"><br><font face="Calibri"; font size="2px">Login</font></button></a>
+                </div>
+                <div class="menu-utama">
+                    <a href="event.html"><button type="button"><font face="Freestyle script"; font size="6px">Let's See an Event</font></button></a>
+                    <a href="wisata.html"><button type="button"><font face="Freestyle script"; font size="6px">Goes to Wisata</font></button></a>
+                </div>
+                <div id="open_menu"><a href="#" onclick="openMenu()"><img src="img/menu.jpg"></a>
+                    <ul>
+                        <a href="#popup"><li>Login</li></a>
+                        <a href="wisata.html"><li>Goes to Wisata</li></a>
+                        <a href="event.html"><li>Let's See an Event</li></a>    
+                    </ul>
+                </div>
+            </div>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="cari">
+            <input class="search" type="text" placeholder="Search here...">
+            <button type="button" value="Search">Search</button>
+        </div>
+        <div class="judul">
+            <font face="Shalinta"; font size=6px; font color="#00FF7F">Welcome to</font><br>
+            <font face="Shalinta"; font size="10px"; font color="#FF8C00">the Beauty of East Java</font><br>
+        </div>
+        <div class="slider">
+            <div class="slide-holder">
+                <div class="slide"><img src="img/Bromo.jpg" alt=""/></div>
+                <div class="slide"><img src="img/merah.jpg" alt=""/></div>
+                <div class="slide"><img src="img/MNP.jpg" alt=""/></div>
+            </div>
+        </div>
+        <div id="ref_judul"><font face="Freestyle script"; font size="20px">Refresh your day!</font></div>
+        <div class="referensi">
+            <!-- <div class="gambar"> -->
+                <a href="#" class="gambar"><img src="img/GBromo-Probolinggo.jpg"></a>
+                <!-- <p><a href="#">Gunung Bromo - Probolinggo</a></p>
+            </div> -->
+            <!-- <div class="gambar"> -->
+                <a href="#" class="gambar"><img src="img/GiliLabak-Madura.jpg"></a>
+                <!-- <p><a href="#" class="nama">Pantai Gili Labak - Madura</a></p> -->
+            <!-- </div>
+            <div class="gambar"> -->
+                <a href="#" class="gambar"><img src="img/CiputraWaterPark-Surabaya.jpg"></a>
+                <!-- <p><a href="#" class="nama">Ciputra Water Park - Surabaya</a></p> -->
+            <!-- </div>
+            <div class="gambar"> -->
+                <a href="#" class="gambar"><img src="img/GuaGong-Pacitan.jpg"></a>
+                <!-- <p><a href="#">Gua Gong - Pacitan</a></p> -->
+            <!-- </div>
+            <div class="gambar"> -->
+                <a href="#" class="gambar"><img src="img/MJatimPark3.jpg"></a>
+                <!-- <p><a href="#">Jatim Park 3 - Malang</a></p> -->
+            <!-- </div>
+            <div class="gambar"> -->
+                <a href="#" class="gambar"><img src="img/TelagaSarangan-Magetan.jpg"></a>
+                <!-- <p><a href="#">Telaga Sarangan - Magetan</a></p> -->
+            <!-- </div>
+            <div class="gambar"> -->
+                <a href="#" class="gambar"><img src="img/KawahIjen-BWI.jpg"></a>
+                <!-- <p><a href="#">Kawah Ijen - Banyuwangi</a></p> -->
+            <!-- </div>
+            <div class="gambar"> -->
+                <a href="#" class="gambar"><img src="img/PuncakB29-Lumajang.jpg"></a>
+                <!-- <p><a href="#">Puncak B29 - Lumajang</a></p> -->
+            <!-- </div> -->
+        </div>
+    </div>
+    <div class="footer">
+        <ul class="footer-menu">
+            <li>
+                <a class="cookie" href="CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
+                <a class="aboutUs" href="AboutUs.html">About us&emsp;&emsp;|</a>
+                <a class="contact" href="ContactUs.html">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="sosmed">
+            <li>
+                Follow us on :<br>
+                <a class="instagram" href="http://www.instagram.com"><img src="img/instagram.png" alt=""></a>
+                <a class="facebook" href="http://www.facebook.com"><img src="img/facebook.png" alt=""></a>
+                <a class="twitter" href="http://www.twitter.com"><img src="img/twitter.png" alt=""></a>
+                <a class="youtube" href="http://www.youtube.com"><img src="img/youtube.png" alt=""></a>
+            </li>
+        </ul><br>
+        <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
+    </div>
+    <div id="popup">
+        <div class="window">
+            <a href="#" class="close-button" title="Close">X</a>
+            <h2>LOGIN</h2>
+            <form name="log" action="index.html" onsubmit="validateLogin()">
+                <input type="text" placeholder="Email Address" id="Email"><br><br>
+                <input type="Password" placeholder="Password" id="Pass"><br><br>
+                <button id="btn-login" href="#" type="submit">Login</button>
+                <br><br>or<br>
+                <button>Login with Facebook</button><br><br>
+                <p>Not a Member? <a href="#popup2">SignUp</a></p>
+            </form>     
+        </div>
+    </div>
+    <div id="popup2">
+        <div class="window2">
+            <a href="#" class="close-button2" title="Close">X</a>
+            <h2>SIGN IN</h2>
+            <form name="reg" action="#popup" onsubmit="validateRegister()">
+                <input type="text" placeholder="Name" id="name"><br><br>
+                <input type="text" placeholder="Username" id="usname"><br><br>
+                <input type="text" placeholder="Email" id="email"><br><br>
+                <input type="Password" placeholder="Password" id="pass"><br><br>
+                <button id="btn-login2" href="#popup" type="submit" value="submit">Sign In</button>
+                <br><br>
+                <button>Continue with Google</button><br>
+                or<br>
+                <button>Continue with Facebook</button><br><br>
+                <p>Have Account? <a href="#popup">Login</a></p>
+            </form>     
+        </div>
+    </div>
+</body>
+
+<!-- javascript untuk form  -->
+<script type="text/javascript">
+    function validateRegister() {
+        var name        = document.getElementById("name").value;
+        var username    = document.getElementById("usname").value;
+        var email       = document.getElementById("email").value;
+        var password    = document.getElementById("pass").value;
+
+        if (name != "" && username != "" && email != "" && password != "") {
+            return true;
+        } else {
+            alert('Anda harus mengisi form dengan lengkap!');
+        }        
+    }
+    function validateLogin() {
+        var email       = document.getElementById("Email").value;
+        var password    = document.getElementById("Pass").value;
+
+        if (email != "" && password != "") {
+            return true;
+        } else {
+            alert('Form login harus diisi dengan benar !');
+        }
+    }
+
+    // function openMenu(){
+    //     var menu = document.getElementById("menu_atas");
+    //     if(menu.className === "menu"){
+    //         menu.className += " responsive";
+    //     }
+    //     else{
+    //         menu.className = "menu";
+    //     }
+    // }
+</script>
+</html>

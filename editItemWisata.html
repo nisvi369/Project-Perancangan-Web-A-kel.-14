@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin - Edit Item Wisata</title>
+    <link rel="icon" href="img/Ikon.ico">
+    <style>
+        *{
+        margin: 0px;
+        padding: 0px;
+        }
+        /*HEADER*/
+        .logo{
+            float: left;
+            width: 170px;
+        }
+        .logo img{
+            align:left;
+            height: 90px;
+            width: 170px;
+        }
+        .header{
+            background-color: #012F52;
+            height: 90px;
+            width: 100%;
+        }
+        /*AKUN*/
+        .akun button{
+            float: right;
+            background-color: transparent;
+            border: none;
+            margin-top: 20px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .akun a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+        .akun img{
+            width: 35px;
+            height: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="img/Logo.png"></a>
+        </div>
+        <div class="akun">
+            <button type="button"><a href="Akun.html"><img src="img/user_akun.png" alt="profile"><br><font face="Freestyle script">Hi, Mr.Travel!</a></font></button>
+        </div>
+    </div>
+    <div class="content">
+            <table>
+                <tr><td>Nama Wisata</td></tr>
+                <tr><td>Jawa Timur Park 3 Malang</td></tr>
+                <tr><td>Kota</td></tr>
+                <tr></tr><td><input type="text" name="kota"></td>
+                </tr>
+                <tr>
+                    <td>Harga Tiket</td>
+                    <td><input type="text" name="harga"></td>
+                </tr>
+                <tr>
+                    <td>Deskripsi</td>
+                    <td><textarea></textarea></td>
+                </tr>
+                <br><br>
+                <tr>
+                    <td>Masukkan beberapa gambar</td>
+                    <td><input type="file"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="adminWisata.html"><button type="button">Kembali</button></a>
+                    </td>
+                    <td>
+                        <a href="admin.html"><button type="button">Tambahkan</button></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+</body>
+</html>

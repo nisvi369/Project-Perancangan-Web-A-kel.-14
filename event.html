@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>See an Event</title>
+    <link rel="icon" href="img/Ikon.ico">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        /*HEADER*/
+        .header{
+            background-color: #012F52;
+            height: 90px;
+            width: 100%;
+        }
+        /*LOGO*/
+        .logo{
+            float: left;
+            width: 170px;
+        }
+        .logo img{
+            align:left;
+            height: 90px;
+            width: 170px;
+        }
+        /*MENU UTAMA*/
+        #open_menu{
+            display: none;
+        }
+        .menu-utama button{
+            background-color:#2F8758;
+            color: white;
+            float: right;
+            padding: 3px 55px 3px 55px;
+            border: none;
+            margin-top: 40px;
+            margin-right: 5px;
+            cursor:pointer;
+        }
+        .menu-utama a{
+            text-decoration: none;
+        }
+        .menu-utama button:hover{
+            background-color: white;     
+            color:#2F8758;
+        }
+        .gambar img:hover {
+            transform: scale(1.3);
+        }
+        /*AKUN*/
+        .akun img{
+            height: 40px;
+            width: 40px;
+            float: right;
+            margin-top: 40px;
+            margin-right: 10px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        /*CONTENT*/
+        /*JUDUL*/
+        .judul{
+            list-style: none;
+            margin-top: 20px;
+            margin-left :43%;
+        }
+        .judul font{
+            background-color: #2F8758;
+            padding: 2px 15px 2px 15px;
+            text-align: center;
+            position: relative;
+            font-size: 40px;
+            color: white;
+        }
+        /*FILTER*/
+        .filter{
+            list-style: none;
+            margin-left: 85%;
+        }
+        .filter li{
+            width: 50px;
+        }
+        .filter li img{
+            width: 25px;
+            height: 25px;
+            background-color: paleturquoise;
+            padding: 7px;
+        }
+        .filter li a{
+            text-decoration: none; /*biar gak ada garis bawahnya*/
+        }
+        .filter ul {
+            list-style: none;
+        }
+        .filter li a { /*English-UK*/
+            display: block; /*kalo gak ada, jadi ke kanan*/
+        }
+        .filter li:hover ul { /*muncul pilihan bahasa*/
+            display:block;
+        }
+        .filter ul { /*pilihan bahasa*/
+            display:none; /*biar gak kelihatan sebelum di tunjuk*/
+            position:absolute;
+            border : 2px solid paleturquoise;
+        }
+        .filter ul:hover li { /*hover pilihan filter*/
+            border-color: paleturquoise;
+        }
+        .filter ul li a { /*kotak pilihan filter*/
+            display:block;
+            padding-left: 10px;
+            text-align:left;
+            width:150px;
+            height:20px;
+            color: black;
+            font-family: calibri;
+            background-color: white;
+        }
+        .filter ul li a:hover{
+            background-color: paleturquoise;
+        }
+        /*GAMBAR*/
+        .gambar{
+            margin-top: 30px;
+        }
+        .gambar img{
+            list-style: none;
+            width: 270px;
+            height: 180px;
+            margin-left: 31px;
+            margin-right: 31px;
+            transition: transform .2s;
+        }
+        .gambar table td{
+            font-family: Calibri;
+            font-size: 15px;
+            text-align: center;
+        }
+        /*FOOTER*/
+        .footer{
+            bottom: 0px;
+            width: 100%;
+            background-color: #B3FF9E;
+            height: 90px;
+            font-family: Calibri;
+            font-size: 15px;
+        }
+        .footer-menu{
+            position: absolute;
+            margin-top: 20px;
+            list-style: none;
+        }
+        .footer-menu li a{
+            text-decoration: none;
+            margin-left: 30px;
+            color: black;
+        }
+        .footer-menu li a:hover{
+            color:#012F52;
+        }
+        .sosmed{
+            float: right;
+            margin-right: 30px;
+            margin-top: 20px;
+            text-align: center;
+            list-style: none;
+            float: right;
+            color: black;
+        }
+        .sosmed li a{
+            padding: 10px;
+        }
+        .sosmed img{
+            width: 25px;
+            height: 25px;
+        }
+        .footer h5{
+            text-align: left;
+            margin-left: 45%;
+            margin-top: 50px;
+            color: black;
+        }
+        /* RESPONSIVE */
+        @media screen and (max-width: 765px){
+            .menu-utama, .akun{
+                display: none;
+            }
+            #open_menu{
+                display: block;
+                background-color: transparent;
+                width: 30px;
+                height: 30px;
+                float: right;
+                margin-top: 20px;
+                margin-right: 10px;
+            }
+            #open_menu img{
+                width: 30px;
+                height: 30px;
+            }
+            #open_menu:hover ul{
+                display: block;
+                float: right;
+                top: -5px;
+            }
+            #open_menu ul{
+                display: none;
+                position: relative;
+                z-index: 10;
+                background-color:#B3FF9E;
+                width: 170px;
+            }
+            #open_menu ul a{
+                text-decoration: none;
+                list-style: none;
+            }
+            #open_menu ul a li {
+                padding: 5px 10px 5px 10px;
+                color: black;
+                font-family: calibri;
+                font-size: 18px;
+            }
+            #open_menu ul li:hover{
+                background-color: #2F8758;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="img/Logo.png"></a>
+        </div>
+        <div class="akun">
+            <a href="akun.html"><img src="img/user_akun.png" alt="profile"></button></a>
+        </div>
+        <div class="menu-utama">
+            <a href="event.html"><button type="button"><font face="Freestyle script"; font size="6px">Let's See an Event</font></button></a>
+            <a href="wisata.html"><button type="button"><font face="Freestyle script"; font size="6px">Goes to Wisata</font></button></a>
+        </div>
+        <div id="open_menu"><a href="#"><img src="img/menu.jpg"></a>
+            <ul>
+                <a href="akun.html"><li>Akun</li></a>
+                <a href="wisata.html"><li>Goes to Wisata</li></a>
+                <a href="event.html"><li>Let's See an Event</li></a>    
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="judul">
+            <font face="Freestyle Script">East Java's Event</font>
+        </li>
+    </div>
+    <div class="filter">
+        <li><a href="#"><img src="img/filter.png"></a></button>
+            <ul>
+                <li><a href="#">Tempat Terdekat</a></li>
+                <li><a href="#">Tanggal Terdekat</a></li>
+            </ul>
+        </li>
+    </div>
+    <div class="gambar">
+        <table border="0">
+            <tr>
+                <td><a href="Majapahit.html"><img src="img/EMajapahit.jpg"></a></td>
+                <td><a href="JFC.html"><img src="img/EJFC.jpg"></a></td>
+                <td><a href="Bromo.html"><img src="img/EBromo.jpg"></a></td>
+                <td><a href="Flower.html"><img src="img/EFlower.jpg"></a></td>
+            </tr>
+            <tr>
+                <td>Majapahit International Travel Tour</td>
+                <td>Jember Fashion Carnaval</td>
+                <td>Yahya Kasada dan Eksotika Bromo</td>
+                <td>Flower Fashion Carnaval</td>
+            </tr>
+            <tr>
+                <td><a href="Tour.html"><img src="img/ETour.jpg"></a></td>
+                <td><a href="Ethno.html"><img src="img/EEthno.jpg"></a></td>
+                <td><a href="Gandrung.html"><img src="img/EGandrung.jpg"></a></td>
+                <td><a href="JSN.html"><img src="img/EJSN.jpg"></a></td>
+            </tr>
+            <tr>
+                <td>International Tour de Banyuwangi Ijen</td>
+                <td>Banyuwangi Ethno Carnaval</td>
+                <td>Festival Gandrung Sewu</td>
+                <td>Jatim Spectacular Night</td>
+            </tr>
+        </table>
+    </div>
+</div><br><br><br>
+<div class="footer">
+    <div class="footer">
+        <ul class="footer-menu">
+            <li>
+                <a class="cookie" href="CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
+                <a class="aboutUs" href="AboutUs.html">About us&emsp;&emsp;|</a>
+                <a class="contact" href="ContactUs.html">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="sosmed">
+            <li>
+                Follow us on :<br>
+                <a class="instagram" href="http://www.instagram.com"><img src="img/instagram.png" alt=""></a>
+                <a class="facebook" href="http://www.facebook.com"><img src="img/facebook.png" alt=""></a>
+                <a class="twitter" href="http://www.twitter.com"><img src="img/twitter.png" alt=""></a>
+                <a class="youtube" href="http://www.youtube.com"><img src="img/youtube.png" alt=""></a>
+            </li>
+        </ul><br>
+        <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
+    </div>
+</body>
+</html>

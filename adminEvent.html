@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin - Wisata</title>
+    <link rel="icon" href="img/Ikon.ico">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        /*HEADER*/
+        .header{
+            background-color: #012F52;
+            height: 90px;
+            width: 100%;
+        }
+        /*LOGO*/
+        .logo{
+            float: left;
+            width: 170px;
+        }
+        .logo img{
+            align:left;
+            height: 90px;
+            width: 170px;
+        }
+        /*MENU UTAMA*/
+        #open_menu{
+            display: none;
+        }
+        .menu-utama button{
+            background-color:#2F8758;
+            color: white;
+            float: right;
+            padding: 3px 55px 3px 55px;
+            border: none;
+            margin-top: 40px;
+            margin-right: 5px;
+            cursor:pointer;
+        }
+        .menu-utama a{
+            text-decoration: none;
+        }
+        .menu-utama button:hover{
+            background-color: white;     
+            color:#2F8758;
+        }
+        /* .gambar img:hover {
+            transform: scale(1.3);
+        } */
+        /*AKUN*/
+        .akun img{
+            height: 40px;
+            width: 40px;
+            float: right;
+            margin-top: 40px;
+            margin-right: 10px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        /*CONTENT*/
+        /*JUDUL*/
+        .namaKota{
+            margin-top: 20px;
+            margin-left :42%;
+        }
+        .namaKota font{
+            background-color: transparent;
+            padding: 7px 60px 7px 60px;
+            text-align: center;
+            font-size: 45px;
+            color: black;
+            font-weight: bold;
+            border-bottom: 5px double mediumturquoise;
+        }
+        /*TOMBOL TAMBAH*/
+        .tombol button {
+            padding: 10px 40px 10px 40px;
+            background-color: #7FFF00;
+            border: 0px;
+            cursor: pointer;
+            margin-top: 80px;
+            margin-left: 45%;
+            font-size: 15px;
+            font-weight: bold;
+            /*text-align: center;*/
+        }
+        .tombol button:hover {
+            background-color: deepskyblue;
+            color: white;
+        }
+        /*CARI*/
+        .cari {
+            top: 120px;
+            background: #B3FF9E;
+            width: 200px;
+            height: 500px;
+            padding-right: 40px;/*search*/
+            position: fixed;
+            z-index: 100; /*biar selalu di atas*/
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+            left: -200px; /*kedalaman*/
+            transition: 0.3s;
+            color: black;
+        }
+        .cari:hover {
+         transform: translate(150px, 0);
+         animation-timing-function: 1s ease-in; /*awal pelan*/
+        }
+        .cari .title {
+            top: 50%;
+            position: absolute;
+            transform: rotate(270deg);
+            right: 0px;
+            font-weight: 800;
+            font-size: 15px;
+        }
+        .cariKota{
+            position: absolute;
+            top: 15px;
+        }
+        .cariKota input{
+            width: 140px;
+            float: right;
+            margin-right: 40px;
+        }
+        .cariKota button{
+            width: 80px;
+            float: right;
+            margin-top: 5px;
+            margin-left: 27px;
+            margin-right: 70px;
+            background-color: lightseagreen;
+            border: none;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            color: white;
+        }
+        .cari .listKota {
+            position: absolute;
+            top: 15%;
+            left: 60px;
+            font-family: calibri;
+            font-size: 16px;
+            width: 130px;
+            height: 400px;
+            overflow-y: auto;
+        }
+        .cari .listKota li {
+            line-height: 30px;
+            list-style: none;
+        }
+        .cari .listKota li a {
+            text-decoration: none;
+            color: black;
+        }
+        .cari .listKota li a:hover{
+            color: lightseagreen;
+        }
+        /*GAMBAR*/
+        .gambar img{
+            margin-left: 40px;
+        }
+        .th button{
+            padding: 5px;
+            width: 100px;
+            background-color: #20B2AA;
+            text-align: center;
+            position: relative;
+            left: 18px;
+        }
+        .item_gambar{
+            float: left;
+            padding: 5px;
+            width: 23%;
+            margin-right: 5px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .gambar_wrap{
+            /*width: 200px;*/
+            margin: auto;
+        }
+        .gambar_wrap img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        @media screen and (max-width:1000px){
+            .gambar img{
+                width: 180px;
+                height: 80px;
+            }
+        }
+        @media screen and (max-width: 900px){
+            .item_gambar{
+                width: 40%;
+            }
+        }
+        @media screen and (max-width: 600px){
+            .item_gambar{
+                width: 90%;
+                padding-right: 10px;
+            }
+        }
+        /*FOOTER*/
+        .footer{
+            bottom: 0px;
+            position: fixed;
+            width: 100%;
+            background-color: #B3FF9E;
+            height: 90px;
+            font-family: Calibri;
+            font-size: 15px;
+        }
+        .footer .footer-menu{
+            margin-top: 20px; 
+        }
+        .footer .footer-menu li a{
+            text-decoration: none;
+            margin-left: 30px;
+            color: black;
+        }
+        .footer .footer-menu li a:hover{
+            color:#012F52;
+        }
+        .sosmed{
+            text-align: center;
+            list-style: none;
+            float: right;
+            margin-right: 30px;
+            color: black;
+        }
+        .sosmed img{
+            width: 25px;
+            height: 25px;
+        }
+        .footer h5{
+            text-align: left;
+            margin-left: 600px;
+            color: black;
+        }
+        @media screen and (max-width: 765px){
+            .menu-utama, .akun{
+                display: none;
+            }
+            #open_menu{
+                display: block;
+                background-color: transparent;
+                width: 30px;
+                height: 30px;
+                float: right;
+                margin-top: 20px;
+                margin-right: 10px;
+            }
+            #open_menu img{
+                width: 30px;
+                height: 30px;
+            }
+            #open_menu:hover ul{
+                display: block;
+                float: right;
+                top: -5px;
+            }
+            #open_menu ul{
+                display: none;
+                position: relative;
+                z-index: 10;
+                background-color:#B3FF9E;
+                width: 170px;
+            }
+            #open_menu ul a{
+                text-decoration: none;
+                list-style: none;
+            }
+            #open_menu ul a li {
+                padding: 5px 10px 5px 10px;
+                color: black;
+                font-family: calibri;
+                font-size: 18px;
+            }
+            #open_menu ul li:hover{
+                background-color: #2F8758;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="img/Logo.png"></a>
+        </div>
+        <div class="akun">
+            <a href="adminAkun.html"><img src="img/user_akun.png" alt="profile"></button></a>
+        </div>
+        <div class="menu-utama">
+            <a href="adminEvent.html"><button type="button"><font face="Freestyle script"; font size="6px">Let's See an Event</font></button></a>
+            <a href="adminWisata.html"><button type="button"><font face="Freestyle script"; font size="6px">Goes to Wisata</font></button></a>
+        </div>
+        <div id="open_menu"><a href="#" onclick="openMenu()"><img src="img/menu.jpg"></a>
+            <ul>
+                <a href="akunAdmin.html"><li>Akun</li></a>
+                <a href="adminWisata.html"><li>Goes to Wisata</li></a>
+                <a href="adminEvent.html"><li>Let's See an Event</li></a>    
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="namaKota"><font face="Freestyle script">East Java's Event</font></div>
+        <div class="tombol">
+            <a href="adminTambahItemEvent.html"><button type="button">Add Event</button></a>
+        </div>
+        <div class="cari">
+            <div class="title">SEARCH</div>
+            <div class="cariKota">
+                <input type="search">
+                <button type="button">Search</button>
+            </div>
+            <ul class="listKota">
+                <li><a href="#">Bangkalan</a></li>
+                <li><a href="#">Banyuwangi</a></li>
+                <li><a href="#">Batu</a></li>
+                <li><a href="#">Blitar</a></li>
+                <li><a href="#">Bojonegoro</a></li>
+                <li><a href="#">Bondowoso</a></li>
+                <li><a href="#">Gresik</a></li>
+                <li><a href="#">Jember</a></li>
+                <li><a href="#">Jombang</a></li>
+                <li><a href="#">Kediri</a></li>
+                <li><a href="#">Lamongan</a></li>
+                <li><a href="#">Lumajang</a></li>
+                <li><a href="#">Madiun</a></li>
+                <li><a href="#">Magetan</a></li>
+                <li><a href="#">Malang</a></li>
+                <li><a href="#">Mojokerto</a></li>
+                <li><a href="#">Nganjuk</a></li>
+                <li><a href="#">Ngawi</a></li>
+                <li><a href="#">Pacitan</a></li>
+                <li><a href="#">Pamekasan</a></li>
+                <li><a href="#">Pasuruan</a></li>
+                <li><a href="#">Ponorogo</a></li>
+                <li><a href="#">Probolinggo</a></li>
+                <li><a href="#">Simpang</a></li>
+                <li><a href="#">Sidoarjo</a></li>
+                <li><a href="#">Situbondo</a></li>
+                <li><a href="#">Sumenep</a></li>
+                <li><a href="#">Surabaya</a></li>
+                <li><a href="#">Trenggalek</a></li>
+                <li><a href="#">Tuban</a></li>
+                <li><a href="#">Tulungagung</a></li>
+            </ul>
+        </div>
+        <div class="gambar">
+            <div class="item_gambar">
+                <div class="gambar_wrap">
+                    <img src="img/EJFC.jpg">
+                </div>
+                <div class="th">
+                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
+                    <button>Hapus</button>
+                </div>
+                <h4>JFC</h4>
+            </div>
+
+            <div class="item_gambar">
+                <div class="gambar_wrap">
+                    <img src="img/EJFC.jpg">
+                </div>
+                <div class="th">
+                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
+                    <button>Hapus</button>
+                </div>
+                <h4>JFC</h4>
+            </div>
+
+            <div class="item_gambar">
+                <div class="gambar_wrap">
+                    <img src="img/EJFC.jpg">
+                </div>
+                <div class="th">
+                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
+                    <button>Hapus</button>
+                </div>
+                <h4>JFC</h4>
+            </div>
+
+            <div class="item_gambar">
+                <div class="gambar_wrap">
+                    <img src="img/EJFC.jpg">
+                </div>
+                <div class="th">
+                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
+                    <button>Hapus</button>
+                </div>
+                <h4>JFC</h4>
+            </div>
+
+            <div class="item_gambar">
+                <div class="gambar_wrap">
+                    <img src="img/EJFC.jpg">
+                </div>
+                <div class="th">
+                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
+                    <button>Hapus</button>
+                </div>
+                <h4>JFC</h4>
+            </div>
+            
+            <div class="item_gambar">
+                <div class="gambar_wrap">
+                    <img src="img/EJFC.jpg">
+                </div>
+                <div class="th">
+                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
+                    <button>Hapus</button>
+                </div>
+                <h4>JFC</h4>
+            </div>
+            
+            <div class="item_gambar">
+                <div class="gambar_wrap">
+                    <img src="img/EJFC.jpg">
+                </div>
+                <div class="th">
+                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
+                    <button>Hapus</button>
+                </div>
+                <h4>JFC</h4>
+            </div>
+            
+            <div class="item_gambar">
+                <div class="gambar_wrap">
+                    <img src="img/EJFC.jpg">
+                </div>
+                <div class="th">
+                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
+                    <button>Hapus</button>
+                </div>
+                <h4>JFC</h4>
+            </div>
+
+            <!-- table border="0">
+                <tr>
+                    <td colspan="4"><a href="AdminTambahItem.html"><button class="button">Tambah Destinasi</button></a></td>
+                </tr>
+                <tr>
+                    <td><a href="EditJP3.html" title="Edit"><img src="img/MJatimPark3.jpg"></a><br>
+                        <div class="th"><button>Edit</button>    <button>Hapus</button>
+                        </div>
+                    </td>
+                    <td><a href="EditKD.html"><img src="img/MKampungTridi.jpg"></a><br>
+                        <div class="th"><button>Edit</button>    <button>Hapus</button>
+                        </div>
+                    </td>
+                    <td><a href="Selecta.html"><img src="img/MSelecta.jpg"></a><br>
+                        <div class="th"><button>Edit</button>    <button>Hapus</button>
+                        </div>
+                    </td>
+                    <td><a href="MuseumA.html"><img src="img/MMuseumAngkut.png"></a><br>
+                        <div class="th"><button>Edit</button>    <button>Hapus</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jatim Park 3</td>
+                    <td>Kampung Tridi</td>
+                    <td>Selecta</td>
+                    <td>Museum Angkut</td>
+                </tr>
+                <tr>
+                    <td><a href="MNP.html"><img src="img/MNP.jpg"></td>
+                    <td><a href="ALun2.html"><img src="img/Malun2.jpg"></a></td>
+                    <td><a href="BatuB.html"><img src="img/MPBatuBengkung.jpg"></a></td>
+                    <td><a href="Tiban.html"><img src="img/MMTiban.jpg"></a></td>
+                </tr>
+                <tr>
+                    <td>Malang Night Paradise</td>
+                    <td>Taman ALun-alun Kota Malang</td>
+                    <td>Pantai Batu Bengkung</td>
+                    <td>Masjid Tiban Turen</td>
+                </tr>
+                <tr>
+                    <td><a href="JP1.html"><img src="img/MJatimPark1.jpg"></a></td>
+                    <td><a href="BNS.html"><img src="img/MBNS.jpg"></a></td>
+                    <td><a href="Hawai.html"><img src="img/MHawai.jpg"></a></td>
+                    <td><a href="JP2.html"><img src="img/MJatimPark2.jpg"></a></td>
+                </tr>
+                <tr>
+                    <td>Jatim Park 1</td>
+                    <td>Batu Night Spectacular</td>
+                    <td>Hawai</td>
+                    <td>Jatim Park 2</td>
+                </tr>
+                <tr>
+                    <td><a href="Kalireco.html"><img src="img/MPKalireco.jpg"></a></td>
+                    <td><a href="OmahKayu.html"><img src="img/MOmahKayu.jpg"></a></td>
+                    <td><a href="CandiBatu.html"><img src="img/MCandiBatu.jpg"></a></td>
+                    <td><a href="Paralayang.html"><img src="img/MParalayang.png"></a></td>
+                </tr>
+                <tr>
+                    <td>Pemandian Kalireco</td>
+                    <td>Penginapan Omah Kayu</td>
+                    <td>Candi Batu</td>
+                    <td>Paralayang</td>
+                </tr>
+            </table> -->
+        </div> 
+    </div>
+    <div class="footer">
+        <ul class="footer-menu">
+            <li>
+                <a class="cookie" href="img/CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
+                <a class="aboutUs" href="img/AboutUs.html">About us&emsp;&emsp;|</a>
+                <a class="contact" href="img/ContactUs.html">Contact Us</a>
+                <ul class="sosmed">
+                    <li>
+                        Follow us on :<br>
+                        <a class="instagram" href="instagram.com/BeautyEastJava"><img src="img/instagram.png" alt=""></a>
+                        <a class="facebook" href="facebook.com/BeautyEastJava"><img src="img/facebook.png" alt=""></a>
+                        <a class="twitter" href="twitter.com/BeautyEastJava"><img src="img/twitter.png" alt=""></a>
+                        <a class="youtube" href="youtube.com/BeautyEastJava"><img src="img/youtube.png" alt=""></a>
+                    </li>
+                </ul>
+            </li>
+        </ul><br>
+        <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
+    </div>
+</body>
+</html>

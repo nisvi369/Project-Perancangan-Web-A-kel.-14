@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="Ikon.ico">
+    <title>Booking Tiket</title>
+    <link rel="icon" href="img/Ikon.ico">
+    <style>
+        *{
+        margin: 0px;
+        padding: 0px;
+        }
+        .logo{
+            float: left;
+            width: 170px;
+        }
+        .logo img{
+            align:left;
+            height: 90px;
+            width: 170px;
+        }
+        .header{
+            background-color: #012F52;
+            height: 90px;
+            width: 100%;
+        }
+        /*AKUN*/
+        .akun button{
+            float: right;
+            background-color: transparent;
+            border: none;
+            margin-top: 20px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .akun a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+        .akun img{
+            width: 35px;
+            height: 35px;
+        }
+        /*JUDUL*/
+        .judul{
+            margin-top: 20px;
+            margin-left :45%;
+        }
+        .judul font{
+            background-color: transparent;
+            padding: 7px 60px 7px 60px;
+            text-align: center;
+            font-size: 45px;
+            color: black;
+            font-weight: bold;
+            border-bottom: 5px double white;
+        }
+        /*CONTENT*/
+        #logo img{
+            width: 170px;
+            height: 90px;
+            margin-left: 45%;
+        }
+        body{
+            background-color: mediumturquoise;
+            font-family: calibri;
+        }
+        .content li{
+            position: absolute;
+            list-style: none;
+        }
+        /* IDENTITAS */
+        .identitas{
+            top: 200px;
+            left: 70px;
+            list-style: none;
+            padding: 5% 8% 10% 5%;
+            background-color: white;
+            border: dotted 10px gray;
+            z-index: 1
+        }
+        .identitas td input{
+            width: 90%;
+        }
+        /* TRAVEL */
+        .travel{
+            top: 250px;
+            right: 70px;
+            background-color: white;
+            border: dashed 6px midnightblue;
+            padding: 5% 8% 10% 15%;
+        }
+        .travel tr{
+            text-align: center;
+        }
+        .travel td{
+            width: 90px;
+        }
+        table tr td img{
+            width: 70px;
+            height: 70px;
+        }
+        /* PESAN */
+        #pesan{
+            z-index: 1;
+            right: 100px;
+            top: 520px;
+        }
+        #pesan button{
+            padding: 5px 15px 5px 15px;
+            background-color: #00FFFF;
+            border: none;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        #pesan button:hover{
+            background-color: #7fff00;
+            cursor: pointer;
+        }
+        @media (max-width:1210px){
+            .travel{
+                top: 400px;
+            }
+            #pesan{
+                top: 700px;
+            }
+        }
+        /*FOOTER*/
+        .footer{
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            background-color: #B3FF9E;
+            height: 90px;
+            font-family: Calibri;
+            font-size: 15px;
+        }
+        .footer .footer-menu{
+            margin-top: 20px; 
+        }
+        .footer .footer-menu li a{
+            text-decoration: none;
+            margin-left: 30px;
+            color: black;
+        }
+        .footer .footer-menu li a:hover{
+            color:#012F52;
+        }
+        .sosmed{
+            text-align: center;
+            list-style: none;
+            float: right;
+            margin-right: 30px;
+            color: black;
+        }
+        .sosmed img{
+            width: 25px;
+            height: 25px;
+        }
+        .footer h5{
+            text-align: left;
+            margin-left: 45%;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="img/Logo.png"></a>
+        </div>
+        <div class="akun">
+            <button type="button"><a href="Akun.html"><img src="img/user_akun.png" alt="profile"><br><font face="Freestyle script">Hi, Mr.Travel!</a></font></button>
+        </div>
+    </div>
+    <div class="judul"><font face="Freestyle script">Booking</font></div>
+    <div class="content">
+        <li class="identitas">
+            <table width="500px">
+                <tr>
+                    <td>Nama Pembooking</td>
+                    <td>: Mr. Travel</td>
+                </tr>
+                <tr>
+                    <td>Nama Wisata</td>
+                    <td>: Jatim Park 3</td>
+                </tr>
+                <tr>
+                    <td>Harga Tiket</td>
+                    <td>: Rp 200.000</td>
+                </tr>
+                <tr>
+                    <td>Jumlah Orang</td>
+                    <td><input type="number" name="jumlah"</td>
+                </tr>
+                <tr>
+                    <td>Tanggal keberangkatan</td>
+                    <td><input type="date" name="tanggal"></td>
+                </tr>
+            </table>
+        </li>
+        <li class="travel">
+            <table>
+                <tr>
+                    <td colspan="3">Booking Travel</td>
+                </tr>
+                <tr>
+                    <td><a href="Pegipegi.com"><img src="img/BPegi.jpg"></a></td>
+                    <td><a href="Traveloka.com"><img src="img/Btraveloka.jpg"></a></td>
+                    <td><a href="Tiket.com"><img src="img/BTiket.png"></a></td>
+                </tr>
+            </table>
+            <table width="300px">
+                <tr>
+                    <td colspan="3">Apakah kamu membutuhkan Tour Guide?</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="TG" value="ya">Ya</td>
+                    <td><input type="radio" name="TG" value="tidak">Tidak</td>
+                </tr>
+            </table>
+        </li>
+        <li id="pesan"><a href="Pembayaran.html"><button type="button">Check Out</button></a></li>
+    </div>
+    <div class="footer">
+        <ul class="footer-menu">
+            <li>
+                <a class="cookie" href="CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
+                <a class="aboutUs" href="AboutUs.html">About us&emsp;&emsp;|</a>
+                <a class="contact" href="ContactUs.html">Contact Us</a>
+                <ul class="sosmed">
+                    <li>
+                        Follow us on :<br>
+                        <a class="instagram" href="instagram.com/BeautyEastJava"><img src="img/instagram.png" alt=""></a>
+                        <a class="facebook" href="facebook.com/BeautyEastJava"><img src="img/facebook.png" alt=""></a>
+                        <a class="twitter" href="twitter.com/BeautyEastJava"><img src="img/twitter.png" alt=""></a>
+                        <a class="youtube" href="youtube.com/BeautyEastJava"><img src="img/youtube.png" alt=""></a>
+                    </li>
+                </ul>
+            </li>
+        </ul><br>
+        <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
+    </div>
+</body>
+</html>
