@@ -28,6 +28,10 @@
             width: 170px;
         }
         /*MENU UTAMA*/
+        @font-face {
+            font-family: "Freestyle Script";
+            src: url('Freestyle Script.ttf');
+        }
         #open_menu{
             display: none;
         }
@@ -43,6 +47,10 @@
         }
         .menu-utama a{
             text-decoration: none;
+        }
+        .menu-utama font{
+            font-family: "Freestyle Script";
+            font-size: 32px;
         }
         .menu-utama button:hover{
             background-color: white;     
@@ -63,17 +71,22 @@
         }
         /*CONTENT*/
         /*JUDUL*/
+        @font-face {
+            font-family: "CaveatBrush";
+            src: url('CaveatBrush.ttf');
+        }
         .judul{
             list-style: none;
             margin-top: 20px;
-            margin-left :43%;
+            margin-left :40%;
         }
         .judul font{
+            font-family: "CaveatBrush";
+            font-size: 35px;
             background-color: #2F8758;
             padding: 2px 15px 2px 15px;
             text-align: center;
             position: relative;
-            font-size: 40px;
             color: white;
         }
         /*FILTER*/
@@ -240,8 +253,8 @@
             <a href="akun.html"><img src="img/user_akun.png" alt="profile"></button></a>
         </div>
         <div class="menu-utama">
-            <a href="event.html"><button type="button"><font face="Freestyle script"; font size="6px">Let's See an Event</font></button></a>
-            <a href="wisata.html"><button type="button"><font face="Freestyle script"; font size="6px">Goes to Wisata</font></button></a>
+            <a href="event.html"><button type="button"><font face="#">Let's See an Event</font></button></a>
+            <a href="wisata.html"><button type="button"><font face="#">Goes to Wisata</font></button></a>
         </div>
         <div id="open_menu"><a href="#"><img src="img/menu.jpg"></a>
             <ul>
@@ -253,7 +266,7 @@
     </div>
     <div class="content">
         <div class="judul">
-            <font face="Freestyle Script">East Java's Event</font>
+            <font face="#">East Java's Event</font>
         </li>
     </div>
     <div class="filter">

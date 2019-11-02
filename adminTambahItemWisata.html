@@ -155,7 +155,18 @@
             <br><br>
             <tr>
                 <td>Masukkan beberapa gambar</td>
-                <td><input type="file"></td>
+                <td><div class="Tambahgbr">
+                        <input type="file" id="imgUpload">
+                    </div>
+                    <hr/>
+
+                    <div id="imgPreview" class="thumbnail" style="display:none">
+                        <img class="img-responsive" id="targetImg">
+                        <div class="caption">
+                            <span id="description"></span>
+                        </div>
+                    </div>    
+                </td>
             </tr>
             <tr>
                 <td>
@@ -187,4 +198,35 @@
         <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
     </div>
 </body>
+<script src="jQuery.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#imgUpload").change(function () {           
+            var File = this.files;
+            if (File && File[0]) {
+                ReadImage(File[0]);
+            }
+        })
+    })
+
+    var ReadImage = function (file) {
+        var reader = new FileReader;
+        var image = new Image;
+
+        reader.readAsDataURL(file);
+        reader.onload = function (_file) {
+            image.src = _file.target.result;
+            image.onload = function () {
+                var height = this.height;
+                var width = this.width;
+                var type = file.type;
+                var size = ~~(file.size / 1024) + "KB";
+
+                $("#targetImg").attr('src', _file.target.result);
+                $("#description").text("Size:" + size + ", " + height + " X " + width + ", " + type + "");
+                $("#imgPreview").show();
+            }
+        }
+    }
+</script>
 </html>

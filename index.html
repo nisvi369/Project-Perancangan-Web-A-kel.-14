@@ -75,6 +75,10 @@
             width: 170px;
         }
         /*MENU-UTAMA*/
+        @font-face {
+            font-family: "Freestyle Script";
+            src: url('Freestyle Script.ttf');
+        }
         #open_menu{
             display: none;
         }
@@ -90,6 +94,10 @@
         }
         .menu-utama a{
             text-decoration: none;
+        }
+        .menu-utama font{
+            font-family: "Freestyle Script";
+            font-size: 32px;
         }
         .menu button:hover{
             background-color: white;     
@@ -207,6 +215,10 @@
             margin-top: 50px;
             text-align: center;
             color:deepskyblue;
+        }
+        #ref_judul font{
+            font-family: "Freestyle script";
+            font-size: 50px;
         }
         .referensi{
             margin:3%;
@@ -524,8 +536,8 @@
                     <a href="#popup"><button type="button"><img src="img/Akun.png"><br><font face="Calibri"; font size="2px">Login</font></button></a>
                 </div>
                 <div class="menu-utama">
-                    <a href="event.html"><button type="button"><font face="Freestyle script"; font size="6px">Let's See an Event</font></button></a>
-                    <a href="wisata.html"><button type="button"><font face="Freestyle script"; font size="6px">Goes to Wisata</font></button></a>
+                    <a href="event.html"><button type="button"><font face="#">Let's See an Event</font></button></a>
+                    <a href="wisata.html"><button type="button"><font face="#">Goes to Wisata</font></button></a>
                 </div>
                 <div id="open_menu"><a href="#" onclick="openMenu()"><img src="img/menu.jpg"></a>
                     <ul>
@@ -543,7 +555,7 @@
             <button type="button" value="Search">Search</button>
         </div>
         <div class="judul">
-            <font size=6px; font color="#00FF7F">Welcome to</font><br>
+            <font size="6px"; font color="#00FF7F">Welcome to</font><br>
             <font size="10px"; font color="#FF8C00">the Beauty of East Java</font><br>
         </div>
         <div class="slider">
@@ -553,7 +565,7 @@
                 <div class="slide"><img src="img/MNP.jpg" alt=""/></div>
             </div>
         </div>
-        <div id="ref_judul"><font face="Freestyle script"; font size="20px">Refresh your day!</font></div>
+        <div id="ref_judul"><font face ="#">Refresh your day!</font></div>
         <div class="referensi">
             <!-- <div class="gambar"> -->
                 <a href="#" class="gambar"><img src="img/GBromo-Probolinggo.jpg"></a>

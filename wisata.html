@@ -28,6 +28,10 @@
             width: 170px;
         }
         /*MENU UTAMA*/
+        @font-face {
+            font-family: "Freestyle Script";
+            src: url('Freestyle Script.ttf');
+        }
         #open_menu{
             display: none;
         }
@@ -44,6 +48,10 @@
         .menu-utama a{
             text-decoration: none;
         }
+        .menu-utama font{
+            font-family: "Freestyle Script";
+            font-size: 32px;
+        }
         .menu-utama button:hover{
             background-color: white;     
             color:#2F8758;
@@ -59,25 +67,33 @@
             cursor: pointer;
         }
         /*CONTENT*/
+        @font-face {
+            font-family: "CaveatBrush";
+            src: url('CaveatBrush.ttf');
+        }
         .namaKota{
             list-style: none;
         }
-        .a{
-            font-size: 25px;
-            margin-left: 40%;
+        #a{
+            margin-left: 39%;
             z-index: 1;
             position: absolute;
         }
-        .b{
+        #a font{
+            font-family: "Shalinta";
+            font-size: 25px;
+        }
+        #b{
             background-color: #2F8758;
             width: 200px;
             text-align: center;
-            margin-left :45%;
+            margin-left :43%;
             margin-top: 20px;
             position: relative;
         }
-        .b font{
-            font-size: 40px;
+        #b font{
+            font-family: "Caveat Brush";
+            font-size: 35px;
             color: white;
         }    
         /*FILTER*/
@@ -315,8 +331,8 @@
             <a href="akun.html"><img src="img/user_akun.png" alt="profile"></button></a>
         </div>
         <div class="menu-utama">
-            <a href="event.html"><button type="button"><font face="Freestyle script"; font size="6px">Let's See an Event</font></button></a>
-            <a href="wisata.html"><button type="button"><font face="Freestyle script"; font size="6px">Goes to Wisata</font></button></a>
+            <a href="event.html"><button type="button"><font face="#">Let's See an Event</font></button></a>
+            <a href="wisata.html"><button type="button"><font face="#">Goes to Wisata</font></button></a>
         </div>
         <div id="open_menu"><a href="#"><img src="img/menu.jpg"></a>
             <ul>
@@ -368,12 +384,10 @@
             </ul>
         </div>
         <div class="namaKota">
-            <li class="a">
-                <font face="Shalinta">Explore</font>
+            <li id="a">
+                <font face="#">Explore</font>
             </li>
-            <li class="b">
-                <font face="Freestyle script">Malang</font>
-            </li>
+            <li id="b"><font face="#">Malang</font></li>
         </div>
 
         <div class="filter">
