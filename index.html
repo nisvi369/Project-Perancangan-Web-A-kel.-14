@@ -212,7 +212,6 @@
         }
         /*REFERENSI*/
         #ref_judul{
-            margin-top: 50px;
             text-align: center;
             color:deepskyblue;
         }
@@ -221,13 +220,46 @@
             font-size: 50px;
         }
         .referensi{
-            margin:3%;
+            /*GAMBAR*/
+            margin-left: 30px;
+            margin-right: 10px;
         }
-        .referensi img{
-            /* margin: 5px 5px 0px 5px; */
-            padding: 5px;
+        .gambar {
+            padding: 10px;
+            float: left;
             width: 23%;
-            height: 200px;
+        }
+        .item_gambar img {
+            width: 100%;
+        }
+        .nama_wisata {
+            font-family: calibri;
+            margin-top: -10px;
+            padding: 15px;
+            text-align: center;
+        }
+        @media only screen and (max-width: 1050px){
+            .gambar {
+                width: 28%;
+            }
+        }
+        @media only screen and (max-width: 850px){
+            .gambar {
+                width: 40%;
+            }
+        }
+        @media only screen and (max-width: 600px){
+            .gambar {
+                width: 100%;
+            }
+            .referensi{
+                margin-left: 0px;
+            }
+        }
+        .all_gambar:after {
+            content: "";
+            display: table;
+            clear: both;
         }
         /*FOOTER*/
         .footer{
@@ -565,42 +597,84 @@
                 <div class="slide"><img src="img/MNP.jpg" alt=""/></div>
             </div>
         </div>
+        <br><br><br><br>
         <div id="ref_judul"><font face ="#">Refresh your day!</font></div>
+        <br>
         <div class="referensi">
-            <!-- <div class="gambar"> -->
-                <a href="#" class="gambar"><img src="img/GBromo-Probolinggo.jpg"></a>
-                <!-- <p><a href="#">Gunung Bromo - Probolinggo</a></p>
-            </div> -->
-            <!-- <div class="gambar"> -->
-                <a href="#" class="gambar"><img src="img/GiliLabak-Madura.jpg"></a>
-                <!-- <p><a href="#" class="nama">Pantai Gili Labak - Madura</a></p> -->
-            <!-- </div>
-            <div class="gambar"> -->
-                <a href="#" class="gambar"><img src="img/CiputraWaterPark-Surabaya.jpg"></a>
-                <!-- <p><a href="#" class="nama">Ciputra Water Park - Surabaya</a></p> -->
-            <!-- </div>
-            <div class="gambar"> -->
-                <a href="#" class="gambar"><img src="img/GuaGong-Pacitan.jpg"></a>
-                <!-- <p><a href="#">Gua Gong - Pacitan</a></p> -->
-            <!-- </div>
-            <div class="gambar"> -->
-                <a href="#" class="gambar"><img src="img/MJatimPark3.jpg"></a>
-                <!-- <p><a href="#">Jatim Park 3 - Malang</a></p> -->
-            <!-- </div>
-            <div class="gambar"> -->
-                <a href="#" class="gambar"><img src="img/TelagaSarangan-Magetan.jpg"></a>
-                <!-- <p><a href="#">Telaga Sarangan - Magetan</a></p> -->
-            <!-- </div>
-            <div class="gambar"> -->
-                <a href="#" class="gambar"><img src="img/KawahIjen-BWI.jpg"></a>
-                <!-- <p><a href="#">Kawah Ijen - Banyuwangi</a></p> -->
-            <!-- </div>
-            <div class="gambar"> -->
-                <a href="#" class="gambar"><img src="img/PuncakB29-Lumajang.jpg"></a>
-                <!-- <p><a href="#">Puncak B29 - Lumajang</a></p> -->
-            <!-- </div> -->
-        </div>
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#">
+                        <img src="img/GBromo-Probolinggo.jpg" height="180px">
+                    </a>
+                    <div class="nama_wisata">Gunung Bromo - Probolinggo</div>
+                </div>
+            </div>
+
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#">
+                        <img src="img/GiliLabak-Madura.jpg" height="180px">
+                    </a>
+                    <div class="nama_wisata">Pantai Gili Labak - Madura</div>
+                </div>
+            </div>
+              
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#.jpg">
+                        <img src="img/CiputraWaterPark-Surabaya.jpg" height="180px">
+                    </a>
+                <div class="nama_wisata">Ciputra Water Park - Surabaya</div>
+            </div>
+                  </div>
+                  
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#">
+                        <img src="img/GuaGong-Pacitan.jpg" height="180px">
+                    </a>
+                    <div class="nama_wisata">Gua Gong - Pacitan</div>
+                </div>
+            </div>
+
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="deskripsi.html">
+                        <img src="img/MJatimPark3.jpg" height="180px">
+                    </a>
+                    <div class="nama_wisata">Jatim Park 3 - Malang</div>
+                </div>
+            </div>
+
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#">
+                        <img src="img/TelagaSarangan-Magetan.jpg" height="180px">
+                    </a>
+                    <div class="nama_wisata">Telaga Sarangan - Magetan</div>
+                </div>
+            </div>
+              
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#">
+                        <img src="img/KawahIjen-BWI.jpg" height="180">
+                    </a>
+                <div class="nama_wisata">Kawah Ijen - Banyuwangi</div>
+            </div>
+                  </div>
+                  
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#.jpg">
+                        <img src="img/PuncakB29-Lumajang.jpg" height="180">
+                    </a>
+                    <div class="nama_wisata">Puncak B29 - Lumajang</div>
+                </div>
+            </div>
+            <div class="all_gambar"></div>
     </div>
+    <br><br><br>
     <div class="footer">
         <ul class="footer-menu">
             <li>
