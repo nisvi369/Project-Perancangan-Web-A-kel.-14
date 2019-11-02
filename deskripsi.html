@@ -26,23 +26,44 @@
             height: 90px;
             width: 100%;
         }
-        /*AKUN*/
-        .akun button{
-            float: right;
-            background-color: transparent;
-            border: none;
-            margin-top: 20px;
-            margin-right: 20px;
-            cursor: pointer;
+        /*MENU UTAMA*/
+        @font-face {
+            font-family: "Freestyle Script";
+            src: url('Freestyle Script.ttf');
         }
-        .akun a{
-            text-decoration: none;
+        #open_menu{
+            display: none;
+        }
+        .menu-utama button{
+            background-color:#2F8758;
             color: white;
-            font-size: 20px;
+            float: right;
+            padding: 3px 55px 3px 55px;
+            border: none;
+            margin-top: 40px;
+            margin-right: 5px;
+            cursor:pointer;
         }
+        .menu-utama a{
+            text-decoration: none;
+        }
+        .menu-utama font{
+            font-family: "Freestyle Script";
+            font-size: 32px;
+        }
+        .menu-utama button:hover{
+            background-color: white;     
+            color:#2F8758;
+        }
+        /*AKUN*/
         .akun img{
-            width: 35px;
-            height: 35px;
+            height: 40px;
+            width: 40px;
+            float: right;
+            margin-top: 40px;
+            margin-right: 10px;
+            margin-left: 5px;
+            cursor: pointer;
         }
         /*CONTENT*/
         /*JUDUL*/
@@ -181,6 +202,12 @@
         }
         /*RESPONSIVE*/
         @media screen and (max-width: 800px) {
+            .judul{
+                margin-left: 25%;
+            }
+            .judul font{
+                font-size: 30px;
+            }
             .gambar{ /*lebar slide pada halaman*/
                 width: 500px;
                 height: 250px;
@@ -215,9 +242,6 @@
                     transform: translateX(-1000px);
                 }
             }
-            .judul font{
-                font-size: 30px;
-            }
         }
     </style>
 </head>
@@ -227,7 +251,18 @@
             <a href="index.html"><img src="img/Logo.png"></a>
         </div>
         <div class="akun">
-            <button type="button"><a href="Akun.html"><img src="img/user_akun.png" alt="profile"><br><font face="Freestyle script">Hi, Mr.Travel!</a></font></button>
+            <a href="akun.html"><img src="img/user_akun.png" alt="profile"></button></a>
+        </div>
+        <div class="menu-utama">
+            <a href="event.html"><button type="button"><font face="#">Let's See an Event</font></button></a>
+            <a href="wisata.html"><button type="button"><font face="#">Goes to Wisata</font></button></a>
+        </div>
+        <div id="open_menu"><a href="#"><img src="img/menu.jpg"></a>
+            <ul>
+                <a href="akun.html"><li>Akun</li></a>
+                <a href="wisata.html"><li>Goes to Wisata</li></a>
+                <a href="event.html"><li>Let's See an Event</li></a>    
+            </ul>
         </div>
     </div>
     <div class="judul">
