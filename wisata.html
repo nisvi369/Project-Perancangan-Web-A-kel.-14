@@ -11,6 +11,14 @@
             margin: 0px;
             padding: 0px;
         }
+        @font-face {
+            font-family: "Freestyle Script";
+            src: url('Freestyle Script.ttf');
+        }
+        @font-face {
+            font-family: "CaveatBrush";
+            src: url('CaveatBrush.ttf');
+        }
         /*HEADER*/
         .header{
             background-color: #012F52;
@@ -28,10 +36,6 @@
             width: 170px;
         }
         /*MENU UTAMA*/
-        @font-face {
-            font-family: "Freestyle Script";
-            src: url('Freestyle Script.ttf');
-        }
         #open_menu{
             display: none;
         }
@@ -67,10 +71,6 @@
             cursor: pointer;
         }
         /*CONTENT*/
-        @font-face {
-            font-family: "CaveatBrush";
-            src: url('CaveatBrush.ttf');
-        }
         .namaKota{
             list-style: none;
         }
@@ -236,17 +236,17 @@
         }
         @media only screen and (max-width: 1100px){
             .gambar {
-                width: 28%;
+                width: 30%;
             }
         }
         @media only screen and (max-width: 850px){
             .gambar {
-                width: 40%;
+                width: 42%;
             }
         }
         @media only screen and (max-width: 600px){
             .gambar {
-                width: 100%;
+                width: 95%;
             }
             .gambar img{
                 height: 250px;
@@ -348,6 +348,22 @@
             #open_menu ul li:hover{
                 background-color: #2F8758;
                 color: white;
+            }
+        }
+        @media screen and (max-width: 600px){
+            .footer{
+                height: 100px;
+            }
+            .footer-menu{
+                margin-top: 10px;
+                margin-left: 30px;
+            }
+            .sosmed{
+                margin-top: 30px;
+                margin-right: 33%;
+            }
+            .footer h5{
+                margin-left: 28%;
             }
         }
     </style>

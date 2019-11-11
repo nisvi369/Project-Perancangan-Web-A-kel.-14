@@ -11,6 +11,10 @@
             margin: 0px;
             padding: 0px;
         }
+        @font-face {
+            font-family: "Freestyle Script";
+            src: url('Freestyle Script.ttf');
+        }
         /*BAR BAHASA*/
         .bar{
             width: 100%;
@@ -75,10 +79,6 @@
             width: 170px;
         }
         /*MENU-UTAMA*/
-        @font-face {
-            font-family: "Freestyle Script";
-            src: url('Freestyle Script.ttf');
-        }
         #open_menu{
             display: none;
         }
@@ -250,7 +250,7 @@
         }
         @media only screen and (max-width: 600px){
             .gambar {
-                width: 100%;
+                width: 98%;
             }
             .referensi{
                 margin-left: 0px;
@@ -285,7 +285,7 @@
         }
         .sosmed{
             float: right;
-            margin-right: 30px;
+            margin-right: 5%;
             margin-top: 20px;
             text-align: center;
             list-style: none;
@@ -491,11 +491,11 @@
                 height: 250px;
             }
             .slider{ /*lebar slide pada halaman*/
-                width: 500px;
+                width: 450px;
                 height: 250px;
             }
             .slide{
-                width: 500px;
+                width: 450px;
                 height: 250px;
             }
             .slide-holder{
@@ -508,13 +508,32 @@
                     transform: translateX(0);
                 }
                 33%{
-                    -webkit-transform: translateX(-500px);
-                    transform: translateX(-500px);
+                    -webkit-transform: translateX(-450px);
+                    transform: translateX(-450px);
                 }
                 66% {
-                    -webkit-transform: translateX(-1000px);
-                    transform: translateX(-1000px);
+                    -webkit-transform: translateX(-900px);
+                    transform: translateX(-900px);
                 }
+            }
+        }
+        @media screen and (max-width: 600px){
+            .item_gambar img{
+                height: 230px;
+            }
+            .footer{
+                height: 100px;
+            }
+            .footer-menu{
+                margin-top: 10px;
+                margin-left: 30px;
+            }
+            .sosmed{
+                margin-top: 30px;
+                margin-right: 33%;
+            }
+            .footer h5{
+                margin-left: 28%;
             }
         }
         /* @media screen and (max-width: 930px){
@@ -673,6 +692,7 @@
                 </div>
             </div>
             <div class="all_gambar"></div>
+        </div>
     </div>
     <br><br><br>
     <div class="footer">

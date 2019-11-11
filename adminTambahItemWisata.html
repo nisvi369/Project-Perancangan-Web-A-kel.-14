@@ -156,16 +156,22 @@
             <tr>
                 <td>Masukkan beberapa gambar</td>
                 <td><div class="Tambahgbr">
-                        <input type="file" id="imgUpload">
+                        <input type="file" id="imgUpload" accept="picture/*">
+                    </div>
+                    <div id="preview_vid">
+                        <span>No File Choosed</span>
+                    </div>
+                    <div id="file_info">
+                        
                     </div>
                     <hr/>
 
-                    <div id="imgPreview" class="thumbnail" style="display:none">
+                    <!-- <div id="imgPreview" class="thumbnail" style="display:none">
                         <img class="img-responsive" id="targetImg">
                         <div class="caption">
                             <span id="description"></span>
                         </div>
-                    </div>    
+                    </div>     -->
                 </td>
             </tr>
             <tr>
@@ -198,35 +204,74 @@
         <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
     </div>
 </body>
-<script src="jQuery.js"></script>
-<script>
-    $(document).ready(function () {
-        $("#imgUpload").change(function () {           
-            var File = this.files;
-            if (File && File[0]) {
-                ReadImage(File[0]);
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/sidebar.js"></script>
+<script type="text/javascript">
+    $.fn.Tambahgbr = function () {
+        this.change(function() {
+            if(this.files.length > 0){
+                var url =  window.URL.createObjectURL(this.files[0]);
+                $("#preview_vid").html(`
+                    <video src="`+url+`" controls="" autoplay=""></video>
+                    `
+                );
+                var new_vid = $("#preview_vid video");
+                new_vid.onload = function () {
+                    window.URL.revokeObjectURL(url);
+                };
+                var name = this.files[0].name;
+                var size = this.files[0].size;
+                var ukuran = "";
+                if (size >= 1000000 ) { //MB
+                    size = Math.ceil(size/1000000); 
+                    ukuran = size + "MB"; 
+                } 
+                else if (size >= 1000) { //KB
+                    size = Math.ceil(size/1000);
+                    ukuran = size + "KB";
+                }
+                else if(size < 1000){
+                    ukuran = size + "Byte";
+                }
+                
+                $("#file_info").html(`
+                    <p>Nama File : `+name+`</p>
+                    <p>Ukuran File : `+ukuran+`</p>
+                    `
+                );
             }
-        })
-    })
-
-    var ReadImage = function (file) {
-        var reader = new FileReader;
-        var image = new Image;
-
-        reader.readAsDataURL(file);
-        reader.onload = function (_file) {
-            image.src = _file.target.result;
-            image.onload = function () {
-                var height = this.height;
-                var width = this.width;
-                var type = file.type;
-                var size = ~~(file.size / 1024) + "KB";
-
-                $("#targetImg").attr('src', _file.target.result);
-                $("#description").text("Size:" + size + ", " + height + " X " + width + ", " + type + "");
-                $("#imgPreview").show();
-            }
-        }
+        });
     }
-</script>
+    $("#btn_file").uplaodVideo();
 </html>
+// <script src="jQuery.js"></script>
+<!-- <script type="text/javascript"> -->
+//     $(document).ready(function () {
+//         $("#imgUpload").change(function () {           
+//             var File = this.files;
+//             if (File && File[0]) {
+//                 ReadImage(File[0]);
+//             }
+//         })
+//     })
+
+//     var ReadImage = function (file) {
+//         var reader = new FileReader;
+//         var image = new Image;
+
+//         reader.readAsDataURL(file);
+//         reader.onload = function (_file) {
+//             image.src = _file.target.result;
+//             image.onload = function () {
+//                 var height = this.height;
+//                 var width = this.width;
+//                 var type = file.type;
+//                 var size = ~~(file.size / 1024) + "KB";
+
+//                 $("#targetImg").attr('src', _file.target.result);
+//                 $("#description").text("Size:" + size + ", " + height + " X " + width + ", " + type + "");
+//                 $("#imgPreview").show();
+//             }
+//         }
+//     }
+<!-- // </script> -->

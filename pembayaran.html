@@ -11,6 +11,10 @@
             margin: 0px;
             padding: 0px;
         }
+        @font-face {
+            font-family: "CaveatBrush";
+            src: url('CaveatBrush.ttf');
+        }
         body {
             background-color: mediumturquoise;
         }
@@ -51,9 +55,10 @@
         /*JUDUL*/
         .judul{
             margin-top: 20px;
-            margin-left :40%;
+            margin-left :35%;
         }
         .judul font{
+            font-family: "Caveat Brush";
             background-color: transparent;
             padding: 7px 60px 7px 60px;
             text-align: center;
@@ -65,46 +70,52 @@
         /*CONTENT*/
         .content li{
             font-size: 18px;
-            position: absolute;
             list-style: none;
             font-family: calibri;
         }
         /* DETAIL */
         .detail{
+            width: 35%;
+            position: relative;
             z-index: 1;
-            top: 200px;
-            left: 100px;
+            top: 50px;
+            margin-left: 7%;
             list-style: none;
             padding: 5% 10% 7% 5%;
             background-color: white;
             border: dashed 6px midnightblue;
         }
         .detail td{
-            width: 200px;
+            width: 65%;
         }
         #jumlah{
             font-weight: bold;
             font-size: 20px;
         }
+        #jumlah td{
+            width: 59%;
+        }
         /* BANK */
         .bank{
-            top: 250px;
-            right: 80px;
+            position: relative;
+            top: -200px;
+            margin-left: 53%;
             background-color: white;
             border: dotted 6px gray;
-            padding: 5% 5% 10% 8%;
+            padding: 5% 0% 8% 8%;
         }
         .bank td{
-            width: 150px;
+            width: 60%;
         }
         .bank img{
-            height: 26px;
+            height: 25px;
         }
         /* BAYAR */
         #bayar{
+            position: absolute;
             z-index: 2;
-            right: 550px;
-            top: 500px;
+            right: 600px;
+            top: 520px;
         }
         #bayar button{
             padding: 7px 25px 7px 25px;
@@ -119,43 +130,52 @@
             color: black;
             cursor: pointer;
         }
-        @media (max-width:1210px){
-            .bank{
-                top: 400px;
-            }
-            #bayar{
-                top: 700px;
+        @media screen and (max-width:900px){
+            .bank td{
+                width: 50%;
             }
         }
-
+        @media screen and (max-width:710px){
+            #bayar{
+                right: 350px;
+            }
+            .judul{
+                margin-left: 15%;
+            }
+        }
         /*FOOTER*/
         .footer{
-            position: absolute;
-            margin-bottom: 0px;
+            bottom: 0px;
             width: 100%;
             background-color: #B3FF9E;
             height: 90px;
             font-family: Calibri;
             font-size: 15px;
-            bottom: 0px;
         }
-        .footer .footer-menu{
-            margin-top: 20px; 
+        .footer-menu{
+            position: absolute;
+            margin-top: 20px;
+            list-style: none;
         }
-        .footer .footer-menu li a{
+        .footer-menu li a{
             text-decoration: none;
             margin-left: 30px;
             color: black;
         }
-        .footer .footer-menu li a:hover{
+        .footer-menu li a:hover{
             color:#012F52;
         }
         .sosmed{
+            float: right;
+            margin-right: 30px;
+            margin-top: 20px;
             text-align: center;
             list-style: none;
             float: right;
-            margin-right: 30px;
             color: black;
+        }
+        .sosmed li a{
+            padding: 10px;
         }
         .sosmed img{
             width: 25px;
@@ -163,8 +183,25 @@
         }
         .footer h5{
             text-align: left;
-            margin-left: 600px;
+            margin-left: 45%;
+            margin-top: 50px;
             color: black;
+        }
+        @media screen and (max-width: 600px){
+            .footer{
+                height: 100px;
+            }
+            .footer-menu{
+                margin-top: 10px;
+                margin-left: 30px;
+            }
+            .sosmed{
+                margin-top: 30px;
+                margin-right: 33%;
+            }
+            .footer h5{
+                margin-left: 28%;
+            }
         }
     </style>
 </head>
@@ -177,8 +214,8 @@
             <button type="button"><a href="Akun.html"><img src="img/user_akun.png" alt="profile"><br><font face="Freestyle script">Hi, Mr.Travel!</a></font></button>
         </div>
     </div>
-    <div class="judul"><font face="Freestyle script">Payment Details</font></div>
     <div class="content">
+        <div class="judul"><font face="Freestyle script">Payment Details</font></div>
         <li class="detail">
             <table>
                 <tr>
@@ -202,7 +239,7 @@
             </table>
         </li>
         <li class="bank">
-            <table border="0">
+            <table>
                 <tr>
                     <td class="judul" width="35%">Pilihan Bank</td>
                 </tr>
@@ -236,15 +273,15 @@
                 <a class="cookie" href="CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
                 <a class="aboutUs" href="AboutUs.html">About us&emsp;&emsp;|</a>
                 <a class="contact" href="ContactUs.html">Contact Us</a>
-                <ul class="sosmed">
-                    <li>
-                        Follow us on :<br>
-                        <a class="instagram" href="instagram.com/BeautyEastJava"><img src="img/instagram.png" alt=""></a>
-                        <a class="facebook" href="facebook.com/BeautyEastJava"><img src="img/facebook.png" alt=""></a>
-                        <a class="twitter" href="twitter.com/BeautyEastJava"><img src="img/twitter.png" alt=""></a>
-                        <a class="youtube" href="youtube.com/BeautyEastJava"><img src="img/youtube.png" alt=""></a>
-                    </li>
-                </ul>
+            </li>
+        </ul>
+        <ul class="sosmed">
+            <li>
+                Follow us on :<br>
+                <a class="instagram" href="http://www.instagram.com"><img src="img/instagram.png" alt=""></a>
+                <a class="facebook" href="http://www.facebook.com"><img src="img/facebook.png" alt=""></a>
+                <a class="twitter" href="http://www.twitter.com"><img src="img/twitter.png" alt=""></a>
+                <a class="youtube" href="http://www.youtube.com"><img src="img/youtube.png" alt=""></a>
             </li>
         </ul><br>
         <h5>&copy;Copyright 2019 BeautyofEastJava</h5>

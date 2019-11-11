@@ -4,110 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Proof of Payment</title>
-    <link rel="icon" href="img/Ikon.ico">
+    <title>Document</title>
     <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-        }
-        body {
-            background-color: mediumturquoise;
-        }
-        /*HEADER*/
-        .header{
-            background-color: #012F52;
-            height: 90px;
-            width: 100%;
-        }
-        /*LOGO*/
-        .logo{
-            float: left;
-            width: 170px;
-        }
-        .logo img{
-            align:left;
-            height: 90px;
-            width: 170px;
-        }
-        /*AKUN*/
-        .akun button{
-            float: right;
-            background-color: transparent;
-            border: none;
-            margin-top: 20px;
-            margin-right: 20px;
-            cursor: pointer;
-        }
-        .akun a{
-            text-decoration: none;
-            color: white;
-            font-size: 20px;
-        }
-        .akun img{
-            width: 35px;
-            height: 35px;
-        }
-        /*JUDUL*/
-        .judul{
-            margin-top: 20px;
-            margin-left :40%;
-        }
-        .judul font{
-            background-color: transparent;
-            padding: 7px 60px 7px 60px;
-            text-align: center;
-            font-size: 45px;
-            color: black;
-            font-weight: bold;
-            border-bottom: 5px double white;
-        }
-        /*CONTENT*/
-        .content li{
-            list-style: none;
-            position: relative;
-            font-family: Calibri;
-            font-size: 18px;
-        }
-        .detail{
-            width: 60%;
-            z-index: 1;
-            top: 50px;
-            left: 210px;
-            padding: 5% 5% 7% 5%;
-            background-color: white;
-            border: 6px solid midnightblue;
-        }
-        .detail td{
-            width: 200px;
-        }
-        #jumlah{
-            font-weight: bold;
-            font-size: 20px;
-        }
-        /*LOGO-BUKTI*/
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    @font-face {
+        font-family: "Freestyle Script";
+        src: url('Freestyle Script.ttf');
+    }
+    body {
+        background-color: mediumturquoise;
+    }
+    /*HEADER*/
+    .header{
+        background-color: #012F52;
+        height: 90px;
+        width: 100%;
+    }
+    /*LOGO*/
+    .logo{
+        float: left;
+        width: 170px;
+    }
+    .logo img{
+        align:left;
+        height: 90px;
+        width: 170px;
+    }
+    /*AKUN*/
+    .akun button{
+        float: right;
+        background-color: transparent;
+        border: none;
+        margin-top: 20px;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    .akun a{
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+    }
+    .akun img{
+        width: 35px;
+        height: 35px;
+    }
+    /*JUDUL*/
+    .judul{
+        margin-top: 20px;
+        margin-left :35%;
+    }
+    .judul font{
+        font-family: "Caveat Brush";
+        background-color: transparent;
+        padding: 7px 60px 7px 60px;
+        text-align: center;
+        font-size: 45px;
+        color: black;
+        font-weight: bold;
+        border-bottom: 5px double white;
+    }
+    /* CONTENT */
+    .content li{
+        list-style: none;
+        font-family: Calibri;
+        font-size: 18px;
+    }
+    .detail{
+        position: relative;
+        width: 60%;
+        z-index: 1;
+        top: 50px;
+        left: 15%;
+        padding: 5% 5% 7% 5%;
+        background-color: white;
+        border: 6px solid midnightblue;
+    }
+    .detail td{
+        width: 200px;
+    }
+    /*LOGO-BUKTI*/
         #logo-bukti{
+            position: absolute;
             z-index: 5;
-            left: 1000px;
-            bottom: 450px;
+            left: 74%;
+            top: 35%;
         }
         #logo-bukti img{
             width: 150px;
             height: 80px;
         }
-        /*BARCODE*/
+        /* BARCODE*/
         #barcode{
+            position: absolute;
             z-index: 5;
-            left: 800px;
-            bottom: 400px;
+            left: 65%;
+            top: 60%;
         }
         #barcode img{
-            width: 14%
+            width: 35%;
         }
         /*DONE*/
         #done{
-            left: 1050px;
-            bottom: 220px;
+            position: absolute;
+            z-index: 5;
+            left: 76%;
+            top: 111%;
         }
         #done button{
             background-color: midnightblue;
@@ -122,33 +126,39 @@
             background-color:#7FFF00;
             color: black;
         }
-        /*FOOTER*/
+    /*FOOTER*/
         .footer{
-            position: absolute;
-            margin-bottom: 0px;
+            bottom: 0px;
             width: 100%;
             background-color: #B3FF9E;
             height: 90px;
             font-family: Calibri;
             font-size: 15px;
         }
-        .footer .footer-menu{
-            margin-top: 20px; 
+        .footer-menu{
+            position: absolute;
+            margin-top: 20px;
+            list-style: none;
         }
-        .footer .footer-menu li a{
+        .footer-menu li a{
             text-decoration: none;
             margin-left: 30px;
             color: black;
         }
-        .footer .footer-menu li a:hover{
+        .footer-menu li a:hover{
             color:#012F52;
         }
         .sosmed{
+            float: right;
+            margin-right: 30px;
+            margin-top: 20px;
             text-align: center;
             list-style: none;
             float: right;
-            margin-right: 30px;
             color: black;
+        }
+        .sosmed li a{
+            padding: 10px;
         }
         .sosmed img{
             width: 25px;
@@ -156,8 +166,30 @@
         }
         .footer h5{
             text-align: left;
-            margin-left: 600px;
+            margin-left: 45%;
+            margin-top: 50px;
             color: black;
+        }
+        @media screen and (max-width: 600px){
+            .footer{
+                height: 100px;
+            }
+            .footer-menu{
+                margin-top: 10px;
+                margin-left: 30px;
+            }
+            .sosmed{
+                margin-top: 30px;
+                margin-right: 33%;
+            }
+            .footer h5{
+                margin-left: 28%;
+            }
+        }
+        @media screen and (max-width: 840px){
+            .judul{
+                margin-left: 10%;
+            }
         }
     </style>
 </head>
@@ -170,8 +202,8 @@
             <button type="button"><a href="Akun.html"><img src="img/user_akun.png" alt="profile"><br><font face="Freestyle script">Hi, Mr.Travel!</a></font></button>
         </div>
     </div>
-    <div class="judul"><font face="Freestyle script">Proof of Payment</font></div>
     <div class="content">
+        <div class="judul"><font face="#">Proof of Payment</font></div>
         <li class="detail">
             <table>
                 <tr>
@@ -198,7 +230,8 @@
                     <td>Nama Tour Guide</td>
                     <td>: -</td>
                 </tr>
-            </table><br>
+            </table>
+            <br>
             <table>
                 <tr>
                     <td id="rincian">Rincian Pembayaran</td>
@@ -233,21 +266,22 @@
         <li id="barcode"><img src="img/qr.png"></li>
         <li id="done"><a href="index.html"><button type="button">Done</button></a></li>
     </div>
+    <br><br><br><br><br><br>
     <div class="footer">
         <ul class="footer-menu">
             <li>
                 <a class="cookie" href="CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
                 <a class="aboutUs" href="AboutUs.html">About us&emsp;&emsp;|</a>
                 <a class="contact" href="ContactUs.html">Contact Us</a>
-                <ul class="sosmed">
-                    <li>
-                        Follow us on :<br>
-                        <a class="instagram" href="instagram.com/BeautyEastJava"><img src="img/instagram.png" alt=""></a>
-                        <a class="facebook" href="facebook.com/BeautyEastJava"><img src="img/facebook.png" alt=""></a>
-                        <a class="twitter" href="twitter.com/BeautyEastJava"><img src="img/twitter.png" alt=""></a>
-                        <a class="youtube" href="youtube.com/BeautyEastJava"><img src="img/youtube.png" alt=""></a>
-                    </li>
-                </ul>
+            </li>
+        </ul>
+        <ul class="sosmed">
+            <li>
+                Follow us on :<br>
+                <a class="instagram" href="http://www.instagram.com"><img src="img/instagram.png" alt=""></a>
+                <a class="facebook" href="http://www.facebook.com"><img src="img/facebook.png" alt=""></a>
+                <a class="twitter" href="http://www.twitter.com"><img src="img/twitter.png" alt=""></a>
+                <a class="youtube" href="http://www.youtube.com"><img src="img/youtube.png" alt=""></a>
             </li>
         </ul><br>
         <h5>&copy;Copyright 2019 BeautyofEastJava</h5>

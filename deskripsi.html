@@ -209,11 +209,11 @@
                 font-size: 30px;
             }
             .gambar{ /*lebar slide pada halaman*/
-                width: 500px;
+                width: 550px;
                 height: 250px;
             }
             .slide img{
-                width: 500px;
+                width: 550px;
                 height: 250px;
             }
             .slider{ /*lebar slide pada halaman*/
@@ -221,7 +221,7 @@
                 height: 250px;
             }
             .slide{
-                width: 500px;
+                width: 550px;
                 height: 250px;
             }
             .slide-holder{
@@ -234,13 +234,110 @@
                     transform: translateX(0);
                 }
                 33%{
-                    -webkit-transform: translateX(-500px);
-                    transform: translateX(-500px);
+                    -webkit-transform: translateX(-550px);
+                    transform: translateX(-550px);
                 }
                 66% {
-                    -webkit-transform: translateX(-1000px);
-                    transform: translateX(-1000px);
+                    -webkit-transform: translateX(-1100px);
+                    transform: translateX(-1100px)
                 }
+            }
+        }
+        @media screen and (max-width: 560px) {
+            .gambar{ /*lebar slide pada halaman*/
+                width: 400px;
+                height: 250px;
+            }
+            .slide img{
+                width: 400px;
+                height: 250px;
+            }
+            .slider{ /*lebar slide pada halaman*/
+                width: 400px;
+                height: 250px;
+            }
+            .slide{
+                width: 400px;
+                height: 250px;
+            }
+            .slide-holder{
+                -webkit-animation: scroller 20s infinite;
+                animation: scroller 20s infinite;
+            }
+            @-webkit-keyframes scroller{
+                0%{
+                    -webkit-transform: translateX(0);
+                    transform: translateX(0);
+                }
+                33%{
+                    -webkit-transform: translateX(-400px);
+                    transform: translateX(-400px);
+                }
+                66% {
+                    -webkit-transform: translateX(-800px);
+                    transform: translateX(-800px)
+                }
+            }
+        }
+        /* RESPONSIVE */
+        @media screen and (max-width: 765px){
+            .menu-utama, .akun{
+                display: none;
+            }
+            #open_menu{
+                display: block;
+                background-color: transparent;
+                width: 30px;
+                height: 30px;
+                float: right;
+                margin-top: 20px;
+                margin-right: 10px;
+            }
+            #open_menu img{
+                width: 30px;
+                height: 30px;
+            }
+            #open_menu:hover ul{
+                display: block;
+                float: right;
+                top: -5px;
+            }
+            #open_menu ul{
+                display: none;
+                position: relative;
+                z-index: 10;
+                background-color:#B3FF9E;
+                width: 170px;
+            }
+            #open_menu ul a{
+                text-decoration: none;
+                list-style: none;
+            }
+            #open_menu ul a li {
+                padding: 5px 10px 5px 10px;
+                color: black;
+                font-family: calibri;
+                font-size: 18px;
+            }
+            #open_menu ul li:hover{
+                background-color: #2F8758;
+                color: white;
+            }
+        }
+        @media screen and (max-width: 600px){
+            .footer{
+                height: 100px;
+            }
+            .footer-menu{
+                margin-top: 10px;
+                margin-left: 30px;
+            }
+            .sosmed{
+                margin-top: 30px;
+                margin-right: 33%;
+            }
+            .footer h5{
+                margin-left: 28%;
             }
         }
     </style>

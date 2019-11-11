@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin - Wisata</title>
+    <title>Admin - Event</title>
     <link rel="icon" href="img/Ikon.ico">
     <style>
         *{
             margin: 0px;
             padding: 0px;
+            box-sizing: border-box;
         }
         /*HEADER*/
         .header{
@@ -48,10 +49,6 @@
             background-color: white;     
             color:#2F8758;
         }
-        /* .gambar img:hover {
-            transform: scale(1.3);
-        } */
-        /*AKUN*/
         .akun img{
             height: 40px;
             width: 40px;
@@ -61,21 +58,33 @@
             margin-left: 5px;
             cursor: pointer;
         }
+        /* .header{
+            height: 20px;
+            background-color: tomato;
+        } */
+
         /*CONTENT*/
         /*JUDUL*/
-        .namaKota{
-            margin-top: 20px;
-            margin-left :42%;
+        @font-face {
+            font-family: "CaveatBrush";
+            src: url('CaveatBrush.ttf');
         }
-        .namaKota font{
+        .judul{
+            list-style: none;
+            margin-top: 20px;
+            margin-left :35%;
+        }
+        .judul font{
+            font-family: "Caveat Brush";
             background-color: transparent;
             padding: 7px 60px 7px 60px;
             text-align: center;
-            font-size: 45px;
+            font-size: 40px;
             color: black;
             font-weight: bold;
             border-bottom: 5px double mediumturquoise;
         }
+
         /*TOMBOL TAMBAH*/
         .tombol button {
             padding: 10px 40px 10px 40px;
@@ -83,7 +92,7 @@
             border: 0px;
             cursor: pointer;
             margin-top: 80px;
-            margin-left: 45%;
+            margin-left: 44%;
             font-size: 15px;
             font-weight: bold;
             /*text-align: center;*/
@@ -92,140 +101,25 @@
             background-color: deepskyblue;
             color: white;
         }
-        /*CARI*/
-        .cari {
-            top: 120px;
-            background: #B3FF9E;
-            width: 200px;
-            height: 500px;
-            padding-right: 40px;/*search*/
-            position: fixed;
-            z-index: 100; /*biar selalu di atas*/
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
-            left: -200px; /*kedalaman*/
-            transition: 0.3s;
-            color: black;
-        }
-        .cari:hover {
-         transform: translate(150px, 0);
-         animation-timing-function: 1s ease-in; /*awal pelan*/
-        }
-        .cari .title {
-            top: 50%;
-            position: absolute;
-            transform: rotate(270deg);
-            right: 0px;
-            font-weight: 800;
-            font-size: 15px;
-        }
-        .cariKota{
-            position: absolute;
-            top: 15px;
-        }
-        .cariKota input{
-            width: 140px;
-            float: right;
-            margin-right: 40px;
-        }
-        .cariKota button{
-            width: 80px;
-            float: right;
-            margin-top: 5px;
-            margin-left: 27px;
-            margin-right: 70px;
-            background-color: lightseagreen;
-            border: none;
-            padding-top: 3px;
-            padding-bottom: 3px;
-            color: white;
-        }
-        .cari .listKota {
-            position: absolute;
-            top: 15%;
-            left: 60px;
-            font-family: calibri;
-            font-size: 16px;
-            width: 130px;
-            height: 400px;
-            overflow-y: auto;
-        }
-        .cari .listKota li {
-            line-height: 30px;
-            list-style: none;
-        }
-        .cari .listKota li a {
-            text-decoration: none;
-            color: black;
-        }
-        .cari .listKota li a:hover{
-            color: lightseagreen;
-        }
-        /*GAMBAR*/
-        .gambar img{
-            margin-left: 40px;
-        }
-        .th button{
-            padding: 5px;
-            width: 100px;
-            background-color: #20B2AA;
-            text-align: center;
-            position: relative;
-            left: 18px;
-        }
-        .item_gambar{
-            float: left;
-            padding: 5px;
-            width: 23%;
-            margin-right: 5px;
-            margin-top: 10px;
-            text-align: center;
-        }
-        .gambar_wrap{
-            /*width: 200px;*/
-            margin: auto;
-        }
-        .gambar_wrap img{
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-        
-        @media screen and (max-width:1000px){
-            .gambar img{
-                width: 180px;
-                height: 80px;
-            }
-        }
-        @media screen and (max-width: 900px){
-            .item_gambar{
-                width: 40%;
-            }
-        }
-        @media screen and (max-width: 600px){
-            .item_gambar{
-                width: 90%;
-                padding-right: 10px;
-            }
-        }
         /*FOOTER*/
         .footer{
-            bottom: 0px;
-            position: fixed;
+            margin-bottom: 0px;
+            position: absolute;
             width: 100%;
             background-color: #B3FF9E;
             height: 90px;
             font-family: Calibri;
             font-size: 15px;
         }
-        .footer .footer-menu{
+        .footer-menu{
             margin-top: 20px; 
         }
-        .footer .footer-menu li a{
+        .footer-menu li a{
             text-decoration: none;
             margin-left: 30px;
             color: black;
         }
-        .footer .footer-menu li a:hover{
+        .footer-menu li a:hover{
             color:#012F52;
         }
         .sosmed{
@@ -244,49 +138,58 @@
             margin-left: 600px;
             color: black;
         }
-        @media screen and (max-width: 765px){
-            .menu-utama, .akun{
-                display: none;
+        /* GAMBAR */
+        .gambar_menu{
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        .gambar {
+            padding: 10px;
+            float: left;
+            width: 25%;
+            font-family: calibri;
+        }
+        .item_gambar img {
+            width: 100%;
+        }
+        .menuItemGambar{
+            margin-left: 175px;
+        }
+        .menuItemGambar button{
+            background-color: darkturquoise;
+            border: 0px;
+            padding: 5px 10px 5px 10px;
+            cursor: pointer;
+        }
+        .menuItemGambar button:hover{
+            background-color: #7fff00;
+        }
+        .nama_wisata {
+            margin-top: -10px;
+            padding: 15px;
+            text-align: center;
+        }
+        @media only screen and (max-width: 1000px){
+            .gambar {
+                width: 30%;
+                margin: 10px;
             }
-            #open_menu{
-                display: block;
-                background-color: transparent;
-                width: 30px;
-                height: 30px;
-                float: right;
-                margin-top: 20px;
-                margin-right: 10px;
+        }
+        @media only screen and (max-width: 850px){
+            .gambar {
+                width: 45%;
+                margin: 10px;
             }
-            #open_menu img{
-                width: 30px;
-                height: 30px;
+        }
+        @media only screen and (max-width: 600px){
+            .gambar {
+                width: 100%;
             }
-            #open_menu:hover ul{
-                display: block;
-                float: right;
-                top: -5px;
-            }
-            #open_menu ul{
-                display: none;
-                position: relative;
-                z-index: 10;
-                background-color:#B3FF9E;
-                width: 170px;
-            }
-            #open_menu ul a{
-                text-decoration: none;
-                list-style: none;
-            }
-            #open_menu ul a li {
-                padding: 5px 10px 5px 10px;
-                color: black;
-                font-family: calibri;
-                font-size: 18px;
-            }
-            #open_menu ul li:hover{
-                background-color: #2F8758;
-                color: white;
-            }
+        }
+        .all_gambar:after {
+            content: "";
+            display: table;
+            clear: both;
         }
     </style>
 </head>
@@ -311,206 +214,122 @@
         </div>
     </div>
     <div class="content">
-        <div class="namaKota"><font face="Freestyle script">East Java's Event</font></div>
+        <div class="judul">
+            <font face="#">East Java's Event</font>
+        </div>
         <div class="tombol">
             <a href="adminTambahItemEvent.html"><button type="button">Add Event</button></a>
         </div>
-        <div class="cari">
-            <div class="title">SEARCH</div>
-            <div class="cariKota">
-                <input type="search">
-                <button type="button">Search</button>
+        <br>
+        <div class="gambar_menu">
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#">
+                        <img src="img/EMajapahit.jpg" height="180px">
+                    </a>
+                </div>
+                <div class="menuItemGambar">
+                    <a href="adminEditItemEvent.html" class="editItem"><button>Edit</button></a>
+                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                </div>
+                <div class="nama_wisata">Majapahit International Travel Tour</div>
             </div>
-            <ul class="listKota">
-                <li><a href="#">Bangkalan</a></li>
-                <li><a href="#">Banyuwangi</a></li>
-                <li><a href="#">Batu</a></li>
-                <li><a href="#">Blitar</a></li>
-                <li><a href="#">Bojonegoro</a></li>
-                <li><a href="#">Bondowoso</a></li>
-                <li><a href="#">Gresik</a></li>
-                <li><a href="#">Jember</a></li>
-                <li><a href="#">Jombang</a></li>
-                <li><a href="#">Kediri</a></li>
-                <li><a href="#">Lamongan</a></li>
-                <li><a href="#">Lumajang</a></li>
-                <li><a href="#">Madiun</a></li>
-                <li><a href="#">Magetan</a></li>
-                <li><a href="#">Malang</a></li>
-                <li><a href="#">Mojokerto</a></li>
-                <li><a href="#">Nganjuk</a></li>
-                <li><a href="#">Ngawi</a></li>
-                <li><a href="#">Pacitan</a></li>
-                <li><a href="#">Pamekasan</a></li>
-                <li><a href="#">Pasuruan</a></li>
-                <li><a href="#">Ponorogo</a></li>
-                <li><a href="#">Probolinggo</a></li>
-                <li><a href="#">Simpang</a></li>
-                <li><a href="#">Sidoarjo</a></li>
-                <li><a href="#">Situbondo</a></li>
-                <li><a href="#">Sumenep</a></li>
-                <li><a href="#">Surabaya</a></li>
-                <li><a href="#">Trenggalek</a></li>
-                <li><a href="#">Tuban</a></li>
-                <li><a href="#">Tulungagung</a></li>
-            </ul>
+
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#">
+                        <img src="img/EJFC.jpg" height="180px">
+                    </a>
+                </div>
+                <div class="menuItemGambar">
+                    <a href="adminEditItemEvent.html" class="editItem"><button>Edit</button></a>
+                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                </div>
+                <div class="nama_wisata">Jember Fashion Carnaval</div>
+            </div>
+              
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#.jpg">
+                        <img src="img/EBromo.jpg" height="180px">
+                    </a>
+                </div>
+                <div class="menuItemGambar">
+                    <a href="adminEditItemEvent.html" class="editItem"><button>Edit</button></a>
+                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                </div>
+                <div class="nama_wisata">Yahya Kasada dan Eksotika Bromo</div>
+            </div>
+                  
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#">
+                        <img src="img/EFlower.jpg" height="180px">
+                    </a>
+                </div>
+                <div class="menuItemGambar">
+                    <a href="adminEditItemEvent.html" class="editItem"><button>Edit</button></a>
+                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                </div>
+                <div class="nama_wisata">Flower Fashion Carnaval</div>
+            </div>
+
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#">
+                        <img src="img/ETour.jpg" height="180px">
+                    </a>
+                </div>
+                <div class="menuItemGambar">
+                    <a href="adminEditItemEvent.html" class="editItem"><button>Edit</button></a>
+                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                </div>
+                <div class="nama_wisata">International Tour de Banyuwangi Ijen</div>
+            </div>
+
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#">
+                        <img src="img/EEthno.jpg" height="180px">
+                    </a>
+                </div>
+                <div class="menuItemGambar">
+                    <a href="adminEditItemEvent.html" class="editItem"><button>Edit</button></a>
+                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                </div>
+                <div class="nama_wisata">Banyuwangi Ethno Carnaval</div>
+            </div>
+              
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#">
+                        <img src="img/EGandrung.jpg" height="180">
+                    </a>
+                </div>
+                <div class="menuItemGambar">
+                    <a href="adminEditItemEvent..html" class="editItem"><button>Edit</button></a>
+                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                </div>
+                <div class="nama_wisata">Festival Gandrung Sewu</div>
+            </div>
+                  
+            <div class="gambar">
+                <div class="item_gambar">
+                    <a href="#.jpg">
+                        <img src="img/EJSN.jpg" height="180">
+                    </a>
+                </div>
+                <div class="menuItemGambar">
+                    <a href="adminEditItemWEvent.html" class="editItem"><button>Edit</button></a>
+                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                </div>
+                <div class="nama_wisata">Jatim Spectacular Night</div>
+            </div>
+
+            <div class="all_gambar"></div>
         </div>
-        <div class="gambar">
-            <div class="item_gambar">
-                <div class="gambar_wrap">
-                    <img src="img/EJFC.jpg">
-                </div>
-                <div class="th">
-                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
-                    <button>Hapus</button>
-                </div>
-                <h4>JFC</h4>
-            </div>
-
-            <div class="item_gambar">
-                <div class="gambar_wrap">
-                    <img src="img/EJFC.jpg">
-                </div>
-                <div class="th">
-                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
-                    <button>Hapus</button>
-                </div>
-                <h4>JFC</h4>
-            </div>
-
-            <div class="item_gambar">
-                <div class="gambar_wrap">
-                    <img src="img/EJFC.jpg">
-                </div>
-                <div class="th">
-                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
-                    <button>Hapus</button>
-                </div>
-                <h4>JFC</h4>
-            </div>
-
-            <div class="item_gambar">
-                <div class="gambar_wrap">
-                    <img src="img/EJFC.jpg">
-                </div>
-                <div class="th">
-                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
-                    <button>Hapus</button>
-                </div>
-                <h4>JFC</h4>
-            </div>
-
-            <div class="item_gambar">
-                <div class="gambar_wrap">
-                    <img src="img/EJFC.jpg">
-                </div>
-                <div class="th">
-                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
-                    <button>Hapus</button>
-                </div>
-                <h4>JFC</h4>
-            </div>
-            
-            <div class="item_gambar">
-                <div class="gambar_wrap">
-                    <img src="img/EJFC.jpg">
-                </div>
-                <div class="th">
-                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
-                    <button>Hapus</button>
-                </div>
-                <h4>JFC</h4>
-            </div>
-            
-            <div class="item_gambar">
-                <div class="gambar_wrap">
-                    <img src="img/EJFC.jpg">
-                </div>
-                <div class="th">
-                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
-                    <button>Hapus</button>
-                </div>
-                <h4>JFC</h4>
-            </div>
-            
-            <div class="item_gambar">
-                <div class="gambar_wrap">
-                    <img src="img/EJFC.jpg">
-                </div>
-                <div class="th">
-                    <a href="adminEditItemWisata.html"><button type="button">Edit</button></a>    
-                    <button>Hapus</button>
-                </div>
-                <h4>JFC</h4>
-            </div>
-
-            <!-- table border="0">
-                <tr>
-                    <td colspan="4"><a href="AdminTambahItem.html"><button class="button">Tambah Destinasi</button></a></td>
-                </tr>
-                <tr>
-                    <td><a href="EditJP3.html" title="Edit"><img src="img/MJatimPark3.jpg"></a><br>
-                        <div class="th"><button>Edit</button>    <button>Hapus</button>
-                        </div>
-                    </td>
-                    <td><a href="EditKD.html"><img src="img/MKampungTridi.jpg"></a><br>
-                        <div class="th"><button>Edit</button>    <button>Hapus</button>
-                        </div>
-                    </td>
-                    <td><a href="Selecta.html"><img src="img/MSelecta.jpg"></a><br>
-                        <div class="th"><button>Edit</button>    <button>Hapus</button>
-                        </div>
-                    </td>
-                    <td><a href="MuseumA.html"><img src="img/MMuseumAngkut.png"></a><br>
-                        <div class="th"><button>Edit</button>    <button>Hapus</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Jatim Park 3</td>
-                    <td>Kampung Tridi</td>
-                    <td>Selecta</td>
-                    <td>Museum Angkut</td>
-                </tr>
-                <tr>
-                    <td><a href="MNP.html"><img src="img/MNP.jpg"></td>
-                    <td><a href="ALun2.html"><img src="img/Malun2.jpg"></a></td>
-                    <td><a href="BatuB.html"><img src="img/MPBatuBengkung.jpg"></a></td>
-                    <td><a href="Tiban.html"><img src="img/MMTiban.jpg"></a></td>
-                </tr>
-                <tr>
-                    <td>Malang Night Paradise</td>
-                    <td>Taman ALun-alun Kota Malang</td>
-                    <td>Pantai Batu Bengkung</td>
-                    <td>Masjid Tiban Turen</td>
-                </tr>
-                <tr>
-                    <td><a href="JP1.html"><img src="img/MJatimPark1.jpg"></a></td>
-                    <td><a href="BNS.html"><img src="img/MBNS.jpg"></a></td>
-                    <td><a href="Hawai.html"><img src="img/MHawai.jpg"></a></td>
-                    <td><a href="JP2.html"><img src="img/MJatimPark2.jpg"></a></td>
-                </tr>
-                <tr>
-                    <td>Jatim Park 1</td>
-                    <td>Batu Night Spectacular</td>
-                    <td>Hawai</td>
-                    <td>Jatim Park 2</td>
-                </tr>
-                <tr>
-                    <td><a href="Kalireco.html"><img src="img/MPKalireco.jpg"></a></td>
-                    <td><a href="OmahKayu.html"><img src="img/MOmahKayu.jpg"></a></td>
-                    <td><a href="CandiBatu.html"><img src="img/MCandiBatu.jpg"></a></td>
-                    <td><a href="Paralayang.html"><img src="img/MParalayang.png"></a></td>
-                </tr>
-                <tr>
-                    <td>Pemandian Kalireco</td>
-                    <td>Penginapan Omah Kayu</td>
-                    <td>Candi Batu</td>
-                    <td>Paralayang</td>
-                </tr>
-            </table> -->
-        </div> 
     </div>
+    <br><br><br>
     <div class="footer">
         <ul class="footer-menu">
             <li>
