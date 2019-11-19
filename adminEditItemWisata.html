@@ -49,34 +49,21 @@
         }
         /*CONTENT*/
         .content{
-            background-color: white;
-            border: dotted 8px grey;
-            margin-top: 50px;
-            margin-left: 150px;
-            margin-right: 150px;
-            padding: 50px;
             font-family: calibri;
         }
-        table td textarea{
-            width: 251px;
-            height: 100px;
-        }
-        table td .nama{
-            width: 100px;
-        }
-        .content button{
-            background-color:deepskyblue ;
-            padding: 5px 15px 5px 15px;
-            border: none;
-            font-size: 15px;
-            font-weight: bold;
+        .judul{
             margin-top: 20px;
-            float: right;
-            /*margin-left: 700px;*/
+            margin-left :35%;
         }
-        .content button:hover{
-            background-color: #7FFF00;
-            color: white;
+        .judul font{
+            font-family: "Caveat Brush";
+            background-color: transparent;
+            padding: 7px 60px 7px 60px;
+            text-align: center;
+            font-size: 45px;
+            color: black;
+            font-weight: bold;
+            border-bottom: 5px double white;
         }
         /*FOOTER*/
         .footer{
@@ -115,6 +102,65 @@
             margin-left: 600px;
             color: black;
         }
+        /* PREVIEW */
+		form{
+			padding: 20px;
+			width: 75%;
+			margin: auto;
+			overflow: hidden;
+		}
+		.form_item{
+			display: block;
+			margin: auto;
+			margin-top: 20px;
+		}
+		.form_item label{
+			display: block;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+		.form_item input, .form_item select{
+			padding: 8px;
+			width: 100%;
+		}
+        .upload input{
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0px;
+            margin: -1px;
+            overflow: hidden;
+        }
+        .upload label{
+            background-color: lightslategray;
+            color: white;
+            width: 100px;
+            padding: 3px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #preview{
+            width: 250px;
+            height: 150px;
+            margin: 0px auto;
+			padding: 0px;
+			border: 2px solid lightslategray ;
+            padding: 10px;
+		}
+        #info{
+            font-size: 16px;
+        }
+        #submit button{
+            background-color: midnightblue;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 7px 25px 7px 25px;
+            border: none;
+            cursor: pointer;
+            float: right;
+        }
     </style>
 </head>
 <body>
@@ -127,34 +173,84 @@
         </div>
     </div>
     <div class="content">
-        <table>
-            <tr>
-                <td width="250px">Nama Wisata</td>
-                <td><input type="text" placeholder="Jatim Park 3 Malang"></td>
-            </tr>
-            <tr>
-                <td width="250px">Kota</td>
-                <td><input type="text" placeholder="Malang"></td>
-            </tr>
-            <tr>
-                <td width="250px">Harga Tiket</td>
-                <td><input type="text" placeholder="Rp 200.000"></td>
-            </tr>
-            <tr>
-                <td width="250px">Deskripsi</td>
-                <td><textarea placeholder="terinspirasi dari film Jurassic Park, Manajemen Jatim Park kembali menghadirkan taman permainan baru. Kali ini tema yang diusung adalah kehidupan Dinosaurus. Mahkluk raksasa yang pernah merajai bumi jutaan tahun yang lalu. Masa dimana manusia belum berevolusi menjadi manusia Homo sapien, seperti sekarang ini.
-                    Taman ini dibangun dengan ide untuk memberikan pengalaman “hidup bersama” dinosaurus. Walau tentu saja tidak dengan dinosaurus beneran seperti di film Jurassic Park.Jatim Park 3 dibangun dengan mengandalkan teknologi tinggi. Menghadirkan 3 zone utama, yaitu Museum patung lilin, museum musik, dan yang paling populer Taman dinosaurus.
-                    Jatim Park 3 atau sering disebut sebagai Dino Park, berlokasi di Jalan Raya Insinyur Soekarno, Nomor 144, Beji, Kota Batu Jawa Timur.
-                    Jatim Park 3 memiliki jadwal operasional yang sedikit lebih lama dibandingkan Jatim Park 1 dan Jatim Park 2. Selama weekdays dan weekend serta hari libur JTP 3 buka mulai pukul 11.00 WIB hingga pukul 22.00 WIB.
-                    Hampir semua wahana permainan dibuka bersamaan dengan Jatim Park 3. Kecuali untuk kawasan Dino Park kabarnya mulai buka pukul 11.00 WIB sampai jam 17.00 WIB saja dan wahana The Legend Star yang baru buka pada pukul 13.00 dan tutup pukul 21.00 WIB."></textarea></td>
-            </tr>
-            <br><br>
-            <tr>
-                <td>Masukkan beberapa gambar</td>
-                <td><input type="text" placeholder="MJatimPark3.jpg"><br><input type="text" placeholder="MJatimPark3a.jpg"><br><input type="text" placeholder="MJatimPark3b.jpg"><br><input type="text" placeholder="MJatimPark3c.jpg"></td>
-            </tr>
-        </table>
-        <a href="adminWisata.html"><button type="button">Simpan</button></a>
+            <div class="judul"><font face="#">Edit Item Information</font></div>
+        <form>
+            <div class="form_item">
+                <label>Jenis Menu</label>
+                <select name="jenis"  id="jenis_menu">
+                    <option value>--Pilih Jenis Menu--</option>
+                    <option value="wisata"selected="">Wisata</option>
+                    <option value="event">Event</option>
+                </select>
+            </div>
+            <div class="form_item">
+                <label>Nama</label>
+                <input type="text" name="nama" value="Jatim Park 3">
+            </div>
+            <div class="form_item">
+                <label>Kota</label>
+                <select name="pilih_kota" id="pilih_kota">
+                    <option value>--Pilih Kota--</option>
+                    <option value="Bangkalan">Bangkalan</option>
+                    <option value="Banyuwangi">Banyuwangi</option>
+                    <option value="Batu">Batu</option>
+                    <option value="Blitar">Blitar</option>
+                    <option value="Bojonegoro">Bojonegoro</option>
+                    <option value="Bondowoso">Bondowoso</option>
+                    <option value="Gresik">Gresik</option>
+                    <option value="Jember">Jember</option>
+                    <option value="Jombang">Jombang</option>
+                    <option value="Kediri">Kediri</option>
+                    <option value="Lamongan">Lamongan</option>
+                    <option value="Lumajang">Lumajang</option>
+                    <option value="Madiun">Madiun</option>
+                    <option value="Magetan">Magetan</option>
+                    <option value="Malang" selected="">Malang</option>
+                    <option value="Mojokerto">Mojokerto</option>
+                    <option value="Nganjuk">Nganjuk</option>
+                    <option value="Ngawi">Ngawi</option>
+                    <option value="Pacitan">Pacitan</option>
+                    <option value="Pamekasan">Pamekasan</option>
+                    <option value="Pasuruan">Pasuruan</option>
+                    <option value="Ponorogo">Ponorogo</option>
+                    <option value="Probolinggo">Probolinggo</option>
+                    <option value="Simpang">Simpang</option>
+                    <option value="Sidoarjo">Sidoarjo</option>
+                    <option value="Situbondo">Situbondo</option>
+                    <option value="Sumenep">Sumenep</option>
+                    <option value="Surabaya">Surabaya</option>
+                    <option value="Trenggalek">Trenggalek</option>
+                    <option value="Tuban">Tuban</option>
+                    <option value="Tulungagung">Tulungagung</option>
+                </select>
+            </div>
+            <div class="form_item">
+                <label>Harga Tiket</label>
+                <input type="text" name="harga" value="Rp200.000">
+            </div>
+            <div class="form_item">
+                <label>Deskripsi</label>
+                <input value="Terinspirasi dari film Jurassic Park, Manajemen Jatim Park kembali menghadirkan taman permainan baru. Kali ini tema yang diusung adalah kehidupan Dinosaurus. Mahkluk raksasa yang pernah merajai bumi jutaan tahun yang lalu. Masa dimana manusia belum berevolusi menjadi manusia Homo sapien, seperti sekarang ini.
+                Taman ini dibangun dengan ide untuk memberikan pengalaman “hidup bersama” dinosaurus. Walau tentu saja tidak dengan dinosaurus beneran seperti di film Jurassic Park.Jatim Park 3 dibangun dengan mengandalkan teknologi tinggi. Menghadirkan 3 zone utama, yaitu Museum patung lilin, museum musik, dan yang paling populer Taman dinosaurus.
+                Jatim Park 3 atau sering disebut sebagai Dino Park, berlokasi di Jalan Raya Insinyur Soekarno, Nomor 144, Beji, Kota Batu Jawa Timur.
+                Jatim Park 3 memiliki jadwal operasional yang sedikit lebih lama dibandingkan Jatim Park 1 dan Jatim Park 2. Selama weekdays dan weekend serta hari libur JTP 3 buka mulai pukul 11.00 WIB hingga pukul 22.00 WIB.
+                Hampir semua wahana permainan dibuka bersamaan dengan Jatim Park 3. Kecuali untuk kawasan Dino Park kabarnya mulai buka pukul 11.00 WIB sampai jam 17.00 WIB saja dan wahana The Legend Star yang baru buka pada pukul 13.00 dan tutup pukul 21.00 WIB."></input>
+            </div>
+            <div class="form_item">
+                <label>Upload Gambar</label>
+                <div class="upload">
+                    <label for="img">Choose File</label>
+					<input type="file" id="img" accept="image" style="margin: 0px auto">
+                    <!-- <div id="preview"> -->
+                        <img id="preview">
+                        <!-- <span>No File Choosed</span> -->
+                    </div>
+					<div id="info"></div>
+				</div>
+            <div id="submit">
+                <a href="#"><button type="submit">Save</button></a>
+            </div>
+        </form>
     </div>
     <div class="footer">
         <ul class="footer-menu">
@@ -176,4 +272,47 @@
         <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
     </div>
 </body>
+<script src="jQuery.js"></script>
+<script type="text/javascript">
+    $.fn.uploadGambar = function () { //extending jquery
+	this.change(function(event) {
+    	if(this.files.length > 0){
+    		console.log(this.files[0]);
+ 			var name = this.files[0].name;
+ 			var size = this.files[0].size;
+
+ 			var ukuran = "";
+ 			if (size >= 1000000 ) { //MB
+ 				size = Math.ceil(size/1000000); 
+ 				ukuran = size + "MB"; 
+ 			} 
+ 			else if (size >= 1000) { //KB
+ 				size = Math.ceil(size/1000);
+ 				ukuran = size + "KB";
+ 			}
+ 			else if(size < 1000){
+ 				ukuran = size + "Byte";
+ 			}
+ 			
+ 			$("#info").html(`
+ 				<p>Nama File : `+name+`</p>
+ 				<p>Ukuran File : `+ukuran+`</p>
+ 				`
+ 			);
+    		
+    		if (this.files && this.files[0]) {
+    		  var reader = new FileReader();
+
+    		  reader.onload = function(e) {
+    		    $('#preview').show();
+    		    $('#preview').attr('src', e.target.result);
+    		  }
+
+    		  reader.readAsDataURL(this.files[0]);
+    		}
+    	}
+	});
+}
+$("#img").uploadGambar();
+</script>
 </html>

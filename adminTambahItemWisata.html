@@ -51,68 +51,69 @@
             margin-top: -20px;
         }
         /*CONTENT*/
-        .content{
-            background-color: white;
-            border: dotted 8px grey;
+        @font-face {
+            font-family: "CaveatBrush";
+            src: url('CaveatBrush.ttf');
+        }
+        .judul{
+            margin-top: 20px;
+            margin-left :25%;
+        }
+        .judul font{
+            font-family: "Caveat Brush";
+            background-color: transparent;
+            padding: 7px 60px 7px 60px;
+            text-align: center;
+            font-size: 45px;
+            color: black;
+            font-weight: bold;
+            border-bottom: 5px double white;
+        }
+        .content form{
             margin-top: 50px;
-            margin-left: 200px;
-            margin-right: 200px;
-            padding-left: 50px;
-            padding-bottom: 100px;
-            font-family: calibri;
+            font-family: Calibri;
+            font-size: 18px;
         }
-        table td{
-            height: 25px;
-            width: 300px;
-        }
-        table td input{
-            width: 250px;
-        }
-        table td textarea{
-            width: 251px;
+        .content textarea{
+            width: 100%;
             height: 100px;
         }
-        .content button{
-            background-color:deepskyblue ;
-            padding: 5px 15px 5px 15px;
-            border: none;
-            font-size: 15px;
-            font-weight: bold;
-            margin-top: 20px;
-            float: right;
-            /*margin-left: 700px;*/
-        }
-        .content button:hover{
-            background-color: #7FFF00;
-            color: white;
+        .form_item label{
+            width: 200px;
         }
         /*FOOTER*/
         .footer{
-            position: absolute;
-            margin-bottom: 0px;
+            bottom: 0px;
             width: 100%;
             background-color: #B3FF9E;
             height: 90px;
             font-family: Calibri;
             font-size: 15px;
         }
-        .footer .footer-menu{
-            margin-top: 20px; 
+        .footer-menu{
+            position: absolute;
+            margin-top: 20px;
+            list-style: none;
         }
-        .footer .footer-menu li a{
+        .footer-menu li a{
             text-decoration: none;
             margin-left: 30px;
             color: black;
         }
-        .footer .footer-menu li a:hover{
+        .footer-menu li a:hover{
             color:#012F52;
         }
         .sosmed{
+            float: right;
+            margin-right: 30px;
+            margin-top: 20px;
             text-align: center;
             list-style: none;
             float: right;
-            margin-right: 30px;
             color: black;
+        }
+        .sosmed li a{
+            padding: 10px;
         }
         .sosmed img{
             width: 25px;
@@ -120,69 +121,154 @@
         }
         .footer h5{
             text-align: left;
-            margin-left: 600px;
+            margin-left: 45%;
+            margin-top: 50px;
             color: black;
+        }
+        /* PREVIEW */
+		form{
+			padding: 20px;
+			width: 75%;
+			margin: auto;
+			overflow: hidden;
+		}
+		.form_item{
+			display: block;
+			margin: auto;
+			margin-top: 20px;
+		}
+		.form_item label{
+			display: block;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+		.form_item input, .form_item select{
+			padding: 8px;
+			width: 100%;
+		}
+        .upload input{
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0px;
+            margin: -1px;
+            overflow: hidden;
+        }
+        .upload label{
+            background-color: lightslategray;
+            color: white;
+            padding: 3px 5px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #preview{
+            width: 250px;
+            height: 150px;
+            margin: 0px auto;
+			padding: 0px;
+			border: 2px solid lightslategray ;
+            padding: 10px;
+		}
+        #info{
+            font-size: 16px;
+        }
+        #submit button{
+            background-color: midnightblue;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 7px 25px 7px 25px;
+            border: none;
+            cursor: pointer;
+            float: right;
         }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="logo">
-            <a href="HomeD.html"><img src="img/Logo.png"></a>
+            <a href="adminWisata.html"><img src="img/Logo.png"></a>
         </div>
         <div class="akun">
             <button type="button"><a href="Akun.html"><img src="img/user_akun.png" alt="profile"><br><font face="Freestyle script">Admin</a></font></button>
         </div>
     </div>
     <div class="content">
-        <table>
-            <tr>
-                <td>Nama Wisata</td>
-                <td><input type="text" name="judul"></td>
-            </tr>
-            <tr>
-                <td>Kota</td>
-                <td><input type="text" name="kota"></td>
-            </tr>
-            <tr>
-                <td>Harga Tiket</td>
-                <td><input type="text" name="harga"></td>
-            </tr>
-            <tr>
-                <td>Deskripsi</td>
-                <td><textarea></textarea></td>
-            </tr>
-            <br><br>
-            <tr>
-                <td>Masukkan beberapa gambar</td>
-                <td><div class="Tambahgbr">
-                        <input type="file" id="imgUpload" accept="picture/*">
+        <div class="judul"><font face="#">Add Item of Destination or Event</font></div>
+        <form>
+            <div class="form_item">
+                <label>Jenis Menu</label>
+                <select name="jenis"  id="jenis_menu">
+                    <option value>--Pilih Jenis Menu--</option>
+                    <option value="wisata">Wisata</option>
+                    <option value="event">Event</option>
+                </select>
+            </div>
+            <div class="form_item">
+                <label>Nama</label>
+                <input type="text" name="nama">
+            </div>
+            <div class="form_item">
+                <label>Kota</label>
+                <select name="pilih_kota" id="pilih_kota">
+                    <option value>--Pilih Kota--</option>
+                    <option value="Bangkalan">Bangkalan</option>
+                    <option value="Banyuwangi">Banyuwangi</option>
+                    <option value="Batu">Batu</option>
+                    <option value="Blitar">Blitar</option>
+                    <option value="Bojonegoro">Bojonegoro</option>
+                    <option value="Bondowoso">Bondowoso</option>
+                    <option value="Gresik">Gresik</option>
+                    <option value="Jember">Jember</option>
+                    <option value="Jombang">Jombang</option>
+                    <option value="Kediri">Kediri</option>
+                    <option value="Lamongan">Lamongan</option>
+                    <option value="Lumajang">Lumajang</option>
+                    <option value="Madiun">Madiun</option>
+                    <option value="Magetan">Magetan</option>
+                    <option value="Malang">Malang</option>
+                    <option value="Mojokerto">Mojokerto</option>
+                    <option value="Nganjuk">Nganjuk</option>
+                    <option value="Ngawi">Ngawi</option>
+                    <option value="Pacitan">Pacitan</option>
+                    <option value="Pamekasan">Pamekasan</option>
+                    <option value="Pasuruan">Pasuruan</option>
+                    <option value="Ponorogo">Ponorogo</option>
+                    <option value="Probolinggo">Probolinggo</option>
+                    <option value="Simpang">Simpang</option>
+                    <option value="Sidoarjo">Sidoarjo</option>
+                    <option value="Situbondo">Situbondo</option>
+                    <option value="Sumenep">Sumenep</option>
+                    <option value="Surabaya">Surabaya</option>
+                    <option value="Trenggalek">Trenggalek</option>
+                    <option value="Tuban">Tuban</option>
+                    <option value="Tulungagung">Tulungagung</option>
+                </select>
+            </div>
+            <div class="form_item">
+                <label>Harga Tiket</label>
+                <input type="text" name="harga">
+            </div>
+            <div class="form_item">
+                <label>Deskripsi</label>
+                <textarea></textarea>
+            </div>
+            <div class="form_item">
+                <label>Upload Gambar</label>
+                <div class="upload">
+                    <label for="img">Choose File</label>
+					<input type="file" id="img" accept="image" style="margin: 0px auto">
+                    <!-- <div id="preview"> -->
+                        <img id="preview">
+                        <!-- <span>No File Choosed</span> -->
                     </div>
-                    <div id="preview_vid">
-                        <span>No File Choosed</span>
-                    </div>
-                    <div id="file_info">
-                        
-                    </div>
-                    <hr/>
-
-                    <!-- <div id="imgPreview" class="thumbnail" style="display:none">
-                        <img class="img-responsive" id="targetImg">
-                        <div class="caption">
-                            <span id="description"></span>
-                        </div>
-                    </div>     -->
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="adminWisata.html"><button type="button">Kembali</button></a>
-                </td>
-                <td>
-                    <a href="adminWisata.html"><button type="button">Tambahkan</button></a>
-                </td>
-            </tr>
-        </table>
+					<div id="info"></div>
+				</div>
+            <div id="submit">
+                <a href="#"><button type="submit">Save</button></a>
+            </div>
+        </form>
     </div>
     <div class="footer">
         <ul class="footer-menu">
@@ -190,88 +276,61 @@
                 <a class="cookie" href="CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
                 <a class="aboutUs" href="AboutUs.html">About us&emsp;&emsp;|</a>
                 <a class="contact" href="ContactUs.html">Contact Us</a>
-                <ul class="sosmed">
-                    <li>
-                        Follow us on :<br>
-                        <a class="instagram" href="instagram.com/BeautyEastJava"><img src="img/instagram.png" alt=""></a>
-                        <a class="facebook" href="facebook.com/BeautyEastJava"><img src="img/facebook.png" alt=""></a>
-                        <a class="twitter" href="twitter.com/BeautyEastJava"><img src="img/twitter.png" alt=""></a>
-                        <a class="youtube" href="youtube.com/BeautyEastJava"><img src="img/youtube.png" alt=""></a>
-                    </li>
-                </ul>
+            </li>
+        </ul>
+        <ul class="sosmed">
+            <li>
+                Follow us on :<br>
+                <a class="instagram" href="http://www.instagram.com"><img src="img/instagram.png" alt=""></a>
+                <a class="facebook" href="http://www.facebook.com"><img src="img/facebook.png" alt=""></a>
+                <a class="twitter" href="http://www.twitter.com"><img src="img/twitter.png" alt=""></a>
+                <a class="youtube" href="http://www.youtube.com"><img src="img/youtube.png" alt=""></a>
             </li>
         </ul><br>
         <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
     </div>
 </body>
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/sidebar.js"></script>
+<script src="jQuery.js"></script>
 <script type="text/javascript">
-    $.fn.Tambahgbr = function () {
-        this.change(function() {
-            if(this.files.length > 0){
-                var url =  window.URL.createObjectURL(this.files[0]);
-                $("#preview_vid").html(`
-                    <video src="`+url+`" controls="" autoplay=""></video>
-                    `
-                );
-                var new_vid = $("#preview_vid video");
-                new_vid.onload = function () {
-                    window.URL.revokeObjectURL(url);
-                };
-                var name = this.files[0].name;
-                var size = this.files[0].size;
-                var ukuran = "";
-                if (size >= 1000000 ) { //MB
-                    size = Math.ceil(size/1000000); 
-                    ukuran = size + "MB"; 
-                } 
-                else if (size >= 1000) { //KB
-                    size = Math.ceil(size/1000);
-                    ukuran = size + "KB";
-                }
-                else if(size < 1000){
-                    ukuran = size + "Byte";
-                }
-                
-                $("#file_info").html(`
-                    <p>Nama File : `+name+`</p>
-                    <p>Ukuran File : `+ukuran+`</p>
-                    `
-                );
-            }
-        });
-    }
-    $("#btn_file").uplaodVideo();
+    $.fn.uploadGambar = function () { //extending jquery
+	this.change(function(event) {
+    	if(this.files.length > 0){
+    		console.log(this.files[0]);
+ 			var name = this.files[0].name;
+ 			var size = this.files[0].size;
+
+ 			var ukuran = "";
+ 			if (size >= 1000000 ) { //MB
+ 				size = Math.ceil(size/1000000); 
+ 				ukuran = size + "MB"; 
+ 			} 
+ 			else if (size >= 1000) { //KB
+ 				size = Math.ceil(size/1000);
+ 				ukuran = size + "KB";
+ 			}
+ 			else if(size < 1000){
+ 				ukuran = size + "Byte";
+ 			}
+ 			
+ 			$("#info").html(`
+ 				<p>Nama File : `+name+`</p>
+ 				<p>Ukuran File : `+ukuran+`</p>
+ 				`
+ 			);
+    		
+    		if (this.files && this.files[0]) {
+    		  var reader = new FileReader();
+
+    		  reader.onload = function(e) {
+    		    $('#preview').show();
+    		    $('#preview').attr('src', e.target.result);
+    		  }
+
+    		  reader.readAsDataURL(this.files[0]);
+    		}
+    	}
+	});
+}
+$("#img").uploadGambar();
+</script>
 </html>
-// <script src="jQuery.js"></script>
-<!-- <script type="text/javascript"> -->
-//     $(document).ready(function () {
-//         $("#imgUpload").change(function () {           
-//             var File = this.files;
-//             if (File && File[0]) {
-//                 ReadImage(File[0]);
-//             }
-//         })
-//     })
-
-//     var ReadImage = function (file) {
-//         var reader = new FileReader;
-//         var image = new Image;
-
-//         reader.readAsDataURL(file);
-//         reader.onload = function (_file) {
-//             image.src = _file.target.result;
-//             image.onload = function () {
-//                 var height = this.height;
-//                 var width = this.width;
-//                 var type = file.type;
-//                 var size = ~~(file.size / 1024) + "KB";
-
-//                 $("#targetImg").attr('src', _file.target.result);
-//                 $("#description").text("Size:" + size + ", " + height + " X " + width + ", " + type + "");
-//                 $("#imgPreview").show();
-//             }
-//         }
-//     }
-<!-- // </script> -->

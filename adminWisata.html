@@ -177,8 +177,7 @@
         }
         /*FOOTER*/
         .footer{
-            margin-bottom: 0px;
-            position: absolute;
+            bottom: 0px;
             width: 100%;
             background-color: #B3FF9E;
             height: 90px;
@@ -186,7 +185,9 @@
             font-size: 15px;
         }
         .footer-menu{
-            margin-top: 20px; 
+            position: absolute;
+            margin-top: 20px;
+            list-style: none;
         }
         .footer-menu li a{
             text-decoration: none;
@@ -197,11 +198,16 @@
             color:#012F52;
         }
         .sosmed{
+            float: right;
+            margin-right: 5%;
+            margin-top: 20px;
             text-align: center;
             list-style: none;
             float: right;
-            margin-right: 30px;
             color: black;
+        }
+        .sosmed li a{
+            padding: 10px;
         }
         .sosmed img{
             width: 25px;
@@ -209,7 +215,8 @@
         }
         .footer h5{
             text-align: left;
-            margin-left: 600px;
+            margin-left: 45%;
+            margin-top: 50px;
             color: black;
         }
 
@@ -267,6 +274,50 @@
             content: "";
             display: table;
             clear: both;
+        }
+        @media screen and (max-width: 765px){
+            .menu-utama, .akun{
+                display: none;
+            }
+            #open_menu{
+                display: block;
+                background-color: transparent;
+                width: 30px;
+                height: 30px;
+                float: right;
+                margin-top: 30px;
+                margin-right: 10px;
+            }
+            #open_menu img{
+                width: 30px;
+                height: 30px;
+            }
+            #open_menu:hover ul{
+                list-style: none;
+                display: block;
+                float: right;
+                top: -5px;
+            }
+            #open_menu ul{
+                display: none;
+                position: relative;
+                z-index: 10;
+                background-color:#B3FF9E;
+                width: 170px;
+            }
+            #open_menu ul a{
+                text-decoration: none;
+            }
+            #open_menu ul a li {
+                padding: 5px 10px 5px 10px;
+                color: black;
+                font-family: calibri;
+                font-size: 18px;
+            }
+            #open_menu ul li:hover{
+                background-color: #2F8758;
+                color: white;
+            }
         }
     </style>
 </head>
@@ -554,18 +605,18 @@
     <div class="footer">
         <ul class="footer-menu">
             <li>
-                <a class="cookie" href="img/CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
-                <a class="aboutUs" href="img/AboutUs.html">About us&emsp;&emsp;|</a>
-                <a class="contact" href="img/ContactUs.html">Contact Us</a>
-                <ul class="sosmed">
-                    <li>
-                        Follow us on :<br>
-                        <a class="instagram" href="instagram.com/BeautyEastJava"><img src="img/instagram.png" alt=""></a>
-                        <a class="facebook" href="facebook.com/BeautyEastJava"><img src="img/facebook.png" alt=""></a>
-                        <a class="twitter" href="twitter.com/BeautyEastJava"><img src="img/twitter.png" alt=""></a>
-                        <a class="youtube" href="youtube.com/BeautyEastJava"><img src="img/youtube.png" alt=""></a>
-                    </li>
-                </ul>
+                <a class="cookie" href="CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
+                <a class="aboutUs" href="AboutUs.html">About us&emsp;&emsp;|</a>
+                <a class="contact" href="ContactUs.html">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="sosmed">
+            <li>
+                Follow us on :<br>
+                <a class="instagram" href="http://www.instagram.com"><img src="img/instagram.png" alt=""></a>
+                <a class="facebook" href="http://www.facebook.com"><img src="img/facebook.png" alt=""></a>
+                <a class="twitter" href="http://www.twitter.com"><img src="img/twitter.png" alt=""></a>
+                <a class="youtube" href="http://www.youtube.com"><img src="img/youtube.png" alt=""></a>
             </li>
         </ul><br>
         <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
