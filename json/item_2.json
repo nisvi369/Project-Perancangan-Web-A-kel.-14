@@ -1,0 +1,34 @@
+[
+	{
+		"img" : "img/MJatimPark1.jpg",
+		"judul" : "Jatim Park 1"
+	},
+	{
+		"img" : "img/MBNS.jpg",
+		"judul" : "Batu Night Spectacular"
+	},
+	{
+		"img" : "img/MHawai.jpg",
+		"judul" : "Hawai"
+	},
+	{
+		"img" : "img/MJatimPark2.jpg",
+		"judul" : "Jatim Park 2"
+	},
+	{
+		"img" : "img/MPKalireco.jpg",
+		"judul" : "Pemandian Kalireco"
+	},
+	{
+		"img" : "img/MOmahKayu.jpg",
+		"judul" : "Penginapan Omah Kayu"
+	},
+	{
+		"img" : "img/MCandiBatu.jpg",
+		"judul" : "Candi Batu"
+	},
+	{
+		"img" : "img/MParalayang.png",
+		"judul" : "Paralayang"
+	}
+]

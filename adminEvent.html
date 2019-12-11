@@ -6,215 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin - Event</title>
     <link rel="icon" href="img/Ikon.ico">
-    <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-        }
-        /*HEADER*/
-        .header{
-            background-color: #012F52;
-            height: 90px;
-            width: 100%;
-        }
-        /*LOGO*/
-        .logo{
-            float: left;
-            width: 170px;
-        }
-        .logo img{
-            align:left;
-            height: 90px;
-            width: 170px;
-        }
-        /*MENU UTAMA*/
-        #open_menu{
-            display: none;
-        }
-        .menu-utama button{
-            background-color:#2F8758;
-            color: white;
-            float: right;
-            padding: 3px 55px 3px 55px;
-            border: none;
-            margin-top: 40px;
-            margin-right: 5px;
-            cursor:pointer;
-        }
-        .menu-utama a{
-            text-decoration: none;
-        }
-        .menu-utama button:hover{
-            background-color: white;     
-            color:#2F8758;
-        }
-        .akun img{
-            height: 40px;
-            width: 40px;
-            float: right;
-            margin-top: 40px;
-            margin-right: 10px;
-            margin-left: 5px;
-            cursor: pointer;
-        }
-        /* .header{
-            height: 20px;
-            background-color: tomato;
-        } */
-
-        /*CONTENT*/
-        /*JUDUL*/
-        @font-face {
-            font-family: "CaveatBrush";
-            src: url('CaveatBrush.ttf');
-        }
-        .judul{
-            list-style: none;
-            margin-top: 20px;
-            margin-left :35%;
-        }
-        .judul font{
-            font-family: "Caveat Brush";
-            background-color: transparent;
-            padding: 7px 60px 7px 60px;
-            text-align: center;
-            font-size: 40px;
-            color: black;
-            font-weight: bold;
-            border-bottom: 5px double mediumturquoise;
-        }
-
-        /*TOMBOL TAMBAH*/
-        .tombol button {
-            padding: 10px 40px 10px 40px;
-            background-color: #7FFF00;
-            border: 0px;
-            cursor: pointer;
-            margin-top: 80px;
-            margin-left: 44%;
-            font-size: 15px;
-            font-weight: bold;
-            /*text-align: center;*/
-        }
-        .tombol button:hover {
-            background-color: deepskyblue;
-            color: white;
-        }
-        /*FOOTER*/
-        .footer{
-            margin-bottom: 0px;
-            position: absolute;
-            width: 100%;
-            background-color: #B3FF9E;
-            height: 90px;
-            font-family: Calibri;
-            font-size: 15px;
-        }
-        .footer-menu{
-            margin-top: 20px; 
-        }
-        .footer-menu li a{
-            text-decoration: none;
-            margin-left: 30px;
-            color: black;
-        }
-        .footer-menu li a:hover{
-            color:#012F52;
-        }
-        .sosmed{
-            text-align: center;
-            list-style: none;
-            float: right;
-            margin-right: 30px;
-            color: black;
-        }
-        .sosmed img{
-            width: 25px;
-            height: 25px;
-        }
-        .footer h5{
-            text-align: left;
-            margin-left: 600px;
-            color: black;
-        }
-        /* GAMBAR */
-        .gambar_menu{
-            margin-left: 30px;
-            margin-right: 30px;
-        }
-        .gambar {
-            padding: 10px;
-            float: left;
-            width: 25%;
-            font-family: calibri;
-        }
-        .item_gambar img {
-            width: 100%;
-        }
-        .menuItemGambar{
-            margin-left: 175px;
-        }
-        .menuItemGambar button{
-            background-color: darkturquoise;
-            border: 0px;
-            padding: 5px 10px 5px 10px;
-            cursor: pointer;
-        }
-        .menuItemGambar button:hover{
-            background-color: #7fff00;
-        }
-        .nama_wisata {
-            margin-top: -10px;
-            padding: 15px;
-            text-align: center;
-        }
-        @media only screen and (max-width: 1000px){
-            .gambar {
-                width: 30%;
-                margin: 10px;
-            }
-        }
-        @media only screen and (max-width: 850px){
-            .gambar {
-                width: 45%;
-                margin: 10px;
-            }
-        }
-        @media only screen and (max-width: 600px){
-            .gambar {
-                width: 100%;
-            }
-        }
-        .all_gambar:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-    </style>
+    <link href="css/admin.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 <body>
     <div class="header">
         <div class="logo">
-            <a href="index.html"><img src="img/Logo.png"></a>
+            <a href="adminEvent.html"><img src="img/Logo.png"></a>
         </div>
         <div class="akun">
             <a href="adminAkun.html"><img src="img/user_akun.png" alt="profile"></button></a>
         </div>
         <div class="menu-utama">
-            <a href="adminEvent.html"><button type="button"><font face="Freestyle script"; font size="6px">Let's See an Event</font></button></a>
-            <a href="adminWisata.html"><button type="button"><font face="Freestyle script"; font size="6px">Goes to Wisata</font></button></a>
+                <a href="adminRank.html" id="chart"><button type="button"><font face="#"; font size="6px">See the Rank</font></button></a>
+            <a href="adminEvent.html"><button type="button"><font face="#"; font size="6px">Let's See an Event</font></button></a>
+            <a href="adminWisata.html"><button type="button"><font face="#"; font size="6px">Goes to Wisata</font></button></a>
         </div>
         <div id="open_menu"><a href="#" onclick="openMenu()"><img src="img/menu.jpg"></a>
             <ul>
                 <a href="akunAdmin.html"><li>Akun</li></a>
                 <a href="adminWisata.html"><li>Goes to Wisata</li></a>
-                <a href="adminEvent.html"><li>Let's See an Event</li></a>    
+                <a href="adminEvent.html"><li>Let's See an Event</li></a>
+                <a href="adminRank.html"><li>See the Rank</li></a>    
             </ul>
         </div>
     </div>
     <div class="content">
-        <div class="judul">
+        <div class="judul_event">
             <font face="#">East Java's Event</font>
         </div>
         <div class="tombol">
@@ -247,7 +64,7 @@
                 </div>
                 <div class="nama_wisata">Jember Fashion Carnaval</div>
             </div>
-              
+
             <div class="gambar">
                 <div class="item_gambar">
                     <a href="#.jpg">
@@ -260,7 +77,7 @@
                 </div>
                 <div class="nama_wisata">Yahya Kasada dan Eksotika Bromo</div>
             </div>
-                  
+
             <div class="gambar">
                 <div class="item_gambar">
                     <a href="#">
@@ -299,7 +116,7 @@
                 </div>
                 <div class="nama_wisata">Banyuwangi Ethno Carnaval</div>
             </div>
-              
+
             <div class="gambar">
                 <div class="item_gambar">
                     <a href="#">
@@ -312,7 +129,7 @@
                 </div>
                 <div class="nama_wisata">Festival Gandrung Sewu</div>
             </div>
-                  
+
             <div class="gambar">
                 <div class="item_gambar">
                     <a href="#.jpg">
@@ -333,18 +150,18 @@
     <div class="footer">
         <ul class="footer-menu">
             <li>
-                <a class="cookie" href="img/CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
-                <a class="aboutUs" href="img/AboutUs.html">About us&emsp;&emsp;|</a>
-                <a class="contact" href="img/ContactUs.html">Contact Us</a>
-                <ul class="sosmed">
-                    <li>
-                        Follow us on :<br>
-                        <a class="instagram" href="instagram.com/BeautyEastJava"><img src="img/instagram.png" alt=""></a>
-                        <a class="facebook" href="facebook.com/BeautyEastJava"><img src="img/facebook.png" alt=""></a>
-                        <a class="twitter" href="twitter.com/BeautyEastJava"><img src="img/twitter.png" alt=""></a>
-                        <a class="youtube" href="youtube.com/BeautyEastJava"><img src="img/youtube.png" alt=""></a>
-                    </li>
-                </ul>
+                <a class="cookie" href="CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
+                <a class="aboutUs" href="AboutUs.html">About us&emsp;&emsp;|</a>
+                <a class="contact" href="ContactUs.html">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="sosmed">
+            <li>
+                Follow us on :<br>
+                <a class="instagram" href="http://www.instagram.com"><img src="img/instagram.png" alt=""></a>
+                <a class="facebook" href="http://www.facebook.com"><img src="img/facebook.png" alt=""></a>
+                <a class="twitter" href="http://www.twitter.com"><img src="img/twitter.png" alt=""></a>
+                <a class="youtube" href="http://www.youtube.com"><img src="img/youtube.png" alt=""></a>
             </li>
         </ul><br>
         <h5>&copy;Copyright 2019 BeautyofEastJava</h5>

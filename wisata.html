@@ -6,374 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Goes to Wisata</title>
     <link rel="icon" href="img/Ikon.ico">
-    <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-        }
-        @font-face {
-            font-family: "Freestyle Script";
-            src: url('Freestyle Script.ttf');
-        }
-        @font-face {
-            font-family: "CaveatBrush";
-            src: url('CaveatBrush.ttf');
-        }
-        /*HEADER*/
-        .header{
-            background-color: #012F52;
-            height: 90px;
-            width: 100%;
-        }
-        /*LOGO*/
-        .logo{
-            float: left;
-            width: 170px;
-        }
-        .logo img{
-            align:left;
-            height: 90px;
-            width: 170px;
-        }
-        /*MENU UTAMA*/
-        #open_menu{
-            display: none;
-        }
-        .menu-utama button{
-            background-color:#2F8758;
-            color: white;
-            float: right;
-            padding: 3px 55px 3px 55px;
-            border: none;
-            margin-top: 40px;
-            margin-right: 5px;
-            cursor:pointer;
-        }
-        .menu-utama a{
-            text-decoration: none;
-        }
-        .menu-utama font{
-            font-family: "Freestyle Script";
-            font-size: 32px;
-        }
-        .menu-utama button:hover{
-            background-color: white;     
-            color:#2F8758;
-        }
-        /*AKUN*/
-        .akun img{
-            height: 40px;
-            width: 40px;
-            float: right;
-            margin-top: 40px;
-            margin-right: 10px;
-            margin-left: 5px;
-            cursor: pointer;
-        }
-        /*CONTENT*/
-        .namaKota{
-            list-style: none;
-        }
-        #a{
-            margin-left: 39%;
-            z-index: 1;
-            position: absolute;
-        }
-        #a font{
-            font-family: "Shalinta";
-            font-size: 25px;
-        }
-        #b{
-            background-color: #2F8758;
-            width: 200px;
-            text-align: center;
-            margin-left :43%;
-            margin-top: 20px;
-            position: relative;
-        }
-        #b font{
-            font-family: "Caveat Brush";
-            font-size: 35px;
-            color: white;
-        }    
-        /*FILTER*/
-        .filter{
-            list-style: none;
-            margin-left: 85%;
-        }
-        .filter li{
-            width: 50px;
-        }
-        .filter li img{
-            width: 25px;
-            height: 25px;
-            background-color: paleturquoise;
-            padding: 7px;
-        }
-        .filter li a{
-            text-decoration: none; /*biar gak ada garis bawahnya*/
-        }
-        .filter ul {
-            list-style: none;
-        }
-        .filter li a { /*English-UK*/
-            display: block; /*kalo gak ada, jadi ke kanan*/
-        }
-        .filter li:hover ul { /*muncul pilihan bahasa*/
-            display:block;
-        }
-        .filter ul { /*pilihan bahasa*/
-            display:none; /*biar gak kelihatan sebelum di tunjuk*/
-            position:absolute;
-            border : 2px solid paleturquoise;
-        }
-        .filter ul:hover li { /*hover pilihan filter*/
-            border-color: paleturquoise;
-        }
-        .filter ul li a { /*kotak pilihan filter*/
-            display:block;
-            padding-left: 10px;
-            text-align:left;
-            width:150px;
-            height:20px;
-            color: black;
-            font-family: calibri;
-            background-color: white;
-        }
-        .filter ul li a:hover{
-            background-color: paleturquoise;
-        }
-        .cari {
-            background: #B3FF9E;
-            width: 200px;
-            height: 520px;
-            padding-right: 40px;/*search*/
-            position: fixed;
-            z-index: 1;
-            box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.3);
-            left: -200px; /*kedalaman*/
-            transition: 0.3s;
-            color: black;
-        }
-        .cari:hover {
-           transform: translate(150px, 0);
-           animation-timing-function: 1s ease-in; /*awal pelan*/
-       }
-        .cari .title {
-            top: 50%;
-            position: absolute;
-            transform: rotate(270deg);
-            right: 0px;
-            font-weight: 800;
-            font-size: 15px;
-        }
-        .cariKota{
-            position: absolute;
-            top: 15px;
-        }
-        .cariKota input{
-            width: 140px;
-            float: right;
-            margin-right: 40px;
-        }
-        .cariKota button{
-            width: 80px;
-            float: right;
-            margin-top: 5px;
-            margin-left: 27px;
-            margin-right: 70px;
-            background-color: lightseagreen;
-            border: none;
-            padding-top: 3px;
-            padding-bottom: 3px;
-            color: white;
-        }
-        .cari .listKota {
-            position: absolute;
-            top: 15%;
-            left: 60px;
-            font-family: calibri;
-            font-size: 16px;
-            width: 130px;
-            height: 400px;
-            overflow-y: auto;
-        }
-        .cari .listKota li {
-            line-height: 30px;
-            list-style: none;
-        }
-        .cari .listKota li a {
-            text-decoration: none;
-            color: black;
-        }
-        .cari .listKota li a:hover{
-            color: lightseagreen;
-        }
-        
-        /*GAMBAR WISATA*/
-        .gambar {
-            padding: 10px;
-            float: left;
-            width: 23%;
-        }
-        .gambar_menu{
-            margin-left: 70px;
-            margin-right: 10px;
-        }
-        .item_gambar img {
-            width: 100%;
-            transition: transform .2s;
-        }
-        .item_gambar img:hover {
-            transform: scale(1.3);
-            transition: 0.2s;
-        }
-        .nama_wisata {
-            font-family: calibri;
-            margin-top: -10px;
-            padding: 15px;
-            text-align: center;
-        }
-        @media only screen and (max-width: 1100px){
-            .gambar {
-                width: 30%;
-            }
-        }
-        @media only screen and (max-width: 850px){
-            .gambar {
-                width: 42%;
-            }
-        }
-        @media only screen and (max-width: 600px){
-            .gambar {
-                width: 95%;
-            }
-            .gambar img{
-                height: 250px;
-            }
-            .namaKota font{
-                font-size: 30px;
-            }
-        }
-        .all_gambar:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-    
-        /*FOOTER*/
-        .footer{
-            bottom: 0px;
-            width: 100%;
-            background-color: #B3FF9E;
-            height: 90px;
-            font-family: Calibri;
-            font-size: 15px;
-        }
-        .footer-menu{
-            position: absolute;
-            margin-top: 20px;
-            list-style: none;
-        }
-        .footer-menu li a{
-            text-decoration: none;
-            margin-left: 30px;
-            color: black;
-        }
-        .footer-menu li a:hover{
-            color:#012F52;
-        }
-        .sosmed{
-            float: right;
-            margin-right: 30px;
-            margin-top: 20px;
-            text-align: center;
-            list-style: none;
-            float: right;
-            color: black;
-        }
-        .sosmed li a{
-            padding: 10px;
-        }
-        .sosmed img{
-            width: 25px;
-            height: 25px;
-        }
-        .footer h5{
-            text-align: left;
-            margin-left: 45%;
-            margin-top: 50px;
-            color: black;
-        }
-        /* RESPONSIVE */
-        @media screen and (max-width: 765px){
-            .menu-utama, .akun{
-                display: none;
-            }
-            #open_menu{
-                display: block;
-                background-color: transparent;
-                width: 30px;
-                height: 30px;
-                float: right;
-                margin-top: 20px;
-                margin-right: 10px;
-            }
-            #open_menu img{
-                width: 30px;
-                height: 30px;
-            }
-            #open_menu:hover ul{
-                display: block;
-                float: right;
-                top: -5px;
-            }
-            #open_menu ul{
-                display: none;
-                position: relative;
-                z-index: 10;
-                background-color:#B3FF9E;
-                width: 170px;
-            }
-            #open_menu ul a{
-                text-decoration: none;
-                list-style: none;
-            }
-            #open_menu ul a li {
-                padding: 5px 10px 5px 10px;
-                color: black;
-                font-family: calibri;
-                font-size: 18px;
-            }
-            #open_menu ul li:hover{
-                background-color: #2F8758;
-                color: white;
-            }
-        }
-        @media screen and (max-width: 600px){
-            .footer{
-                height: 100px;
-            }
-            .footer-menu{
-                margin-top: 10px;
-                margin-left: 30px;
-            }
-            .sosmed{
-                margin-top: 30px;
-                margin-right: 33%;
-            }
-            .footer h5{
-                margin-left: 28%;
-            }
-        }
-    </style>
+    <link href="css/CSS.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 <body>
     <div class="header">
         <div class="logo">
             <a href="index.html"><img src="img/Logo.png"></a>
         </div>
-        <div class="akun">
+        <div class="profil_akun">
             <a href="akun.html"><img src="img/user_akun.png" alt="profile"></button></a>
         </div>
         <div class="menu-utama">
@@ -388,8 +28,8 @@
             </ul>
         </div>
     </div>
-    <div class="content">
-        <div class="cari">
+    <div class="content_wisata">
+        <div class="bar_cari">
             <div class="title">SEARCH</div>
             <div class="cariKota">
                 <input type="search">
@@ -439,14 +79,14 @@
         <div class="filter">
             <li><a href="#"><img src="img/filter.png"></a></button>
                 <ul>
-                    <li><a href="#">Tempat Terdekat</a></li>
+                    <li><a href="terdekat.html">Tempat Terdekat</a></li>
                     <li><a href="#">Rating Tertinggi</a></li>
                     <li><a href="#">Banyak Dikunjungi</a></li>
                 </ul>
             </li>
         </div>
         <br>
-        <div class="gambar_menu">
+        <div class="gambar_menu" id="list_item" page="">
             <div class="gambar">
                 <div class="item_gambar">
                     <a href="deskripsi.html">
@@ -464,16 +104,16 @@
                     <div class="nama_wisata">Kampung Tridi</div>
                 </div>
             </div>
-              
+
             <div class="gambar">
                 <div class="item_gambar">
                     <a href="#.jpg">
                         <img src="img/MSelecta.jpg" height="180px">
                     </a>
-                <div class="nama_wisata">Selecta</div>
+                    <div class="nama_wisata">Selecta</div>
+                </div>
             </div>
-                  </div>
-                  
+
             <div class="gambar">
                 <div class="item_gambar">
                     <a href="#">
@@ -500,16 +140,16 @@
                     <div class="nama_wisata">Taman Alun-Alun Kota Malang</div>
                 </div>
             </div>
-              
+
             <div class="gambar">
                 <div class="item_gambar">
                     <a href="#">
                         <img src="img/MPBatuBengkung.jpg" height="180">
                     </a>
-                <div class="nama_wisata">Pantai Batu Bengkung</div>
+                    <div class="nama_wisata">Pantai Batu Bengkung</div>
+                </div>
             </div>
-                  </div>
-                  
+
             <div class="gambar">
                 <div class="item_gambar">
                     <a href="#.jpg">
@@ -518,80 +158,11 @@
                     <div class="nama_wisata">Masjid Turen Tiban</div>
                 </div>
             </div>
-
-            <div class="gambar">
-                <div class="item_gambar">
-                    <a href="#">
-                        <img src="img/MJatimPark1.jpg" height="180px">
-                    </a>
-                    <div class="nama_wisata">Jatim Park 1</div>
-                </div>
-            </div>
-
-            <div class="gambar">
-                <div class="item_gambar">
-                    <a href="#">
-                        <img src="img/MBNS.jpg" height="180px">
-                    </a>
-                    <div class="nama_wisata">Batu Night Spectacular</div>
-                </div>
-            </div>
-              
-            <div class="gambar">
-                <div class="item_gambar">
-                    <a href="#.jpg">
-                        <img src="img/MHawai.jpg" height="180px">
-                    </a>
-                <div class="nama_wisata">Hawai</div>
-            </div>
-                  </div>
-                  
-            <div class="gambar">
-                <div class="item_gambar">
-                    <a href="#">
-                        <img src="img/MJatimPark2.jpg" height="180px">
-                    </a>
-                    <div class="nama_wisata">Jatim Park 2</div>
-                </div>
-            </div>
-
-            <div class="gambar">
-                <div class="item_gambar">
-                    <a href="#">
-                        <img src="img/MPKalireco.jpg" height="180px">
-                    </a>
-                    <div class="nama_wisata">Pemandian Kalireco</div>
-                </div>
-            </div>
-
-            <div class="gambar">
-                <div class="item_gambar">
-                    <a href="#">
-                        <img src="img/MOmahKayu.jpg" height="180px">
-                    </a>
-                    <div class="nama_wisata">Penginapan Omah Kayu</div>
-                </div>
-            </div>
-              
-            <div class="gambar">
-                <div class="item_gambar">
-                    <a href="#">
-                        <img src="img/MCandiBatu.jpg" height="180">
-                    </a>
-                <div class="nama_wisata">Candi Batu</div>
-            </div>
-                  </div>
-                  
-            <div class="gambar">
-                <div class="item_gambar">
-                    <a href="#.jpg">
-                        <img src="img/MParalayang.png" height="180">
-                    </a>
-                    <div class="nama_wisata">Paralayang</div>
-                </div>
-            </div>      
             <div class="all_gambar"></div>
         </div>
+        <div class="btn-more" id="btn-more">
+            <a href="#">More...</a>
+        </div>  
     </div>
     <br><br>
     <div class="footer">
@@ -613,16 +184,55 @@
         </ul><br>
         <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
     </div>
-<!-- <script type="text/javascript">
-    function zoomB(x) {
-      x.style.height = "210px";
-      x.style.width = "310px";
-  }
 
-  function zoomN(x) {
-      x.style.height = "180px";
-      x.style.width = "270px";
-  }
-</script> -->
+<script src="js/jQuery.js"></script>
+<script>
+    $("#btn-more").click(function (event) {
+        event.preventDefault();
+        var hal = $("#list_item").attr('page');
+        hal = Number(hal);
+
+        if (hal == "") {
+            hal = 1;
+        }
+        else{
+            hal+=1;
+        }
+
+        $("#list_item").attr('page', hal);
+        if (hal == 2) {
+            $("#btn-more").hide();
+        }
+
+        var path = "json/item_"+hal+".json";
+
+        $.ajax({
+            url:path,
+            type: 'GET',
+            dataType: 'json'
+        })
+        .done(function(data){
+            console.log("success");
+            var gabung = "";
+            $.each(data, function (index, val) {
+             gabung+=`
+             <div class="gambar">
+             <div class="item_gambar">
+             <a href="#.jpg">
+             <img src="`+val.img+`" height="180">
+             </a>
+             <div class="nama_wisata">`+val.judul+`</div>
+             </div>
+             </div>
+             ` 
+         });
+
+            $("#list_item").append(gabung);
+        })
+        .fail(function () {
+            console.log("error");
+        });
+    })
+</script>
 </body>
 </html>

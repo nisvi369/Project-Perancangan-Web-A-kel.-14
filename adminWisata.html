@@ -6,338 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin - Wisata</title>
     <link rel="icon" href="img/Ikon.ico">
-    <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-        }
-        /*HEADER*/
-        .header{
-            background-color: #012F52;
-            height: 90px;
-            width: 100%;
-        }
-        /*LOGO*/
-        .logo{
-            float: left;
-            width: 170px;
-        }
-        .logo img{
-            align:left;
-            height: 90px;
-            width: 170px;
-        }
-        /*MENU UTAMA*/
-        #open_menu{
-            display: none;
-        }
-        .menu-utama button{
-            background-color:#2F8758;
-            color: white;
-            float: right;
-            padding: 3px 55px 3px 55px;
-            border: none;
-            margin-top: 40px;
-            margin-right: 5px;
-            cursor:pointer;
-        }
-        .menu-utama a{
-            text-decoration: none;
-        }
-        .menu-utama button:hover{
-            background-color: white;     
-            color:#2F8758;
-        }
-        .akun img{
-            height: 40px;
-            width: 40px;
-            float: right;
-            margin-top: 40px;
-            margin-right: 10px;
-            margin-left: 5px;
-            cursor: pointer;
-        }
-        /* .header{
-            height: 20px;
-            background-color: tomato;
-        } */
-
-        /*CONTENT*/
-        /*JUDUL*/
-        @font-face {
-            font-family: "CaveatBrush";
-            src: url('CaveatBrush.ttf');
-        }
-        .namaKota{
-            margin-top: 20px;
-            margin-left :40%;
-        }
-        .namaKota font{
-            font-family: "Caveat Brush";
-            background-color: transparent;
-            padding: 7px 60px 7px 60px;
-            text-align: center;
-            font-size: 40px;
-            color: black;
-            font-weight: bold;
-            border-bottom: 5px double mediumturquoise;
-        }
-        /* .namaKota{
-            height: 20px;
-            background-color: teal;
-        } */
-
-        /*TOMBOL TAMBAH*/
-        .tombol button {
-            padding: 10px 40px 10px 40px;
-            background-color: #7FFF00;
-            border: 0px;
-            cursor: pointer;
-            margin-top: 80px;
-            margin-left: 44%;
-            font-size: 15px;
-            font-weight: bold;
-            /*text-align: center;*/
-        }
-        .tombol button:hover {
-            background-color: deepskyblue;
-            color: white;
-        }
-        /* .tombol{
-            height: 20px;
-            background-color: yellowgreen;
-        } */
-
-        .cari {
-            background: #B3FF9E;
-            width: 200px;
-            height: 520px;
-            padding-right: 40px;/*search*/
-            position: fixed;
-            z-index: 1;
-            box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.3);
-            left: -160px; /*kedalaman*/
-            transition: 0.3s;
-            color: black;
-        }
-        .cari:hover {
-           transform: translate(150px, 0);
-           animation-timing-function: 1s ease-in; /*awal pelan*/
-       }
-        .cari .title {
-            top: 50%;
-            position: absolute;
-            transform: rotate(270deg);
-            right: 0px;
-            font-weight: 800;
-            font-size: 15px;
-        }
-        .cariKota{
-            position: absolute;
-            top: 15px;
-        }
-        .cariKota input{
-            width: 140px;
-            float: right;
-            margin-right: 40px;
-        }
-        .cariKota button{
-            width: 80px;
-            float: right;
-            margin-top: 5px;
-            margin-left: 27px;
-            margin-right: 70px;
-            background-color: lightseagreen;
-            border: none;
-            padding-top: 3px;
-            padding-bottom: 3px;
-            color: white;
-        }
-        .cari .listKota {
-            position: absolute;
-            top: 15%;
-            left: 25px;
-            font-family: calibri;
-            font-size: 16px;
-            width: 130px;
-            height: 400px;
-            overflow-y: auto;
-        }
-        .cari .listKota li {
-            line-height: 30px;
-            list-style: none;
-        }
-        .cari .listKota li a {
-            text-decoration: none;
-            color: black;
-        }
-        .cari .listKota li a:hover{
-            color: lightseagreen;
-        }
-        /*FOOTER*/
-        .footer{
-            bottom: 0px;
-            width: 100%;
-            background-color: #B3FF9E;
-            height: 90px;
-            font-family: Calibri;
-            font-size: 15px;
-        }
-        .footer-menu{
-            position: absolute;
-            margin-top: 20px;
-            list-style: none;
-        }
-        .footer-menu li a{
-            text-decoration: none;
-            margin-left: 30px;
-            color: black;
-        }
-        .footer-menu li a:hover{
-            color:#012F52;
-        }
-        .sosmed{
-            float: right;
-            margin-right: 5%;
-            margin-top: 20px;
-            text-align: center;
-            list-style: none;
-            float: right;
-            color: black;
-        }
-        .sosmed li a{
-            padding: 10px;
-        }
-        .sosmed img{
-            width: 25px;
-            height: 25px;
-        }
-        .footer h5{
-            text-align: left;
-            margin-left: 45%;
-            margin-top: 50px;
-            color: black;
-        }
-
-        .gambar {
-            padding: 10px;
-            float: left;
-            width: 25%;
-            font-family: calibri;
-        }
-        .gambar_menu{
-            margin-left: 80px;
-            margin-right: 40px;
-        }
-        .item_gambar img {
-            width: 100%;
-        }
-        .menuItemGambar{
-            margin-left: 175px;
-        }
-        .menuItemGambar button{
-            background-color: darkturquoise;
-            border: 0px;
-            padding: 5px 10px 5px 10px;
-            cursor: pointer;
-        }
-        .menuItemGambar button:hover{
-            background-color: #7fff00;
-        }
-        .nama_wisata {
-            margin-top: -10px;
-            padding: 15px;
-            text-align: center;
-        }
-        @media only screen and (max-width: 1000px){
-            .gambar {
-                width: 30%;
-                margin: 10px;
-            }
-        }
-        @media only screen and (max-width: 850px){
-            .gambar {
-                width: 45%;
-                margin: 10px;
-            }
-        }
-        @media only screen and (max-width: 600px){
-            .gambar {
-                width: 100%;
-            }
-            .namaKota font{
-                font-size: 30px;
-            }
-        }
-        .all_gambar:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        @media screen and (max-width: 765px){
-            .menu-utama, .akun{
-                display: none;
-            }
-            #open_menu{
-                display: block;
-                background-color: transparent;
-                width: 30px;
-                height: 30px;
-                float: right;
-                margin-top: 30px;
-                margin-right: 10px;
-            }
-            #open_menu img{
-                width: 30px;
-                height: 30px;
-            }
-            #open_menu:hover ul{
-                list-style: none;
-                display: block;
-                float: right;
-                top: -5px;
-            }
-            #open_menu ul{
-                display: none;
-                position: relative;
-                z-index: 10;
-                background-color:#B3FF9E;
-                width: 170px;
-            }
-            #open_menu ul a{
-                text-decoration: none;
-            }
-            #open_menu ul a li {
-                padding: 5px 10px 5px 10px;
-                color: black;
-                font-family: calibri;
-                font-size: 18px;
-            }
-            #open_menu ul li:hover{
-                background-color: #2F8758;
-                color: white;
-            }
-        }
-    </style>
+    <link href="css/admin.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 <body>
     <div class="header">
         <div class="logo">
-            <a href="index.html"><img src="img/Logo.png"></a>
+            <a href="adminWisata.html"><img src="img/Logo.png"></a>
         </div>
         <div class="akun">
             <a href="adminAkun.html"><img src="img/user_akun.png" alt="profile"></button></a>
         </div>
         <div class="menu-utama">
-            <a href="adminEvent.html"><button type="button"><font face="Freestyle script"; font size="6px">Let's See an Event</font></button></a>
-            <a href="adminWisata.html"><button type="button"><font face="Freestyle script"; font size="6px">Goes to Wisata</font></button></a>
+            <a href="adminRank.html" id="chart"><button type="button"><font face="#"; font size="6px">See the Rank</font></button></a>
+            <a href="adminEvent.html"><button type="button"><font face="#"; font size="6px">Let's See an Event</font></button></a>
+            <a href="adminWisata.html"><button type="button"><font face="#"; font size="6px">Goes to Wisata</font></button></a>
         </div>
         <div id="open_menu"><a href="#" onclick="openMenu()"><img src="img/menu.jpg"></a>
             <ul>
                 <a href="akunAdmin.html"><li>Akun</li></a>
                 <a href="adminWisata.html"><li>Goes to Wisata</li></a>
-                <a href="adminEvent.html"><li>Let's See an Event</li></a>    
+                <a href="adminEvent.html"><li>Let's See an Event</li></a>
+                <a href="adminRank.html"><li>See the Rank</li></a>    
             </ul>
         </div>
     </div>
@@ -398,7 +87,7 @@
                 </div>
                 <div class="menuItemGambar">
                     <a href="adminEditItemWisata.html" class="editItem"><button>Edit</button></a>
-                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                    <a class="hapusItem"><button id="myBtn" type="button">Delete</button></a>
                 </div>
                 <div class="nama_wisata">Jatim Park 3</div>
             </div>
@@ -411,11 +100,11 @@
                 </div>
                 <div class="menuItemGambar">
                     <a href="adminEditItemWisata.html" class="editItem"><button>Edit</button></a>
-                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                    <a href="#" class="hapusItem"><button id="myBtn">Delete</button></a>
                 </div>
                 <div class="nama_wisata">Kampung Tridi</div>
             </div>
-              
+
             <div class="gambar">
                 <div class="item_gambar">
                     <a href="#.jpg">
@@ -424,11 +113,11 @@
                 </div>
                 <div class="menuItemGambar">
                     <a href="adminEditItemWisata.html" class="editItem"><button>Edit</button></a>
-                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                    <a href="#" class="hapusItem"><button id="myBtn">Delete</button></a>
                 </div>
                 <div class="nama_wisata">Selecta</div>
             </div>
-                  
+
             <div class="gambar">
                 <div class="item_gambar">
                     <a href="#">
@@ -437,7 +126,7 @@
                 </div>
                 <div class="menuItemGambar">
                     <a href="adminEditItemWisata.html" class="editItem"><button>Edit</button></a>
-                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                    <a href="#" class="hapusItem"><button id="myBtn">Delete</button></a>
                 </div>
                 <div class="nama_wisata">Museum Angkut</div>
             </div>
@@ -450,7 +139,7 @@
                 </div>
                 <div class="menuItemGambar">
                     <a href="adminEditItemWisata.html" class="editItem"><button>Edit</button></a>
-                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                    <a href="#" class="hapusItem"><button id="myBtn">Delete</button></a>
                 </div>
                 <div class="nama_wisata">Malang Night Paradise</div>
             </div>
@@ -463,11 +152,11 @@
                 </div>
                 <div class="menuItemGambar">
                     <a href="adminEditItemWisata.html" class="editItem"><button>Edit</button></a>
-                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                    <a href="#" class="hapusItem"><button id="myBtn">Delete</button></a>
                 </div>
                 <div class="nama_wisata">Taman Alun-Alun Kota Malang</div>
             </div>
-              
+
             <div class="gambar">
                 <div class="item_gambar">
                     <a href="#">
@@ -476,11 +165,11 @@
                 </div>
                 <div class="menuItemGambar">
                     <a href="adminEditItemWisata.html" class="editItem"><button>Edit</button></a>
-                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                    <a href="#" class="hapusItem"><button id="myBtn">Delete</button></a>
                 </div>
                 <div class="nama_wisata">Pantai Batu Bengkung</div>
             </div>
-                  
+
             <div class="gambar">
                 <div class="item_gambar">
                     <a href="#.jpg">
@@ -489,7 +178,7 @@
                 </div>
                 <div class="menuItemGambar">
                     <a href="adminEditItemWisata.html" class="editItem"><button>Edit</button></a>
-                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                    <a href="#" class="hapusItem"><button id="myBtn">Delete</button></a>
                 </div>
                 <div class="nama_wisata">Masjid Turen Tiban</div>
             </div>
@@ -502,7 +191,7 @@
                 </div>
                 <div class="menuItemGambar">
                     <a href="adminEditItemWisata.html" class="editItem"><button>Edit</button></a>
-                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                    <a href="#" class="hapusItem"><button id="myBtn">Delete</button></a>
                 </div>
                 <div class="nama_wisata">Jatim Park 1</div>
             </div>
@@ -515,7 +204,7 @@
                 </div>
                 <div class="menuItemGambar">
                     <a href="adminEditItemWisata.html" class="editItem"><button>Edit</button></a>
-                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                    <a href="#" class="hapusItem"><button id="myBtn">Delete</button></a>
                 </div>
                 <div class="nama_wisata">Batu Night Spectacular</div>
             </div>
@@ -528,7 +217,7 @@
                 </div>
                 <div class="menuItemGambar">
                     <a href="adminEditItemWisata.html" class="editItem"><button>Edit</button></a>
-                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                    <a href="#" class="hapusItem"><button id="myBtn">Delete</button></a>
                 </div>
                 <div class="nama_wisata">Hawai</div>
             </div>
@@ -541,7 +230,7 @@
                 </div>
                 <div class="menuItemGambar">
                     <a href="adminEditItemWisata.html" class="editItem"><button>Edit</button></a>
-                    <a href="#" class="hapusItem"><button>Delete</button></a>
+                    <a href="#" class="hapusItem"><button id="myBtn">Delete</button></a>
                 </div>
                 <div class="nama_wisata">Jatim Park 2</div>
             </div>
@@ -597,7 +286,7 @@
                 </div>
                 <div class="nama_wisata">Paralayang</div>
             </div>
-                  
+
             <div class="all_gambar"></div>
         </div>
     </div>
@@ -621,5 +310,24 @@
         </ul><br>
         <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
     </div>
+
+    <!-- modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Warning</h2>
+      </div>
+      <div class="modal-body">
+        <div class="modal_item">
+            <h2>Are you sure to delete this item?</h2>
+        </div>
+        
+        <div class="modal-footer">
+          <a href="" type="button">Yes</a>
+          <a href="" type="button" id="back">Cancel</button></a>
+      </div>
+  </div>
 </body>
+<script type="text/javascript" src="js/confirm.js"></script>
 </html>

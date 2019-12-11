@@ -4,206 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="Ikon.ico">
     <title>Booking Tiket</title>
     <link rel="icon" href="img/Ikon.ico">
-    <style>
-        *{
-        margin: 0px;
-        padding: 0px;
-        }
-        @font-face {
-            font-family: "CaveatBrush";
-            src: url('CaveatBrush.ttf');
-        }
-        .logo{
-            float: left;
-            width: 170px;
-        }
-        .logo img{
-            align:left;
-            height: 90px;
-            width: 170px;
-        }
-        .header{
-            background-color: #012F52;
-            height: 90px;
-            width: 100%;
-        }
-        /*AKUN*/
-        .akun button{
-            float: right;
-            background-color: transparent;
-            border: none;
-            margin-top: 20px;
-            margin-right: 20px;
-            cursor: pointer;
-        }
-        .akun a{
-            text-decoration: none;
-            color: white;
-            font-size: 20px;
-        }
-        .akun img{
-            width: 35px;
-            height: 35px;
-        }
-        /*JUDUL*/
-        .judul{
-            margin-top: 20px;
-            margin-left :40%;
-        }
-        .judul font{
-            font-family: "Caveat Brush";
-            background-color: transparent;
-            padding: 7px 60px 7px 60px;
-            text-align: center;
-            font-size: 45px;
-            color: black;
-            font-weight: bold;
-            border-bottom: 5px double white;
-        }
-        /*CONTENT*/
-        #logo img{
-            width: 170px;
-            height: 90px;
-            margin-left: 45%;
-        }
-        body{
-            background-color: mediumturquoise;
-            font-family: calibri;
-        }
-        .content li{
-            list-style: none;
-        }
-        /* IDENTITAS */
-        .identitas{
-            width: 40%;
-            position: relative;
-            top: 50px;
-            margin-left: 7%;
-            list-style: none;
-            padding: 5% 0% 10% 5%;
-            background-color: white;
-            border: dotted 10px gray;
-            z-index: 1
-        }
-        .identitas td input{
-            width: 90%;
-        }
-        /* TRAVEL */
-        .travel{
-            width: 35%;
-            position: relative;
-            margin-top: -200px;
-            margin-left: 47%;
-            background-color: white;
-            border: dashed 6px midnightblue;
-            padding: 5% 0% 10% 10%;
-        }
-        .travel tr{
-            text-align: center;
-        }
-        .travel td{
-            width: 90px;
-        }
-        table tr td img{
-            width: 70px;
-            height: 70px;
-        }
-        /* PESAN */
-        #pesan{
-            z-index: 1;
-            position: absolute;
-            margin-left: 78%;
-            margin-top: -80px;
-        }
-        #pesan button{
-            padding: 5px 15px 5px 15px;
-            background-color: #00FFFF;
-            border: none;
-            font-size: 15px;
-            font-weight: bold;
-        }
-        #pesan button:hover{
-            background-color: #7fff00;
-            cursor: pointer;
-        }
-        @media (max-width:900px){
-            .identitas{
-                padding: 10%;
-            }
-            .travel{
-                margin-top: 70px;
-                margin-left: 70px;
-                padding: 20%;
-            }
-            #pesan{
-                margin-top: 10px;
-                margin-left: 300px;
-            }
-        }
-        /*FOOTER*/
-        .footer{
-            bottom: 0px;
-            width: 100%;
-            background-color: #B3FF9E;
-            height: 90px;
-            font-family: Calibri;
-            font-size: 15px;
-        }
-        .footer-menu{
-            position: absolute;
-            margin-top: 20px;
-            list-style: none;
-        }
-        .footer-menu li a{
-            text-decoration: none;
-            margin-left: 30px;
-            color: black;
-        }
-        .footer-menu li a:hover{
-            color:#012F52;
-        }
-        .sosmed{
-            float: right;
-            margin-right: 30px;
-            margin-top: 20px;
-            text-align: center;
-            list-style: none;
-            float: right;
-            color: black;
-        }
-        .sosmed li a{
-            padding: 10px;
-        }
-        .sosmed img{
-            width: 25px;
-            height: 25px;
-        }
-        .footer h5{
-            text-align: left;
-            margin-left: 45%;
-            margin-top: 50px;
-            color: black;
-        }
-        @media screen and (max-width: 600px){
-            .footer{
-                height: 100px;
-            }
-            .footer-menu{
-                margin-top: 10px;
-                margin-left: 30px;
-            }
-            .sosmed{
-                margin-top: 30px;
-                margin-right: 33%;
-            }
-            .footer h5{
-                margin-left: 28%;
-            }
-        }
-    </style>
+    <link href="css/CSS.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 <body>
     <div class="header">
@@ -216,6 +19,7 @@
     </div>
     <div class="content">
         <div class="judul"><font face="#">Booking</font></div>
+        <form name="log" onsubmit="validateBooking()">
         <li class="identitas">
             <table>
                 <tr>
@@ -232,11 +36,11 @@
                 </tr>
                 <tr>
                     <td>Jumlah Orang</td>
-                    <td><input type="number" name="jumlah"</td>
+                    <td><input type="number" id="jumlah"></td>
                 </tr>
                 <tr>
                     <td>Tanggal keberangkatan</td>
-                    <td><input type="date" name="tanggal"></td>
+                    <td><input type="date" id="tanggal"></td>
                 </tr>
             </table>
         </li>
@@ -262,8 +66,9 @@
             </table>
         </li>
         <li id="pesan"><a href="pembayaran.html"><button type="button">Check Out</button></a></li>
+    </form>
+        <br><br><br>
     </div>
-    <br><br><br>
     <div class="footer">
         <ul class="footer-menu">
             <li>
@@ -284,4 +89,17 @@
         <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
     </div>
 </body>
+<!-- <script type="text/javascript">
+function validateBooking(){
+    var jumlah = document.getElementById("jumlah").value;
+    var tanggal = document.getElementById("tanggal").value;
+
+    if (jumlah != "" && tanggal != ""){
+        return true;
+    }
+    else{
+        alert('Anda harus mengisi form dengan lengkap!');
+    }
+}
+</script> -->
 </html>

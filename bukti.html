@@ -5,193 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Proof of Payment</title>
-    <style>
-    *{
-        margin: 0px;
-        padding: 0px;
-    }
-    @font-face {
-        font-family: "Freestyle Script";
-        src: url('Freestyle Script.ttf');
-    }
-    body {
-        background-color: mediumturquoise;
-    }
-    /*HEADER*/
-    .header{
-        background-color: #012F52;
-        height: 90px;
-        width: 100%;
-    }
-    /*LOGO*/
-    .logo{
-        float: left;
-        width: 170px;
-    }
-    .logo img{
-        align:left;
-        height: 90px;
-        width: 170px;
-    }
-    /*AKUN*/
-    .akun button{
-        float: right;
-        background-color: transparent;
-        border: none;
-        margin-top: 20px;
-        margin-right: 20px;
-        cursor: pointer;
-    }
-    .akun a{
-        text-decoration: none;
-        color: white;
-        font-size: 20px;
-    }
-    .akun img{
-        width: 35px;
-        height: 35px;
-    }
-    /*JUDUL*/
-    .judul{
-        margin-top: 20px;
-        margin-left :35%;
-    }
-    .judul font{
-        font-family: "Caveat Brush";
-        background-color: transparent;
-        padding: 7px 60px 7px 60px;
-        text-align: center;
-        font-size: 45px;
-        color: black;
-        font-weight: bold;
-        border-bottom: 5px double white;
-    }
-    /* CONTENT */
-    .content li{
-        list-style: none;
-        font-family: Calibri;
-        font-size: 18px;
-    }
-    .detail{
-        position: relative;
-        width: 60%;
-        z-index: 1;
-        top: 50px;
-        left: 15%;
-        padding: 5% 5% 7% 5%;
-        background-color: white;
-        border: 6px solid midnightblue;
-    }
-    .detail td{
-        width: 200px;
-    }
-    /*LOGO-BUKTI*/
-        #logo-bukti{
-            position: absolute;
-            z-index: 5;
-            left: 74%;
-            top: 35%;
-        }
-        #logo-bukti img{
-            width: 150px;
-            height: 80px;
-        }
-        /* BARCODE*/
-        #barcode{
-            position: absolute;
-            z-index: 5;
-            left: 65%;
-            top: 60%;
-        }
-        #barcode img{
-            width: 35%;
-        }
-        /*DONE*/
-        #done{
-            position: absolute;
-            z-index: 5;
-            left: 76%;
-            top: 111%;
-        }
-        #done button{
-            background-color: midnightblue;
-            color: white;
-            font-size: 15px;
-            font-weight: bold;
-            padding: 7px 25px 7px 25px;
-            border: none;
-            cursor: pointer;
-        }
-        #done button:hover{
-            background-color:#7FFF00;
-            color: black;
-        }
-    /*FOOTER*/
-        .footer{
-            bottom: 0px;
-            width: 100%;
-            background-color: #B3FF9E;
-            height: 90px;
-            font-family: Calibri;
-            font-size: 15px;
-        }
-        .footer-menu{
-            position: absolute;
-            margin-top: 20px;
-            list-style: none;
-        }
-        .footer-menu li a{
-            text-decoration: none;
-            margin-left: 30px;
-            color: black;
-        }
-        .footer-menu li a:hover{
-            color:#012F52;
-        }
-        .sosmed{
-            float: right;
-            margin-right: 30px;
-            margin-top: 20px;
-            text-align: center;
-            list-style: none;
-            float: right;
-            color: black;
-        }
-        .sosmed li a{
-            padding: 10px;
-        }
-        .sosmed img{
-            width: 25px;
-            height: 25px;
-        }
-        .footer h5{
-            text-align: left;
-            margin-left: 45%;
-            margin-top: 50px;
-            color: black;
-        }
-        @media screen and (max-width: 600px){
-            .footer{
-                height: 100px;
-            }
-            .footer-menu{
-                margin-top: 10px;
-                margin-left: 30px;
-            }
-            .sosmed{
-                margin-top: 30px;
-                margin-right: 33%;
-            }
-            .footer h5{
-                margin-left: 28%;
-            }
-        }
-        @media screen and (max-width: 840px){
-            .judul{
-                margin-left: 10%;
-            }
-        }
-    </style>
+    <link rel="icon" href="img/Ikon.ico">
+    <link href="css/CSS.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 <body>
     <div class="header">
@@ -204,7 +19,7 @@
     </div>
     <div class="content">
         <div class="judul"><font face="#">Proof of Payment</font></div>
-        <li class="detail">
+        <li class="rincian_pesanan">
             <table>
                 <tr>
                     <td>Nama Turis</td>
@@ -265,8 +80,8 @@
         <li id="logo-bukti"><img src="img/logo.png"></li>
         <li id="barcode"><img src="img/qr.png"></li>
         <li id="done"><a href="index.html"><button type="button">Done</button></a></li>
+        <br><br><br><br><br><br><br>
     </div>
-    <br><br><br><br><br><br>
     <div class="footer">
         <ul class="footer-menu">
             <li>

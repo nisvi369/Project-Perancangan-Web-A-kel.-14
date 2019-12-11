@@ -6,565 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The Beauty of East Java</title>
     <link rel="icon" href="img/Ikon.ico">
-    <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-        }
-        @font-face {
-            font-family: "Freestyle Script";
-            src: url('Freestyle Script.ttf');
-        }
-        /*BAR BAHASA*/
-        .bar{
-            width: 100%;
-            height: 20px;
-            background-color:white;
-        }
-        .bahasa{
-            margin-top: 0px;
-            float:right;
-            font-size: 12px;
-            font-family:"Calibri";
-            line-height: 20px; /*ukuran blok*/
-        }
-        .bahasa li { 
-            list-style: none;
-        }
-        .bahasa li a{
-            text-decoration: none; /*menghilangkan garis bawah krn a href*/
-            width:100px;
-            display: block; /*kalo gak ada, jadi ke kanan*/
-            text-align:center; 
-            color:black;
-        }
-        .bahasa li:hover ul { /*muncul pilihan bahasa*/
-            display:block;
-        }
-        .bahasa ul { /*pilihan bahasa*/
-            display:none; /*biar gak kelihatan sebelum di tunjuk*/
-            list-style:none; 
-            position:absolute; 
-            background-color:#B3FF9E;
-            top:20px;
-        }
-        .bahasa ul li a { /*kotak pilihan bahasa*/
-            display:block;
-            padding-left: 10px;
-            text-align:left;
-            width:80px;
-            height:25px;
-        }
-        .bahasa ul li a:hover { /*hover pilihan bahasa*/
-            background-color:#012F52; 
-            color: white;
-        }
-        /*HEADER*/
-        .header {
-            background:#012F52;
-            width: 100%;
-            height: 90px;
-        }
-        .header ul { 
-            list-style: none;
-        }
-        /*LOGO*/
-        .logo{
-            float: left;
-            width: 170px;
-        }
-        .logo img{
-            align: left;
-            height: 90px;
-            width: 170px;
-        }
-        /*MENU-UTAMA*/
-        #open_menu{
-            display: none;
-        }
-        .menu-utama button{
-            background-color:#2F8758;
-            color: white;
-            float: right;
-            padding: 3px 55px 3px 55px;
-            border: none;
-            margin-top: 40px;
-            margin-right: 5px;
-            cursor:pointer;
-        }
-        .menu-utama a{
-            text-decoration: none;
-        }
-        .menu-utama font{
-            font-family: "Freestyle Script";
-            font-size: 32px;
-        }
-        .menu button:hover{
-            background-color: white;     
-            color:#2F8758;
-        }
-        /*LOGIN*/
-        .login button img{
-            height: 25px;
-            width: 25px;
-        }
-        .login button{
-            float: right;
-            background-color: #2F8758;
-            color: white;
-            border: none;
-            margin-top: 34px;
-            margin-right: 10px;
-            padding : 3px 15px 3px 15px;
-            cursor: pointer;
-        }
-        .login a{
-            text-decoration: none;
-            color: white;
-        }
-        .login button:hover{
-            background-color: white;
-            color:#2F8758;
-        }
-        /*CONTENT*/
-        body{
-            background-color: white;
-            position: relative;
-        }
-        /*SLIDE*/
-        .slide img{
-            width: 1200px;
-            height: 500px;
-        }
-        .slider{ /*lebar slide pada halaman*/
-            width: 1200px;
-            height: 500px;
-            overflow: hidden;
-            border: none;
-        }
-        .slide{
-            width: 1200px;
-            height: 500px;
-            float: left;
-            position: relative;
-        }
-        .slide-holder{
-            width: 400%;
-            position: relative;
-            left: 0;
-            -webkit-animation: scroller 10s infinite;
-            animation: scroller 20s infinite;
-        }
-        @-webkit-keyframes scroller{
-            0%{
-                -webkit-transform: translateX(0);
-                transform: translateX(0);
-            }
-            33%{
-                -webkit-transform: translateX(-1200px);
-                transform: translateX(-1200px);
-            }
-            66% {
-                -webkit-transform: translateX(-2400px);
-                transform: translateX(-2400px);
-            }
-        }
-        .slider {
-            margin: 0 auto;
-        }
-        /*CARI*/
-        .cari{
-            height: 50px;
-            float: left;
-            margin-left: 25%;
-            margin-top: 20px;
-        }
-        .cari input{
-            height: 25px;
-            width: 250px;
-        }
-        .cari button{
-            position: relative;
-            left: -5px;
-            background-color:#2F8758;
-            color: white;
-            padding: 7px 15px 7px 15px;
-            border: #2F8758;
-            cursor:pointer;
-        }
-        .cari button:hover{
-            background-color: white;
-            color:#2F8758;
-            border: 1px solid #2F8758;
-        }
-        /*JUDUL*/
-        @font-face {
-            font-family: "Shalinta";
-            src: url('Shalinta.otf');
-        }
-        .judul{
-            font-family: "Shalinta";
-            margin-top: 40px ;
-            margin-left: 30px;
-            position: absolute;
-            z-index: 1;
-            font-weight: bold;
-        }
-        /*REFERENSI*/
-        #ref_judul{
-            text-align: center;
-            color:deepskyblue;
-        }
-        #ref_judul font{
-            font-family: "Freestyle script";
-            font-size: 50px;
-        }
-        .referensi{
-            /*GAMBAR*/
-            margin-left: 30px;
-            margin-right: 10px;
-        }
-        .gambar {
-            padding: 10px;
-            float: left;
-            width: 23%;
-        }
-        .item_gambar img {
-            width: 100%;
-        }
-        .nama_wisata {
-            font-family: calibri;
-            margin-top: -10px;
-            padding: 15px;
-            text-align: center;
-        }
-        @media only screen and (max-width: 1050px){
-            .gambar {
-                width: 28%;
-            }
-        }
-        @media only screen and (max-width: 850px){
-            .gambar {
-                width: 40%;
-            }
-        }
-        @media only screen and (max-width: 600px){
-            .gambar {
-                width: 98%;
-            }
-            .referensi{
-                margin-left: 0px;
-            }
-        }
-        .all_gambar:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        /*FOOTER*/
-        .footer{
-            bottom: 0px;
-            width: 100%;
-            background-color: #B3FF9E;
-            height: 90px;
-            font-family: Calibri;
-            font-size: 15px;
-        }
-        .footer-menu{
-            position: absolute;
-            margin-top: 20px;
-            list-style: none;
-        }
-        .footer-menu li a{
-            text-decoration: none;
-            margin-left: 30px;
-            color: black;
-        }
-        .footer-menu li a:hover{
-            color:#012F52;
-        }
-        .sosmed{
-            float: right;
-            margin-right: 5%;
-            margin-top: 20px;
-            text-align: center;
-            list-style: none;
-            float: right;
-            color: black;
-        }
-        .sosmed li a{
-            padding: 10px;
-        }
-        .sosmed img{
-            width: 25px;
-            height: 25px;
-        }
-        .footer h5{
-            text-align: left;
-            margin-left: 45%;
-            margin-top: 50px;
-            color: black;
-        }
-        /*jendela pop-up login*/
-        #popup, #popup2 {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            background: rgba(0,0,0,.7);
-            left: 0;
-            top: 0;
-            z-index: 999;
-            visibility: hidden;
-        }
-        /* tampilan pop-up */
-        .window {
-            width: 400px;
-            height: 300px;
-            background: #DCDCDC;;
-            border-radius: 10px;
-            position: relative;
-            padding: 10px;
-            text-align: center;
-            margin: 10% auto;
-
-        }
-        /*tombol tutup*/
-        .close-button, .close-button2 {
-            width: 8%;
-            height: 10%;
-            line-height: 33px;
-            font-size: 20px;
-            font-family: sans-serif;
-            font-weight: bold;
-            background: grey;
-            border-radius: 50%;
-            border : 0px solid #fff;
-            display: block;
-            text-align: center;
-            color: #000;
-            text-decoration: none;
-            position: absolute;
-            top: -10px;
-            right: -15px;
-        }
-        /*memunculkan pop-up*/
-        #popup:target, #popup2:target {
-            visibility: visible;
-        }
-        #popup h2, #popup2 h2 {
-            font-family: sans-serif;
-            font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        /*paragraf*/
-        .window p, .window2 p {
-            margin-bottom: 8px;
-            text-decoration: none;
-            font-family: sans-serif;
-            font-size: 13px;
-        }
-        .window input, .window2 input {
-            width: 300px;
-            height: 30px;
-            font-size: 17px;
-            padding-left: 3px;
-        }
-        /*tombol login*/
-        #btn-login, #btn-login2 {
-            color: black;
-            background-color: #00FFFF;
-            padding: 7px;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-bottom: 25px;
-            text-decoration: none;
-            font-family: sans-serif;
-            font-weight: bold;
-            border-radius: 5px;
-            font-size: 18px;
-            width: 120px;
-        }
-        #btn-login:hover, #btn-login2:hover {
-            background-color: #7FFF00;
-            color: #FFF;
-        }
-        /*login with fb*/
-        .window button, .window2 button { 
-            margin-top: 5px;
-            width: 200px;
-            height: 25px;
-            font-size: 15px;
-        }
-        /*jendela sign in dan tombol close*/
-        .window2  {
-            width: 400px;
-            height: 450px;
-            background: #DCDCDC;;
-            border-radius: 10px;
-            position: relative;
-            padding: 5px;
-            text-align: center;
-            margin: 8% auto;
-        }
-        .close-button2 {
-            width: 8%;
-            height: 7%;
-        }
-        /* RESPONSIVE */
-        @media screen and (max-width: 1200px) {
-            .slide img{
-                width: 750px;
-                height: 300px;
-            }
-            .slider{ /*lebar slide pada halaman*/
-                width: 750px;
-                height: 300px;
-            }
-            .slide{
-                width: 750px;
-                height: 300px;
-            }
-            .slide-holder{
-                -webkit-animation: scroller 20s infinite;
-                animation: scroller 20s infinite;
-            }
-            @-webkit-keyframes scroller{
-                0%{
-                    -webkit-transform: translateX(0);
-                    transform: translateX(0);
-                }
-                33%{
-                    -webkit-transform: translateX(-750px);
-                    transform: translateX(-750px);
-                }
-                66% {
-                    -webkit-transform: translateX(-1500px);
-                    transform: translateX(-1500px);
-                }
-            }
-        }
-        @media screen and (max-width: 765px){
-            .menu-utama, .login{
-                display: none;
-            }
-            #open_menu{
-                display: block;
-                background-color: transparent;
-                width: 30px;
-                height: 30px;
-                float: right;
-                margin-top: 20px;
-                margin-right: 10px;
-            }
-            #open_menu img{
-                width: 30px;
-                height: 30px;
-            }
-            #open_menu:hover ul{
-                display: block;
-                float: right;
-                top: -5px;
-            }
-            #open_menu ul{
-                display: none;
-                position: relative;
-                z-index: 10;
-                background-color:#B3FF9E;
-                width: 170px;
-            }
-            #open_menu ul a{
-                text-decoration: none;
-            }
-            #open_menu ul a li {
-                padding: 5px 10px 5px 10px;
-                color: black;
-                font-family: calibri;
-                font-size: 18px;
-            }
-            #open_menu ul li:hover{
-                background-color: #2F8758;
-                color: white;
-            }
-            .slide img{
-                width: 500px;
-                height: 250px;
-            }
-            .slider{ /*lebar slide pada halaman*/
-                width: 450px;
-                height: 250px;
-            }
-            .slide{
-                width: 450px;
-                height: 250px;
-            }
-            .slide-holder{
-                -webkit-animation: scroller 20s infinite;
-                animation: scroller 20s infinite;
-            }
-            @-webkit-keyframes scroller{
-                0%{
-                    -webkit-transform: translateX(0);
-                    transform: translateX(0);
-                }
-                33%{
-                    -webkit-transform: translateX(-450px);
-                    transform: translateX(-450px);
-                }
-                66% {
-                    -webkit-transform: translateX(-900px);
-                    transform: translateX(-900px);
-                }
-            }
-        }
-        @media screen and (max-width: 600px){
-            .item_gambar img{
-                height: 230px;
-            }
-            .footer{
-                height: 100px;
-            }
-            .footer-menu{
-                margin-top: 10px;
-                margin-left: 30px;
-            }
-            .sosmed{
-                margin-top: 30px;
-                margin-right: 33%;
-            }
-            .footer h5{
-                margin-left: 28%;
-            }
-        }
-        /* @media screen and (max-width: 930px){
-            div.menu{
-                display: none;
-            }
-            #open_menu{
-                display: block;
-                float: right;
-            }
-        }
-        @media screen and (max-width: 930px){
-            .menu.responsive{
-                position: relative;
-            }
-            .menu.responsive {
-                display: block;
-            }
-            .menu.responsive div{
-                float: none;
-                width: 100%;
-                display: block;
-                text-align: right;
-            }
-            .menu.responsive div a{
-                float: none;
-                display: block;
-                text-align: right;
-            }
-        } */
-    </style>
+    <link href="css/CSS.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="JavaScript.js" rel="stylesheet" type="text/javascript">
 </head>
 <body>
     <div class="bar">
@@ -577,7 +20,7 @@
             </li>
         </div>
     </div>
-    <nav class="header">
+    <div class="header">
         <ul>
             <div class="logo">
                 <a href="index.html"><img src="img/Logo.png" alt="home"></a>
@@ -599,29 +42,29 @@
                 </div>
             </div>
         </ul>
-    </nav>
-    <div class="content">
+    </div>
+    <div class="content_index">
         <div class="cari">
             <input class="search" type="text" placeholder="Search here...">
             <button type="button" value="Search">Search</button>
         </div>
-        <div class="judul">
+        <div class="judul_index">
             <font size="6px"; font color="#00FF7F">Welcome to</font><br>
             <font size="10px"; font color="#FF8C00">the Beauty of East Java</font><br>
         </div>
-        <div class="slider">
-            <div class="slide-holder">
-                <div class="slide"><img src="img/Bromo.jpg" alt=""/></div>
-                <div class="slide"><img src="img/merah.jpg" alt=""/></div>
-                <div class="slide"><img src="img/MNP.jpg" alt=""/></div>
+        <div class="slider_index">
+            <div class="slide-holder_index">
+                <div class="slide_index"><img src="img/Bromo.jpg" alt=""/></div>
+                <div class="slide_index"><img src="img/merah.jpg" alt=""/></div>
+                <div class="slide_index"><img src="img/MNP.jpg" alt=""/></div>
             </div>
         </div>
         <br><br><br><br>
         <div id="ref_judul"><font face ="#">Refresh your day!</font></div>
         <br>
         <div class="referensi">
-            <div class="gambar">
-                <div class="item_gambar">
+            <div class="ref_gambar">
+                <div class="ref_item_gambar">
                     <a href="#">
                         <img src="img/GBromo-Probolinggo.jpg" height="180px">
                     </a>
@@ -629,26 +72,26 @@
                 </div>
             </div>
 
-            <div class="gambar">
-                <div class="item_gambar">
+            <div class="ref_gambar">
+                <div class="ref_item_gambar">
                     <a href="#">
                         <img src="img/GiliLabak-Madura.jpg" height="180px">
                     </a>
                     <div class="nama_wisata">Pantai Gili Labak - Madura</div>
                 </div>
             </div>
-              
-            <div class="gambar">
-                <div class="item_gambar">
+
+            <div class="ref_gambar">
+                <div class="ref_item_gambar">
                     <a href="#.jpg">
                         <img src="img/CiputraWaterPark-Surabaya.jpg" height="180px">
                     </a>
-                <div class="nama_wisata">Ciputra Water Park - Surabaya</div>
+                    <div class="nama_wisata">Ciputra Water Park - Surabaya</div>
+                </div>
             </div>
-                  </div>
-                  
-            <div class="gambar">
-                <div class="item_gambar">
+
+            <div class="ref_gambar">
+                <div class="ref_item_gambar">
                     <a href="#">
                         <img src="img/GuaGong-Pacitan.jpg" height="180px">
                     </a>
@@ -656,8 +99,8 @@
                 </div>
             </div>
 
-            <div class="gambar">
-                <div class="item_gambar">
+            <div class="ref_gambar">
+                <div class="ref_item_gambar">
                     <a href="deskripsi.html">
                         <img src="img/MJatimPark3.jpg" height="180px">
                     </a>
@@ -665,26 +108,26 @@
                 </div>
             </div>
 
-            <div class="gambar">
-                <div class="item_gambar">
+            <div class="ref_gambar">
+                <div class="ref_item_gambar">
                     <a href="#">
                         <img src="img/TelagaSarangan-Magetan.jpg" height="180px">
                     </a>
                     <div class="nama_wisata">Telaga Sarangan - Magetan</div>
                 </div>
             </div>
-              
-            <div class="gambar">
-                <div class="item_gambar">
+
+            <div class="ref_gambar">
+                <div class="ref_item_gambar">
                     <a href="#">
                         <img src="img/KawahIjen-BWI.jpg" height="180">
                     </a>
-                <div class="nama_wisata">Kawah Ijen - Banyuwangi</div>
+                    <div class="nama_wisata">Kawah Ijen - Banyuwangi</div>
+                </div>
             </div>
-                  </div>
-                  
-            <div class="gambar">
-                <div class="item_gambar">
+
+            <div class="ref_gambar">
+                <div class="ref_item_gambar">
                     <a href="#.jpg">
                         <img src="img/PuncakB29-Lumajang.jpg" height="180">
                     </a>
@@ -714,18 +157,21 @@
         </ul><br>
         <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
     </div>
+
+
+    <!-- popo up login dan register -->
     <div id="popup">
         <div class="window">
             <a href="#" class="close-button" title="Close">X</a>
             <h2>LOGIN</h2>
-            <form name="log" action="index.html" onsubmit="validateLogin()">
+            <form name="log" onsubmit="validateLogin()">
                 <input type="text" placeholder="Email Address" id="Email"><br><br>
                 <input type="Password" placeholder="Password" id="Pass"><br><br>
                 <button id="btn-login" href="#" type="submit">Login</button>
                 <br><br>or<br>
                 <button>Login with Facebook</button><br><br>
                 <p>Not a Member? <a href="#popup2">SignUp</a></p>
-            </form>     
+            </form>
         </div>
     </div>
     <div id="popup2">
@@ -766,21 +212,14 @@
         var email       = document.getElementById("Email").value;
         var password    = document.getElementById("Pass").value;
 
-        if (email != "" && password != "") {
-            return true;
-        } else {
+        if (email == "admin" && password == "admin") {
+            document.location.href = "adminWisata.html";
+        } else if (email == "user" && password == "user") {
+            document.location.href = "wisata.html";
+        }
+        else {
             alert('Form login harus diisi dengan benar !');
         }
     }
-
-    // function openMenu(){
-    //     var menu = document.getElementById("menu_atas");
-    //     if(menu.className === "menu"){
-    //         menu.className += " responsive";
-    //     }
-    //     else{
-    //         menu.className = "menu";
-    //     }
-    // }
 </script>
 </html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin - Rank</title>
+    <link rel="icon" href="img/Ikon.ico">
+    <link href="css/admin.css" rel="stylesheet" type="text/css" media="screen">
+    <!-- <link href="js/canvas.js" rel="stylesheet" type="text/css" media="screen"> -->
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="adminWisata.html"><img src="img/Logo.png"></a>
+        </div>
+        <div class="akun">
+            <a href="adminAkun.html"><img src="img/user_akun.png" alt="profile"></button></a>
+        </div>
+        <div class="menu-utama">
+            <a href="adminRank.html" id="chart"><button type="button"><font face="#"; font size="6px">See the Rank</font></button></a>
+            <a href="adminEvent.html"><button type="button"><font face="Freestyle script"; font size="6px">Let's See an Event</font></button></a>
+            <a href="adminWisata.html"><button type="button"><font face="Freestyle script"; font size="6px">Goes to Wisata</font></button></a>
+        </div>
+        <div id="open_menu"><a href="#" onclick="openMenu()"><img src="img/menu.jpg"></a>
+            <ul>
+                <a href="akunAdmin.html"><li>Akun</li></a>
+                <a href="adminWisata.html"><li>Goes to Wisata</li></a>
+                <a href="adminEvent.html"><li>Let's See an Event</li></a>
+                <a href="adminRank.html"><li>See the Rank</li></a>  
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div id="judul_rank"><font face="#">Rank of Destination</font></div>
+        <!-- <div class="content_wisata"> -->
+        <div class="cari">
+            <div class="title">SEARCH</div>
+            <div class="cariKota">
+                <input type="search">
+                <button type="button">Search</button>
+            </div>
+            <ul class="listKota">
+                <li><a href="#">Semua</a></li>
+                <li><a href="#">Wisata</a></li>
+                <li><a href="#">Event</a></li>
+                <li><a href="#">Bangkalan</a></li>
+                <li><a href="#">Banyuwangi</a></li>
+                <li><a href="#">Batu</a></li>
+                <li><a href="#">Blitar</a></li>
+                <li><a href="#">Bojonegoro</a></li>
+                <li><a href="#">Bondowoso</a></li>
+                <li><a href="#">Gresik</a></li>
+                <li><a href="#">Jember</a></li>
+                <li><a href="#">Jombang</a></li>
+                <li><a href="#">Kediri</a></li>
+                <li><a href="#">Lamongan</a></li>
+                <li><a href="#">Lumajang</a></li>
+                <li><a href="#">Madiun</a></li>
+                <li><a href="#">Magetan</a></li>
+                <li><a href="#">Malang</a></li>
+                <li><a href="#">Mojokerto</a></li>
+                <li><a href="#">Nganjuk</a></li>
+                <li><a href="#">Ngawi</a></li>
+                <li><a href="#">Pacitan</a></li>
+                <li><a href="#">Pamekasan</a></li>
+                <li><a href="#">Pasuruan</a></li>
+                <li><a href="#">Ponorogo</a></li>
+                <li><a href="#">Probolinggo</a></li>
+                <li><a href="#">Simpang</a></li>
+                <li><a href="#">Sidoarjo</a></li>
+                <li><a href="#">Situbondo</a></li>
+                <li><a href="#">Sumenep</a></li>
+                <li><a href="#">Surabaya</a></li>
+                <li><a href="#">Trenggalek</a></li>
+                <li><a href="#">Tuban</a></li>
+                <li><a href="#">Tulungagung</a></li>
+            </ul>
+        </div>
+        <canvas id="rank"
+        style="border:1px solid black" width="700px" height="370px">
+        </canvas>
+    </div><br><br>
+    <div class="footer">
+        <ul class="footer-menu">
+            <li>
+                <a class="cookie" href="CookiePolicy.html">Cookie Policy &emsp;&emsp;|</a>
+                <a class="aboutUs" href="AboutUs.html">About us&emsp;&emsp;|</a>
+                <a class="contact" href="ContactUs.html">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="sosmed">
+            <li>
+                Follow us on :<br>
+                <a class="instagram" href="http://www.instagram.com"><img src="img/instagram.png" alt=""></a>
+                <a class="facebook" href="http://www.facebook.com"><img src="img/facebook.png" alt=""></a>
+                <a class="twitter" href="http://www.twitter.com"><img src="img/twitter.png" alt=""></a>
+                <a class="youtube" href="http://www.youtube.com"><img src="img/youtube.png" alt=""></a>
+            </li>
+        </ul><br>
+        <h5>&copy;Copyright 2019 BeautyofEastJava</h5>
+    </div>
+</body>
+<script>
+    window.addEventListener('load', function(){
+        console.log('document ready');
+        drawCanvas();
+    });
+    function drawCanvas(){
+        console.log('start draw to canvas');
+        var canvas=document.getElementById('rank')
+        console.log('canvas', canvas)
+    
+        var ctx = canvas.getContext('2d');
+        console.log('ctx', ctx);
+
+        ctx.strokeStyle = 'black';
+        ctx.beginPath();
+        ctx.moveTo(25,300); //titik awal
+        ctx.lineTo(500-5,300); //titik akhir
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(40,310);
+        ctx.lineTo(40,15);
+        ctx.stroke();
+
+        ctx.fillStyle = 'black';
+        ctx.fillText('0',20,290);
+        ctx.fillText('50',20,200);
+        ctx.fillText('100',20,110);
+        ctx.fillText('150',20,20);
+        
+
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(50,100,50,200);
+        ctx.fillText('Jatim Park 3',50,315);
+
+        ctx.fillStyle = 'red';
+        ctx.fillRect(130,150,50,150);
+        ctx.fillText('Selecta',140,315)
+
+        ctx.fillStyle = 'green';
+        ctx.fillRect(210,130,50,170);
+        ctx.fillText('MNP',220,315)
+
+        ctx.fillStyle = 'turquoise';
+        ctx.fillRect(290,200,50,99);
+        ctx.fillText('Jatim Park 2',290,315);
+
+        ctx.fillStyle = 'magenta';
+        ctx.fillRect(370,210,50,89);
+        ctx.fillText('Hawai',380,315);
+    }
+</script>
+</html>
